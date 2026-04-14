@@ -29,3 +29,15 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.hovercard {
+    border-radius: 25px 100px 0px 25px;
+    background: #395988;
+    transition: all 1.5s ease;
+    left: 0;
+    img{
+    border-radius: 100px 100px 0px 25px;
+    width: 400px;
+    height: 350px;
+    margin-top: 50px;
+}
+}

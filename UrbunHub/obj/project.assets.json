@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbunHub\\UrbunHub.csproj",
-      "projectName": "UrbunHub",
-      "projectPath": "E:\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbunHub\\UrbunHub.csproj",
+      "projectUniqueName": "E:\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbunHub\\UrbanHub.csproj",
+      "projectName": "UrbanHub",
+      "projectPath": "E:\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbunHub\\UrbanHub.csproj",
       "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
       "outputPath": "E:\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbunHub\\obj\\",
       "projectStyle": "PackageReference",
