@@ -30,14 +30,20 @@ body {
   text-align: start;
 }
 .hovercard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 25px 100px 0px 25px;
     background: #395988;
     transition: all 1.5s ease;
     left: 0;
-    img{
+    margin-bottom: 20px;
+    padding: 20px;
+    img {
     border-radius: 100px 100px 0px 25px;
-    width: 400px;
-    height: 350px;
+    width: 90%;
+    height: 70%;
     margin-top: 50px;
 }
+
 }
