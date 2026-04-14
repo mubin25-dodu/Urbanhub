@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|g:\\aiub portal\\10th semester (spring)\\adv_pro_dot_net_project\\urbanhub\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|solutionrelative:views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|g:\\aiub portal\\10th semester (spring)\\adv_pro_dot_net_project\\urbanhub\\wwwroot\\css\\pages\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|solutionrelative:wwwroot\\css\\pages\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|g:\\aiub portal\\10th semester (spring)\\adv_pro_dot_net_project\\urbanhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|g:\\aiub portal\\10th semester (spring)\\adv_pro_dot_net_project\\urbanhub\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12A42CAB-CEF6-4B22-938B-C515E3783589}|UrbunHub.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 228,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:42:06.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:56:23.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\Login.cshtml",
+              "ToolTip": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "Views\\User\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-14T07:45:36.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "login.css",
+              "DocumentMoniker": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\wwwroot\\css\\pages\\login.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\pages\\login.css",
+              "ToolTip": "G:\\AIUB PORTAL\\10th semester (Spring)\\ADV_PRO_DOT_NET_PROJECT\\UrbanHub\\wwwroot\\css\\pages\\login.css",
+              "RelativeToolTip": "wwwroot\\css\\pages\\login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-14T07:53:01.058Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

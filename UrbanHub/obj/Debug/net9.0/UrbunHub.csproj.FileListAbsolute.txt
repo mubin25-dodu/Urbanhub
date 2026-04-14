@@ -1,0 +1,196 @@
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\appsettings.Development.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\appsettings.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.staticwebassets.runtime.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.staticwebassets.endpoints.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.exe
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.deps.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.runtimeconfig.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\bin\Debug\net9.0\UrbunHub.pdb
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.GeneratedMSBuildEditorConfig.editorconfig
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.AssemblyInfoInputs.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.AssemblyInfo.cs
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.csproj.CoreCompileInputs.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.MvcApplicationPartsAssemblyInfo.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.RazorAssemblyInfo.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.RazorAssemblyInfo.cs
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\scopedcss\bundle\UrbunHub.styles.css
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\scopedcss\projectbundle\UrbunHub.bundle.scp.css
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\0n1ntpk0tw-lugek5hnai.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\6dtg0gs23k-61n19gt1b8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\unqdvv2nd3-fr7q2aak1r.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\1poo2673ke-bqjiyaj88i.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\zfbf7eq4bi-c2jlpeoesf.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\sz3ihici7n-erw9l3u2r3.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\nw7wbzwiyx-aexeepp0ev.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\ud7d3d9xh3-d7shbmvgxk.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\unx17v2zg4-ausgxo2sd3.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\3sl8k22kyx-k8d9w2qqmf.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\ylwg3bqusn-cosvhxvwiu.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\p9o64kzmba-ub07r2b239.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\ww3kv6l616-fvhpjtyr6v.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\o2w1m0qb8z-b7pk76d08c.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\5o0kbbwsk2-fsbi9cje9m.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\7fhw1urf2o-rzd6atqjts.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\17j2c7ztn0-ee0r1s7dh0.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\7p3lu0mwg0-dxx9fxp4il.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\rfw5onsmx9-jd9uben2k1.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\58eu446ple-khv3u5hwcm.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\fgkf9455im-r4e9w2rdcm.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\7w92cirk9c-lcd1t2u6c8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\3yx398he79-c2oey78nd0.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\2d4tvm8jyf-tdbxkamptv.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\7u5ceb3k2e-j5mq2jizvt.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\v1jadlpv1o-06098lyss8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\du1vhg6kel-nvvlpmu67g.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\pn8xu7wrou-s35ty4nyc5.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\xa1vji5ygl-pj5nd1wqec.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\k5dngzqbpj-46ein0sx1k.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\4glt0z6cw8-v0zj4ognzu.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\2i8sthmy3q-37tfw0ft22.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\wp522743kh-hrwsygsryq.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\gxohnrrhlj-pk9g2wxc8p.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\pp44nzc37k-ft3s53vfgj.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\vlke81uh9i-6cfz1n2cew.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\on5la7ke1h-6pdc2jztkx.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\xt6eronnmx-493y06b0oq.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\b0g9z8r39w-iovd86k7lj.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\ffjn8hi530-vr1egmr9el.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\sc8qomni3d-kbrnm935zg.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\pzbl075720-jj8uyg4cgr.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\43gwv3r443-y7v9cxd14o.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\fs4ydkckxo-notf2xhcfb.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\cm1d8ps2e9-h1s4sie4z3.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\3ajdzil8w6-63fj8s7r0e.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\g9lwxv0kz0-0j3bgjxly4.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\gewtx4tyvz-47otxtyo56.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\jwozygixks-4v8eqarkd7.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\3o78l4jcuy-l3n5xuwxn8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\c2y4aq9plr-ilo7uva0vt.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\xrb91jb0hf-qlccset4i1.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\lipp0uflzi-lzl9nlhx6b.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\uf8skc9d80-ag7o75518u.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\4wltybp5bd-xzw0cte36n.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\3ngs4odc1h-0i3buxo5is.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\xy0cwz24vt-o1o13a6vjx.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\o0822gefl7-ttgo8qnofa.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\fmaeb2w7w8-2z0ns9nrw6.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\lqa98xdxsb-muycvpuwrr.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\kwxr3tkxxs-87fc7y1x7t.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\h31oa4ljiw-jfsiqqwiad.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\xqw5dzskrx-h8v7c0p8md.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\7a8lniarso-h8v7c0p8md.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\staticwebassets.build.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\staticwebassets.development.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\refint\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.pdb
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\UrbunHub.genruntimeconfig.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\ref\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT - Copy\UrbanHub\obj\Debug\net9.0\compressed\eb8smdko0p-wlki4slt4b.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\appsettings.Development.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\appsettings.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.staticwebassets.endpoints.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.staticwebassets.runtime.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.exe
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.deps.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.runtimeconfig.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\bin\Debug\net9.0\UrbunHub.pdb
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.GeneratedMSBuildEditorConfig.editorconfig
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.AssemblyInfoInputs.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.AssemblyInfo.cs
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.csproj.CoreCompileInputs.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.MvcApplicationPartsAssemblyInfo.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.RazorAssemblyInfo.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.RazorAssemblyInfo.cs
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\scopedcss\bundle\UrbunHub.styles.css
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\scopedcss\projectbundle\UrbunHub.bundle.scp.css
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\eb8smdko0p-wlki4slt4b.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\0n1ntpk0tw-lugek5hnai.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\6dtg0gs23k-61n19gt1b8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\unqdvv2nd3-fr7q2aak1r.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\1poo2673ke-bqjiyaj88i.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\zfbf7eq4bi-c2jlpeoesf.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\sz3ihici7n-erw9l3u2r3.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\nw7wbzwiyx-aexeepp0ev.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\ud7d3d9xh3-d7shbmvgxk.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\unx17v2zg4-ausgxo2sd3.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\3sl8k22kyx-k8d9w2qqmf.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\ylwg3bqusn-cosvhxvwiu.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\p9o64kzmba-ub07r2b239.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\ww3kv6l616-fvhpjtyr6v.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\o2w1m0qb8z-b7pk76d08c.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\5o0kbbwsk2-fsbi9cje9m.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\7fhw1urf2o-rzd6atqjts.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\17j2c7ztn0-ee0r1s7dh0.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\7p3lu0mwg0-dxx9fxp4il.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\rfw5onsmx9-jd9uben2k1.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\58eu446ple-khv3u5hwcm.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\fgkf9455im-r4e9w2rdcm.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\7w92cirk9c-lcd1t2u6c8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\3yx398he79-c2oey78nd0.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\2d4tvm8jyf-tdbxkamptv.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\7u5ceb3k2e-j5mq2jizvt.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\v1jadlpv1o-06098lyss8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\du1vhg6kel-nvvlpmu67g.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\pn8xu7wrou-s35ty4nyc5.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\xa1vji5ygl-pj5nd1wqec.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\k5dngzqbpj-46ein0sx1k.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\4glt0z6cw8-v0zj4ognzu.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\2i8sthmy3q-37tfw0ft22.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\wp522743kh-hrwsygsryq.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\gxohnrrhlj-pk9g2wxc8p.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\pp44nzc37k-ft3s53vfgj.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\vlke81uh9i-6cfz1n2cew.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\on5la7ke1h-6pdc2jztkx.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\xt6eronnmx-493y06b0oq.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\b0g9z8r39w-iovd86k7lj.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\ffjn8hi530-vr1egmr9el.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\sc8qomni3d-kbrnm935zg.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\pzbl075720-jj8uyg4cgr.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\43gwv3r443-y7v9cxd14o.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\fs4ydkckxo-notf2xhcfb.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\cm1d8ps2e9-h1s4sie4z3.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\3ajdzil8w6-63fj8s7r0e.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\g9lwxv0kz0-0j3bgjxly4.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\gewtx4tyvz-47otxtyo56.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\jwozygixks-4v8eqarkd7.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\3o78l4jcuy-l3n5xuwxn8.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\c2y4aq9plr-ilo7uva0vt.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\xrb91jb0hf-qlccset4i1.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\lipp0uflzi-lzl9nlhx6b.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\uf8skc9d80-ag7o75518u.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\4wltybp5bd-xzw0cte36n.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\3ngs4odc1h-0i3buxo5is.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\xy0cwz24vt-o1o13a6vjx.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\o0822gefl7-ttgo8qnofa.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\fmaeb2w7w8-2z0ns9nrw6.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\lqa98xdxsb-muycvpuwrr.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\kwxr3tkxxs-87fc7y1x7t.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\h31oa4ljiw-jfsiqqwiad.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\xqw5dzskrx-h8v7c0p8md.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\compressed\7a8lniarso-h8v7c0p8md.gz
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\staticwebassets.build.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\staticwebassets.development.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\refint\UrbunHub.dll
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.pdb
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\UrbunHub.genruntimeconfig.cache
+G:\AIUB PORTAL\10th semester (Spring)\ADV_PRO_DOT_NET_PROJECT\UrbanHub\obj\Debug\net9.0\ref\UrbunHub.dll

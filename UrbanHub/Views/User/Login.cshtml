@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login - UrbanHub</title>
+    <link rel="stylesheet" href="~/css/pages/login.css" />
+</head>
+<body class="login-page-bg">
+
+    <div class="auth-container">
+        <div class="brand-box">
+            <img src="~/images/logo.png" class="brand-logo" />
+            <span class="brand-name">UrbanHub</span>
+        </div>
+
+        <div class="header-text">
+            <h2>Welcome Back</h2>
+            <p>Login to your UrbanHub account to continue</p>
+        </div>
+
+        <form asp-action="Login" method="post">
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@company.com" />
+            </div>
+
+            <div class="input-group">
+                <div class="label-row">
+                    <label>Password</label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                <div class="password-wrapper">
+                    <input id="passwordInput" type="password" placeholder="Enter your password" />
+
+                    <img src="~/images/eye.png"
+                         id="eyeIcon"
+                         class="eye-toggle"
+                         onclick="togglePassword()"
+                         style="cursor: pointer;" />
+                </div>
+            </div>
+
+            <button type="submit" class="signin">Sign In</button>
+        </form>
+
+        <div class="separator">
+            <span>OR CONTINUE WITH</span>
+        </div>
+
+        <div class="social-grid">
+            <a href="#" class="social-btn">
+                <img src="~/images/google.png" class="social-icon" />
+                Google
+            </a>
+            <a href="#" class="social-btn">
+                <img src="~/images/apple.png" class="social-icon" />
+                Apple
+            </a>
+        </div>
+
+        <div class="footer-link">
+            Don't have an account? <a asp-action="Register">Sign up for free</a>
+        </div>
+    </div>
+
+</body>
+</html>
