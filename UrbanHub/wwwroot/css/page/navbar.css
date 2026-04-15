@@ -1,0 +1,60 @@
+﻿#logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    margin-right: 10px;
+}
+.navlogo {
+    padding-left: 10%;
+    padding-top: 10%;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 50px;
+}
+
+.navbar {
+    width: 250px;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+}
+.arrow {
+    position: absolute;
+    font-size: 25px;
+    color: #395988;
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    cursor: pointer;
+    right: 3px;
+    top: 10px;
+}
+.nav-btns {
+    text-align: start;
+    transition: all .3s ease-in-out;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 80%;
+    border: none;
+    background: none;
+    color: #395988;
+    height: 45px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+    .nav-btns:hover {
+        background-color: rgb(99, 103, 255,0.2);
+/*        color: white;*/
+    }
+    .nav-btns.active {
+        background-color: #258cfb;
+        color: white;
+/*        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;*/
+    }
+    .nav-btns:active {
+        transition: all 0s ease-in-out;
+        background-color: #258cfb;/
+        color: white;
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    }
