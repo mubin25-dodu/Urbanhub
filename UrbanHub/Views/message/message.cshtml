@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - UrbanHub</title>
+    <link rel="stylesheet" href="~/css/page/messages.css" />
+</head>
+<body class="messages-page-bg">
+
+    <div class="chat-sidebar" id="sidebarContainer">
+        <h2 class="sidebar-title">Messages</h2>
+        <div class="search-container" id="searchArea">
+            <div class="search-wrapper" id="searchWrapper">
+                <img src="~/assets/img/search.png" class="search-icon" id="iconSearch" />
+                <input type="text" id="chatSearchInput" class="search-bar" placeholder="Search chats...">
+            </div>
+        </div>
+
+        <div class="user-list-container" id="userList">
+            <div class="user-item active" id="userChat_1">
+                <div class="avatar-container">
+                    <img src="~/assets/img/marcus.png" class="avatar-main" id="sidebarAvatar_1" />
+                    <div class="status-indicator" id="status_1"></div>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="userName_1">Marcus Sterling</div>
+                    <div class="user-preview" id="userPreview_1">I've sent a counter-offer for the space.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-main" id="mainChatArea">
+        <div class="chat-header" id="chatHeader">
+            <div class="header-info">
+                <img src="~/assets/img/marcus.png" class="header-avatar" id="currentChatAvatar" />
+                <div>
+                    <div class="header-name" id="currentChatName">Marcus Sterling</div>
+                    <div class="active-status" id="currentChatStatus">ACTIVE NOW</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <img src="~/assets/img/call.png" class="header-icon" id="btnCall" title="Call" />
+                <img src="~/assets/img/more.png" class="header-icon" id="btnMoreOptions" title="More" />
+            </div>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <div class="bubble-sent" id="initialMessage">
+                Hello Marcus! Yes, it's still available. The standard rate is $7.00/hr, but for a full week, we could look at a bundle price.
+            </div>
+
+            <div class="offer-card" id="negotiationCard">
+                <div class="offer-header">
+                    <img src="~/assets/img/offer.png" class="offer-icon" />
+                    <span class="offer-label">NEGOTIATION OFFER</span>
+                </div>
+
+                <p class="offer-description" id="offerDesc">
+                    You proposed a discounted rate for the weekly booking.
+                </p>
+
+                <div class="rate-box">
+                    <span class="rate-label">RATE</span>
+                    <span class="rate-value" id="offerRateValue">$5.00/hr</span>
+                </div>
+
+                <div class="offer-buttons">
+                    <button class="btn-modify" id="btnModifyOffer">Modify</button>
+                    <button class="btn-waiting" id="btnWaitingStatus" disabled>Waiting...</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-area" id="inputArea">
+            <img src="~/assets/img/add.png" class="input-icon-add" id="btnAddFiles" />
+            <div class="input-wrapper">
+                <img src="~/assets/img/tag.png" class="input-icon-tag" id="btnTags" />
+                <input type="text" id="msgInput" class="input-field" placeholder="Type a message or offer...">
+            </div>
+            <img src="~/assets/img/send.png" class="btn-send-img" id="btnSendMessage" onclick="sendMessage()" />
+        </div>
+    </div>
+
+    <div class="listing-details" id="detailsSidebar">
+        <p class="details-section-label">LISTING DETAILS</p>
+
+        <img src="~/assets/img/park.jpg" class="detail-img" id="listingImage" />
+
+        <h3 class="listing-title" id="listingName">Premium Spot #402</h3>
+        <p class="listing-location" id="listingLoc">
+            <img src="~/assets/img/location.png" class="location-icon" /> Downtown Financial District
+        </p>
+
+        <div class="owner-container">
+            <p class="owner-label">OWNER</p>
+            <div class="owner-flex">
+                <div class="owner-avatar" id="ownerInitials">UH</div>
+                <span class="owner-name" id="ownerName">UrbanHub Management</span>
+            </div>
+        </div>
+
+        <div class="summary-container" id="negotiationSummary">
+            <p class="details-section-label">NEGOTIATION SUMMARY</p>
+
+            <div class="summary-row">
+                <span class="summary-label">Initial Rate</span>
+                <span class="summary-val" id="summaryInitialRate">$7.00/hr</span>
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Proposed Discount</span>
+                <span class="discount-text" id="summaryDiscountPercentage">-28%</span>
+            </div>
+
+            <div class="final-rate-container">
+                <span class="final-label">FINAL RATE</span>
+                <span class="final-value" id="summaryFinalRateValue">$5.00/hr</span>
+            </div>
+        </div>
+
+        <button class="btn-schedule" id="btnViewSchedule">
+            <img src="~/assets/img/calendar.png" class="calendar-icon" /> View Schedule
+        </button>
+    </div>
+
+    <script src="~/js/messages.js"></script>
+</body>
+</html>
