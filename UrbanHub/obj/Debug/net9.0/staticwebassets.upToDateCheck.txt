@@ -1,7 +1,9 @@
 wwwroot\assets\img\logo.png
 wwwroot\assets\img\urbanhub.png
+wwwroot\css\page\navbar.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\js\layout.js
 wwwroot\js\login.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -88,9 +90,8 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\page\navbar.css
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\site.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\favicon.ico
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\login.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\site.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -137,6 +138,22 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\additional-methods.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\LICENSE.md
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.min.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\LICENSE.txt
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\site.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\all.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\all.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\brands.css
@@ -157,19 +174,4 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v4-shims.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.min.css
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\additional-methods.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\LICENSE.md
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.min.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.min.map
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.js
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.map
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\LICENSE.txt
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\layout.js

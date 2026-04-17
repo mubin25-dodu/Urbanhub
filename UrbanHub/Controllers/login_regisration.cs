@@ -10,7 +10,7 @@ namespace UrbunHub.Controllers
             return View("login_reg");
         }
 
-        public IActionResult login()
+        public IActionResult islogin()
         {
             return RedirectToAction("Index", "Home");
         }
