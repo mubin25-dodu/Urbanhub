@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - UrbunHub</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/page/navbar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Urbanhub.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 transition-base">
+            <div class="container-fluid px-4 px-lg-5">
+                <!-- Brand -->
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" href="#">
+                    <img src="~/assets/img/logo.png" alt="UrbanHub Logo" class="logo" />
+                    <span class="fw-bold fs-4 text-dark mb-0">UrbanHub</span>
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Nav Items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark nav-hover-effect active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark nav-hover-effect" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark nav-hover-effect disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Right side tools -->
+                    <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                        <!-- Notification Icon -->
+                        <a href="#" class="text-dark position-relative nav-icon-hover transition-base text-decoration-none">
+                            <i class="fa-regular fa-bell fs-5"></i>
+                            <span class="position-absolute top-1 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New notifications</span>
+                            </span>
+                        </a>
+                        
+                        <!-- Login Button -->
+                        <a class="btn btn-dark fw-bold rounded-pill px-4 shadow-sm login-btn-hover transition-base" href="/login">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2026 - UrbunHub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/layout.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
