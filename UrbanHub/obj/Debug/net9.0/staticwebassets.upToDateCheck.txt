@@ -92,7 +92,6 @@ wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\favicon.ico
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\login.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\site.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -176,4 +175,5 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\layout.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\home.css
