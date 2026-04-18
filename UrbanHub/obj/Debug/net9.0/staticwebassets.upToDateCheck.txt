@@ -1,0 +1,179 @@
+wwwroot\assets\img\logo.png
+wwwroot\assets\img\urbanhub.png
+wwwroot\css\page\home.css
+wwwroot\css\page\navbar.css
+wwwroot\css\site.css
+wwwroot\favicon.ico
+wwwroot\js\layout.js
+wwwroot\js\login.js
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\font-awesome\css\all.css
+wwwroot\lib\font-awesome\css\all.min.css
+wwwroot\lib\font-awesome\css\brands.css
+wwwroot\lib\font-awesome\css\brands.min.css
+wwwroot\lib\font-awesome\css\fontawesome.css
+wwwroot\lib\font-awesome\css\fontawesome.min.css
+wwwroot\lib\font-awesome\css\regular.css
+wwwroot\lib\font-awesome\css\regular.min.css
+wwwroot\lib\font-awesome\css\solid.css
+wwwroot\lib\font-awesome\css\solid.min.css
+wwwroot\lib\font-awesome\css\svg-with-js.css
+wwwroot\lib\font-awesome\css\svg-with-js.min.css
+wwwroot\lib\font-awesome\css\svg.css
+wwwroot\lib\font-awesome\css\svg.min.css
+wwwroot\lib\font-awesome\css\v4-font-face.css
+wwwroot\lib\font-awesome\css\v4-font-face.min.css
+wwwroot\lib\font-awesome\css\v4-shims.css
+wwwroot\lib\font-awesome\css\v4-shims.min.css
+wwwroot\lib\font-awesome\css\v5-font-face.css
+wwwroot\lib\font-awesome\css\v5-font-face.min.css
+wwwroot\lib\font-awesome\webfonts\fa-brands-400.woff2
+wwwroot\lib\font-awesome\webfonts\fa-regular-400.woff2
+wwwroot\lib\font-awesome\webfonts\fa-solid-900.woff2
+wwwroot\lib\font-awesome\webfonts\fa-v4compatibility.woff2
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\LICENSE.txt
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.min.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\LICENSE.md
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation\dist\additional-methods.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v4-shims.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v4-shims.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v4-font-face.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v4-font-face.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\svg.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\svg.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\svg-with-js.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\svg-with-js.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\solid.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\solid.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\regular.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\regular.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\fontawesome.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\fontawesome.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\brands.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\brands.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\all.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\all.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\site.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\login.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\layout.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\favicon.ico
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\site.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\home.css

@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Login";
-}
+    string email = Context.Request.Cookies["email"];
+    string name = Context.Request.Cookies["name"];
+} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,41 +17,46 @@
         <!-- card -->
         <div class="shadow flex-row d-flex align-items-center justify-content-evenly rounded-5 position-relative" id="card_login">
             <!-- left of the card -->
-        <div class="m-5 p-5 flex-column gap-1" id="left_login"> 
-            <h2>Create Account</h2>
+        <div class="m-5 p-5 flex-column gap-1" id="left_login">
+                <form asp-action="registration" method="post">
+                    <h2>Create Account</h2>
         <p class="text-primary">We will send you a verification email</p>
         <label for="fullname" class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="fullname" placeholder="Enter full name">
+        <input name="name" type="text" class="form-control" id="fullname" placeholder="Enter full name">
         <span class="text-danger"></span>
 
             <label for="username" class="form-label">Email</label>
-            <input type="email" class="form-control" id="username" placeholder="Enter email">
+            <input name="email" type="email" class="form-control" id="username" placeholder="Enter email">
             <span class="text-danger"></span>
 
             <div class="d-grid gap-2 pt-3">
-                <button type="button" name="login-btn"id="login-btn" class="btn btn-primary">
+                <button type="submit" name="login-btn"id="submit-btn" class="btn btn-primary">
                     Submit
                 </button>
-            </div>
+
+                    </div>
+                </form>
         </div>
-        <!-- right of the card -->
+            <!-- right of the card --> 
+        <form asp-action="islogin" method="post">
         <div class="m-5 p-5 flex-column gap-1" id="registration"> 
+           
             <h2>Welcome back</h2>
             <h5 class="text-primary">Enter your login details</h5>
             <label for="username" class="form-label">Email</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter email">
+            <input name="email" value="@email" type="text" class="form-control" id="username" placeholder="Enter email">
             <span class="text-danger"></span>
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password">
+            <input name="name" value="@name" type="password" class="form-control" id="password" placeholder="Enter password">
             <span class="text-danger"></span>
-            <input type="checkbox" name="remember" value="1" /> Remember me <br />
+            <input name="remember" type="checkbox"/> Remember me <br />
             <a href="#" class="text-decoration-none text-danger">Forget password?</a>
             <div class="d-grid gap-2 pt-3">
-                <a asp-action="islogin" asp-controller="login_regisration" name="login-btn"id="login-btn" class="btn btn-primary">
+                <button type="submit" name="login-btn"id="login-btn" class="btn btn-primary">
                     Login
-                </a>
+                </button>
             </div>
-        
+                
 
             <!-- the hovering card -->
                 <div class="position-absolute h-100 top-0 w-50 hovercard " id="hovercard"> 
@@ -57,8 +64,8 @@
                     <p class ="text-white text-center" id="question">Don't have an account?</p>
                     <button type="button" class="btn btn-light mx-auto d-block " id="togglebtn">Sign Up</button>
             </div>
-
-        </div>
+                </div>
+            </form>
     </div>
     </div>
     <script src="~/js/login.js"></script>

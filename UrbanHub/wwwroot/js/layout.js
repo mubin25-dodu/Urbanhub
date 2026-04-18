@@ -26,3 +26,10 @@ document.getElementById('arrow').addEventListener('click', function (event) {
         }, 200);
     }
 });
+
+//submit the data
+
+//let submitBtn = document.getElementById('submit-btn');
+//submitBtn.addEventListener('click', function (event) {
+
+//});
