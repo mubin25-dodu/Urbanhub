@@ -1,5 +1,6 @@
 wwwroot\assets\img\logo.png
 wwwroot\assets\img\urbanhub.png
+wwwroot\css\page\home.css
 wwwroot\css\page\navbar.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
@@ -91,7 +92,6 @@ wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\favicon.ico
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\login.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\site.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -118,7 +118,7 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\site.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
@@ -153,7 +153,7 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.js
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\dist\jquery.slim.min.map
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\jquery\LICENSE.txt
-E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\site.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\bootstrap\dist\css\bootstrap.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\all.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\all.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\brands.css
@@ -175,3 +175,5 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\lib\font-awesome\css\v5-font-face.min.css
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\js\layout.js
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\navbar.css
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub\wwwroot\css\page\home.css
