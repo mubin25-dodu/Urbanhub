@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrbanHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dea75458fdb5fee686f31dfe07c787fb1e628988")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e859b82541a8bddf0e7221803d20fdbeb18cea56")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrbanHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrbanHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

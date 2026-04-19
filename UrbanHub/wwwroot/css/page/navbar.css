@@ -1,60 +1,51 @@
-﻿#logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 20%;
-    margin-right: 10px;
-}
-.navlogo {
-    padding-left: 10%;
-    padding-top: 10%;
-    width: 100%;
-    height: fit-content;
-    margin-bottom: 50px;
+.logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.navbar {
-    width: 250px;
-    height: 100vh;
-    justify-content: flex-start;
-    align-items: center;
+.transition-base {
+    transition: all 0.3s ease-in-out;
 }
-.arrow {
+
+.nav-hover-effect {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-hover-effect::after {
+    content: '';
     position: absolute;
-    font-size: 25px;
-    color: #395988;
-    width: 150px;
-    height: 30px;
-    margin: auto;
-    cursor: pointer;
-    right: 3px;
-    top: 10px;
+    width: 0;
+    height: 2px;
+    bottom: 2px;
+    left: 50%;
+    background-color: #212529;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
-.nav-btns {
-    text-align: start;
-    transition: all .3s ease-in-out;
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 10px;
-    width: 80%;
-    border: none;
-    background: none;
-    color: #395988;
-    height: 45px;
-    cursor: pointer;
-    margin-bottom: 10px;
+
+.nav-hover-effect:hover::after, .nav-hover-effect.active::after {
+    width: 60%;
 }
-    .nav-btns:hover {
-        background-color: rgb(99, 103, 255,0.2);
-/*        color: white;*/
-    }
-    .nav-btns.active {
-        background-color: #258cfb;
-        color: white;
-/*        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;*/
-    }
-    .nav-btns:active {
-        transition: all 0s ease-in-out;
-        background-color: #258cfb;/
-        color: white;
-        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-    }
+
+.nav-hover-effect:hover {
+    color: #495057 !important;
+}
+
+.nav-icon-hover {
+    display: inline-block;
+}
+
+.nav-icon-hover:hover {
+    transform: translateY(-2px);
+    color: #0d6efd !important;
+}
+
+.login-btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+}
