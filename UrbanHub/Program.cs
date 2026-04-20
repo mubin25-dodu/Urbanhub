@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using UrbanHub.customclasses;
+using UrbanHub.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<UrbanhubDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UrbanhubDB")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(mapping));
 
 var app = builder.Build();
 
@@ -12,6 +20,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
 
 app.UseHttpsRedirection();
 app.UseRouting();

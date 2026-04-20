@@ -1,20 +1,28 @@
-using System.Diagnostics;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using UrbunHub.Models;
+using System.Diagnostics;
+using UrbanHub.Data;
+using UrbanHub.DTO;
+using UrbanHub.Models;
 
-namespace UrbunHub.Controllers
+namespace UrbanHub.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly UrbanhubDbContext _context;
+        private IMapper _mapper;
+        public HomeController(ILogger<HomeController> logger, UrbanhubDbContext context , IMapper mapper)
         {
             _logger = logger;
+            _context = context;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
+            //var data = _context.Registrations.ToList();
+            //var map = _mapper.Map<List<RegistrationDTO>>(data);
             return View();
         }
 
