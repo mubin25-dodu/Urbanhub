@@ -24,4 +24,6 @@ public partial class User
     public int? Vid { get; set; }
 
     public int? Logid { get; set; }
+
+    public string Phone { get; set; } = null!;
 }

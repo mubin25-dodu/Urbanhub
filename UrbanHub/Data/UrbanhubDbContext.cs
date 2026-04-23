@@ -16,6 +16,8 @@ public partial class UrbanhubDbContext : DbContext
     {
     }
 
+    public virtual DbSet<Email> Emails { get; set; }
+
     public virtual DbSet<Registration> Registrations { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -27,6 +29,23 @@ public partial class UrbanhubDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Email>(entity =>
+        {
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Body)
+                .HasMaxLength(500)
+                .IsUnicode(false)
+                .HasColumnName("body");
+            entity.Property(e => e.Date)
+                .HasColumnType("datetime")
+                .HasColumnName("date");
+            entity.Property(e => e.LogId).HasColumnName("log_id");
+            entity.Property(e => e.MailTo)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("mail_to");
+        });
+
         modelBuilder.Entity<Registration>(entity =>
         {
             entity.HasKey(e => e.Rid);
@@ -67,13 +86,19 @@ public partial class UrbanhubDbContext : DbContext
                 .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasColumnName("password");
+            entity.Property(e => e.Phone)
+                .HasMaxLength(14)
+                .IsUnicode(false)
+                .HasColumnName("phone");
             entity.Property(e => e.Role)
                 .HasMaxLength(50)
                 .IsUnicode(false)
+                .HasDefaultValueSql("(user_name())")
                 .HasColumnName("role");
             entity.Property(e => e.Status)
                 .HasMaxLength(50)
                 .IsUnicode(false)
+                .HasDefaultValue("not verified")
                 .HasColumnName("status");
             entity.Property(e => e.Vid).HasColumnName("vid");
         });

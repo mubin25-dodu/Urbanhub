@@ -10,6 +10,8 @@ namespace UrbanHub.customclasses
         {
             CreateMap<Registration, RegistrationDTO>();
             CreateMap<RegistrationDTO, Registration>();
+            CreateMap<User, UserDTO>();
+            CreateMap<UserDTO, User>();
         }
     }
 }

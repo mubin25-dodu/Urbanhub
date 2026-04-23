@@ -1,10 +1,11 @@
 ﻿using UrbanHub.Data.Entities;
+using UrbanHub.DTO;
 
 namespace UrbanHub.Models
 {
     public class login_reg
     {
-        public Registration Registration { get; set; }
-        public User User { get; set; }
+        public RegistrationDTO Registration { get; set; }
+        public LoginDTO Login { get; set; }
     }
 }

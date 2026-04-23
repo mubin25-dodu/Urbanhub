@@ -9,6 +9,7 @@ builder.Services.AddDbContext<UrbanhubDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
 builder.Services.AddAutoMapper(typeof(mapping));
 
 var app = builder.Build();
