@@ -37,7 +37,7 @@ namespace UrbanHub.Controllers
             {
                 return View("login_reg");
             }
-            var check = _context.Registrations.Where(u => u.Email == data.Login.Email && u.Name == data.Login.Password);
+            var check = _context.Users.Where(u => u.Email == data.Login.Email && u.Password == data.Login.Password);
             if (check.Count() == 1)
             {
                 return RedirectToAction("Index", "Home");
@@ -99,9 +99,9 @@ namespace UrbanHub.Controllers
             {
                 return RedirectToAction("login_reg");
             }
+            HttpContext.Session.SetString("email", email);
+            HttpContext.Session.SetString("name", check.First().Name);
 
-            ViewBag.Email = email;
-            ViewBag.Name = check.First().Name;
 
             return View();
         }
@@ -129,6 +129,7 @@ namespace UrbanHub.Controllers
             }
             return View();
         }
+
         private async Task sendmail(string e, string n)
         {
             //sending mail
@@ -150,14 +151,15 @@ namespace UrbanHub.Controllers
                         <a href='https://localhost:7019/registration?email={email}&id={rid}' style=""background-color: #007bff; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;"">Complete Registration</a>
                     </p>
                     <p>If you're having trouble with the button, you can also copy and paste the following link into your browser:</p>
-                    <p><a href='https://localhost:7019/registration?email={email}&id={rid}'>https://localhost:7019/registration?email={e}&id={rid}</a></p>
+                    <p><a href='https://localhost:7019/registration?email={email}&id={rid}'>https://localhost:7019/registration?email={email}&id={rid}</a></p>
                     <p>If you did not request this registration, please ignore this email.</p>
                     <hr style=""border: 0; border-top: 1px solid #eee;"">
                     <p style=""font-size: 0.9em; color: #777;"">Best regards,<br>The UrbanHub Team</p>
                 </div>
             </body>
             </html>";
-            // Call the email sending method (you need to implement this)
+
+            // Calliing the email sending method
             await new send_email().SendEmail(email, subject, message);
         }
     }

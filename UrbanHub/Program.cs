@@ -26,9 +26,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthorization();
-
+app.UseSession();
 app.MapStaticAssets();
 
 app.MapControllerRoute(

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UrbanHub.Data.Entities;
 
@@ -10,7 +11,7 @@ public partial class User
     public string Name { get; set; } = null!;
 
     public string Email { get; set; } = null!;
-
+   
     public string Password { get; set; } = null!;
 
     public string Role { get; set; } = null!;
