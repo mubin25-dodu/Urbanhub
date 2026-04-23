@@ -119,6 +119,7 @@ namespace UrbanHub.Controllers
                 data.JoinDate = DateTime.Now;
                 var adduser = _mapper.Map<User>(data);
                 _context.Users.Add(adduser);
+                _context.Registrations.Remove(check.First());
                 _context.SaveChanges();
 
                 return RedirectToAction("Index", "Home");
