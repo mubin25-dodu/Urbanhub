@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using UrbanHub.customclasses;
+using UrbanHub.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<UrbanhubDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UrbanhubDB")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
+builder.Services.AddAutoMapper(typeof(mapping));
 
 var app = builder.Build();
 
@@ -13,11 +22,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthorization();
-
+app.UseSession();
 app.MapStaticAssets();
 
 app.MapControllerRoute(

@@ -1,4 +1,4 @@
-namespace UrbunHub.Models
+namespace UrbanHub.Models
 {
     public class ErrorViewModel
     {
