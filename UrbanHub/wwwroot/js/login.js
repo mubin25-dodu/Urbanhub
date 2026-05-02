@@ -1,20 +1,100 @@
-﻿
-let hovecard = document.getElementById('hovercard');
-let questiopn = document.getElementById('question');
-let togglebtn = document.getElementById('togglebtn');   
+﻿import { showNotification } from "/js/layout.js";
 
-document.getElementById('togglebtn').addEventListener('click', function (event) {
-    console.log('Toggle button clicked');
+let hovecard = document.getElementById("hovercard");
+let questiopn = document.getElementById("question");
+let togglebtn = document.getElementById("togglebtn");
+let loginform = document.getElementById("LoginForm");
+let loginBtn = document.getElementById("LoginBtn");
 
-    if (hovecard.style.left === '50%') {
-        hovecard.style.left = '0';
-        hovecard.style.borderRadius = '25px 100px 0px 25px';
-        questiopn.innerHTML = 'Don\'t have an account?';
-        togglebtn.innerHTML = 'Sign Up';
+let registrationform = document.getElementById("RegistrationForm");
+let RegBtn = document.getElementById("RegBtn");
+
+document
+  .getElementById("togglebtn")
+  .addEventListener("click", function (event) {
+    console.log("Toggle");
+
+    if (hovecard.style.left === "50%") {
+      hovecard.style.left = "0";
+      hovecard.style.borderRadius = "25px 100px 0px 25px";
+      questiopn.innerHTML = "Don't have an account?";
+      togglebtn.innerHTML = "Sign Up";
     } else {
-        hovecard.style.left = '50%';
-        hovecard.style.borderRadius = '100px 25px 25px 0px';
-        questiopn.innerHTML = 'Already have an account?';
-        togglebtn.innerHTML = 'Login';
+      hovecard.style.left = "50%";
+      hovecard.style.borderRadius = "100px 25px 25px 0px";
+      questiopn.innerHTML = "Already have an account?";
+      togglebtn.innerHTML = "Login";
     }
+  });
+
+if (loginBtn) { loginBtn.addEventListener("click", function (event) {
+  //console.log("Login");
+  const formData = new FormData(loginform);
+  const email = formData.get("Email");
+  const password = formData.get("Password");
+
+  fetch("api/islogin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      //console.log(data);
+      showNotification(data);
+      if (data.status) {
+        window.location.href = "/home";
+      } else {
+        showNotification(data);
+      }
+    })
+    .catch((err) => console.log(err));
 });
+}
+
+
+
+if (RegBtn) {
+    RegBtn.addEventListener("click", function (event) {
+        //console.log("Register");
+        const formData = new FormData(registrationform);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        //console.log(name, email);
+        fetch("api/Reg", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({  name, email  }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+
+                //console.log(data);
+                document.getElementById("SEmail").innerHTML = null;
+                document.getElementById("SName").innerHTML = null;
+
+                if (data.errors && data.status!=false) {
+                    //console.log(data.errors);
+                    if (data.errors.Email) {
+                        document.getElementById("SEmail").innerHTML = data.errors.Email.errors[0].errorMessage;
+                    }
+                    if (data.errors.Name) {
+                        document.getElementById("SName").innerHTML = data.errors.Name.errors[0].errorMessage;
+                    }
+                }
+                else if (data.status) {
+                    showNotification(data);
+                    togglebtn.click();
+                    notif.style.backgroundColor = "#212529";
+                    //console.log("Registration done");
+                }
+                else {
+
+                    showNotification(data);
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+}

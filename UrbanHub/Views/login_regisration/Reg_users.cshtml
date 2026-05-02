@@ -1,5 +1,5 @@
-﻿@model UserDTO
-@{
+﻿@{ 
+    @model UrbanHub.Entities.User
     string name = Context.Session.GetString("name") ?? "";
     string email = Context.Session.GetString("email") ?? "";
 }
@@ -17,9 +17,9 @@
         <div class="d-flex flex-column  p-5 rounded-4 shadow vw-100">
             <h1>Welcome to <span class="text-primary">UrbanHub</span></h1>
             <h5>Enter your details to get started</h5>
-    
             <form method="post">
                 <div class="d-flex gap-5">
+                
                     <div class="d-flex flex-column gap-3 mt-4" style="width: 50%;">
                         <div class="form-group">
                             <label asp-for="Name">Username <span class="text-danger">*</span></label>
@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password <span class="text-danger">*</span></label>
-                                        <input class="form-control" id="confirm_password" placeholder="Confirm Password">
+                                        <input name="cpass" class="form-control" id="confirm_password" placeholder="Confirm Password">
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="Phone">Phone <span class="text-danger">*</span></label>
@@ -60,7 +60,7 @@
                                                  style="overflow-y: auto; scrollbar-width: thin; scrollbar-color: #96b8f7 transparent;">
                                                 <p>
                                                     Welcome to UrbanHub! These terms and conditions outline the rules and regulations for
-                                                    the use of UrbanHub's Website, located at urbanhub.com.
+                                                    the use of UrbanHub's Website, located at UrbanHub.com.
                                                 </p>
                                                 <p>
                                                     By accessing this website we assume you accept these terms and conditions. Do not
@@ -88,12 +88,12 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </form>
 
-                                </div>
+
+                </div>
+            </form>
+                            </div> 
                             </div>
-    
-                        </div>
                     </body>
                     <script src="~/js/registration.js"></script>
                 </html>

@@ -1,28 +1,32 @@
-﻿let arrow = document.getElementById('arrow');  
-let navbar = document.getElementById('navbar');
-let btn_titles = document.querySelectorAll('.btn_titles');
-//let 
+﻿let message = document.getElementById("notifMessage");
+let notif = document.getElementById("Notification");
 
-//navbar shrink and expand
+let type = document.getElementById("notifType");
 
-document.getElementById('arrow').addEventListener('click', function (event) {
-    if (navbar.style.width < '50px') {
-        console.log('Arrow button shrink');
-        navbar.style.width = '50px';
-        arrow.style.transform = 'rotate(180deg)';
-        setTimeout(function () { 
-        btn_titles.forEach(function(b) {
-            b.style.display = 'none';
-        });
-        }, 250); 
-    } else {
-        navbar.style.width = '250px';
-        console.log('Arrow button expand');
-        arrow.style.transform = 'rotate(0deg)';
-        setTimeout(function () { 
-        btn_titles.forEach(function (b) {
-            b.style.display = 'inline-block';
-        });
-        }, 200);
+//showNotification({ type: "error", message: 'Welcome to our website!' });
+
+export function showNotification(payload) {
+  if ((notif.style.display = "none")) {
+    if (payload) {
+        if (payload.status == false) {
+            notif.style.backgroundColor = "#9B0F06";
+            message.innerHTML = payload.message;
+            notif.style.display = "block";
+            notif.style.animation = "fadein 1.0s, fadeout .5s 2.5s";
+            notif.style.right = "10px";
+        }
+        else {
+            message.innerHTML = payload.message;
+            notif.style.display = "block";
+            notif.style.animation = "fadein 1.0s, fadeout .5s 2.5s";
+            notif.style.right = "10px";
+        }
+      setTimeout(() => {
+        notif.style.display = "none";
+      }, 5000);
     }
-});
+  } else {
+    notif.style.display = "none";
+    showNotification(payload);
+  }
+}

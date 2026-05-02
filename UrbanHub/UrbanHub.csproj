@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\assets\img\urbanhub.png" />
+    <None Include="wwwroot\assets\img\UrbanHub.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Urbanhub.Data\UrbanHub.Data.csproj" />
+    <ProjectReference Include="..\UrbanHub.DTO\UrbanHub.DTO.csproj" />
+    <ProjectReference Include="..\UrbanhubAuth.repo\UrbanHubManagement.repo.csproj" />
   </ItemGroup>
 
   <ItemGroup>

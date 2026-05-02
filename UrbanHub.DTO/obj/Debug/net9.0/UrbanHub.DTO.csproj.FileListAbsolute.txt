@@ -1,0 +1,12 @@
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.AssemblyInfoInputs.cache
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.AssemblyInfo.cs
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.csproj.CoreCompileInputs.cache
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.sourcelink.json
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\bin\Debug\net9.0\UrbanHub.DTO.deps.json
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\bin\Debug\net9.0\UrbanHub.DTO.dll
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\bin\Debug\net9.0\UrbanHub.DTO.pdb
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.dll
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\refint\UrbanHub.DTO.dll
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\UrbanHub.DTO.pdb
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanHub.DTO\obj\Debug\net9.0\ref\UrbanHub.DTO.dll

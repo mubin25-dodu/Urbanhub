@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/page/navbar.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Urbanhub.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UrbanHub.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" asp-append-version="true" />
 </head>
 <body>
@@ -57,7 +57,13 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+
+    <div id="Notification" class="notification" role="status" aria-live="polite">
+        <div id="notifType" class="type">System alert</div>
+        <div id="notifMessage" class="message">notification message.</div>
+    </div>
+
+<div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -71,7 +77,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/layout.js" asp-append-version="true"></script>
+    <script type="module" src="~/js/layout.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

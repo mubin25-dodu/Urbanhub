@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "K+ayWWCvDcY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbahHubMail\\UrbahHubMail.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amimu\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\amimu\\.nuget\\packages\\mimekit\\4.16.0\\mimekit.4.16.0.nupkg.sha512",
+    "C:\\Users\\amimu\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
+    "C:\\Users\\amimu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.13\\microsoft.windowsdesktop.app.ref.9.0.13.nupkg.sha512",
+    "C:\\Users\\amimu\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.13\\microsoft.netcore.app.ref.9.0.13.nupkg.sha512",
+    "C:\\Users\\amimu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.13\\microsoft.aspnetcore.app.ref.9.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace UrbanHub.Entities;
+
+[Table("User")]
+public partial class User
+{
+    [Key , DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Uid { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
+
+    public string Password { get; set; } = null!;
+    //[ValidateNever]
+    public string? Role { get; set; }
+
+    public string Address { get; set; } = null!;
+
+    public string? Status { get; set; }
+
+    public DateTime JoinDate { get; set; }
+
+    public int? Vid { get; set; }
+
+    public int? Logid { get; set; }
+
+    public string Phone { get; set; } = null!;
+}
