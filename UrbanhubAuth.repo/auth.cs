@@ -17,7 +17,7 @@ namespace UrbanHubManagement.repo
                 if (check == null)
                 {
                     result.data=null;
-                    result.message = "User not found";
+                    result.message = "Wrong email or password";
                     result.status = false;
                 }
                 else

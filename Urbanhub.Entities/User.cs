@@ -17,11 +17,11 @@ public partial class User
 
     public string Password { get; set; } = null!;
     //[ValidateNever]
-    public string? Role { get; set; }
+    public string Role { get; set; } = "User";
 
     public string Address { get; set; } = null!;
 
-    public string? Status { get; set; }
+    public string Status { get; set;  }= "Active";
 
     public DateTime JoinDate { get; set; }
 

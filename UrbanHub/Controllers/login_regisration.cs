@@ -17,7 +17,7 @@ namespace UrbanHub.Controllers;
 public class login_regisration(Auth repo , UrbanHubDbContext context) : Controller
 {
 
-    private static int rid;
+    
 
     [Route("Login")]
     public IActionResult login_reg()
@@ -45,13 +45,14 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         ModelState.Remove("Login");
         if (!ModelState.IsValid)
         {
-            return BadRequest(new { status = false, errors = ModelState });
+            return Ok(new { HasError = false, errors = ModelState });
         }
         var newdata = repo.register(data);
+        int rid;
         if(newdata.status)
         {
             rid = int.Parse(newdata.AdditionalMessage);
-            sendmail(data.Email, data.Name);
+            sendmail(data.Email, data.Name,rid);
         }
         return Ok(newdata);
        
@@ -60,7 +61,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
     //registration page actions
 
     [Route("Registration")]
-    [HttpGet("Registration/{email}/{id}\"")]
+    [HttpGet("Registration/{email}/{id}")]
     public IActionResult Reg_users(string email, int id)
     {
         if (email == null || id == 0)
@@ -69,7 +70,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         }
         var check = context.Registrations.Where(u => u.Email == email && u.Rid == id);
 
-        if (check.Count() == 0)
+        if (check.Any())
         {
             return RedirectToAction("login_reg");
         }
@@ -114,7 +115,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         return View();
     }
 
-    private async Task sendmail(string e, string n)
+    private async Task sendmail(string e, string n ,int rid)
     {
         //sending mail
         var email = e;

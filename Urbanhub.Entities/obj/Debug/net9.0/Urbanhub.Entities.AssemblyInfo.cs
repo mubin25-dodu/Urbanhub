@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrbanHub.Entities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1c83ad35b0a41885b9ef0c77ab4722bb55da6da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18b891ad72892a0e94d0d15aa14df6d1ad49752b")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrbanHub.Entities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrbanHub.Entities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
