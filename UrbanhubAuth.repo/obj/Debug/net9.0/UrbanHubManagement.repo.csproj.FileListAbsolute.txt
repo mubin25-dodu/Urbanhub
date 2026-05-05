@@ -20,3 +20,25 @@ C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 se
 C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\ref\UrbanHubManagement.repo.dll
 C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.DTO.dll
 C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.DTO.pdb
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHubManagement.repo.deps.json
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHubManagement.repo.runtimeconfig.json
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHubManagement.repo.dll
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHubManagement.repo.pdb
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.Data.dll
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.DTO.dll
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.Entities.dll
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.Data.pdb
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.DTO.pdb
+C:\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.Entities.pdb
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.csproj.AssemblyReference.cache
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.AssemblyInfoInputs.cache
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.AssemblyInfo.cs
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.csproj.CoreCompileInputs.cache
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.sourcelink.json
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHub.0403667C.Up2Date
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.dll
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\refint\UrbanHubManagement.repo.dll
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.pdb
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.genruntimeconfig.cache
+C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\ref\UrbanHubManagement.repo.dll

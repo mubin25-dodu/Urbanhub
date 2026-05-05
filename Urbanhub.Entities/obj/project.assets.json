@@ -4686,11 +4686,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\Urbanhub.Entities.csproj",
-      "projectName": "Urbanhub.Entities",
-      "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\Urbanhub.Entities.csproj",
+      "projectUniqueName": "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj",
+      "projectName": "UrbanHub.Entities",
+      "projectPath": "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj",
       "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\obj\\",
+      "outputPath": "C:\\Urbanhub\\Urbanhub.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

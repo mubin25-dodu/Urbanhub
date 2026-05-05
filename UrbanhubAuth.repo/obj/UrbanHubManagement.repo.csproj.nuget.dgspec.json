@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj": {}
+    "C:\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj": {
+    "C:\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj",
+        "projectUniqueName": "C:\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj",
         "projectName": "UrbanHub.Data",
-        "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj",
+        "projectPath": "C:\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj",
         "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Data\\obj\\",
+        "outputPath": "C:\\Urbanhub\\Urbanhub.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj": {
-                "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj"
+              "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj": {
+                "projectPath": "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj"
               }
             }
           }
@@ -99,14 +99,14 @@
         }
       }
     },
-    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {
+    "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
+        "projectUniqueName": "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
         "projectName": "UrbanHub.DTO",
-        "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
+        "projectPath": "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
         "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\obj\\",
+        "outputPath": "C:\\Urbanhub\\UrbanHub.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -178,14 +178,14 @@
         }
       }
     },
-    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj": {
+    "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj",
+        "projectUniqueName": "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj",
         "projectName": "UrbanHub.Entities",
-        "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj",
+        "projectPath": "C:\\Urbanhub\\Urbanhub.Entities\\UrbanHub.Entities.csproj",
         "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Entities\\obj\\",
+        "outputPath": "C:\\Urbanhub\\Urbanhub.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -273,14 +273,14 @@
         }
       }
     },
-    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj": {
+    "C:\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj",
+        "projectUniqueName": "C:\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj",
         "projectName": "UrbanHubManagement.repo",
-        "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj",
+        "projectPath": "C:\\Urbanhub\\UrbanhubAuth.repo\\UrbanHubManagement.repo.csproj",
         "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanhubAuth.repo\\obj\\",
+        "outputPath": "C:\\Urbanhub\\UrbanhubAuth.repo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -301,11 +301,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj": {
-                "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj"
+              "C:\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj": {
+                "projectPath": "C:\\Urbanhub\\Urbanhub.Data\\UrbanHub.Data.csproj"
               },
-              "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {
-                "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj"
+              "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {
+                "projectPath": "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj"
               }
             }
           }

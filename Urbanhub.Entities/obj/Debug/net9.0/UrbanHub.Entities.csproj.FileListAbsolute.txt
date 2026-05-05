@@ -13,3 +13,18 @@ c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 se
 c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.pdb
 c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.genruntimeconfig.cache
 c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\ref\UrbanHub.Entities.dll
+C:\Urbanhub\Urbanhub.Entities\bin\Debug\net9.0\UrbanHub.Entities.deps.json
+C:\Urbanhub\Urbanhub.Entities\bin\Debug\net9.0\UrbanHub.Entities.runtimeconfig.json
+C:\Urbanhub\Urbanhub.Entities\bin\Debug\net9.0\UrbanHub.Entities.dll
+C:\Urbanhub\Urbanhub.Entities\bin\Debug\net9.0\UrbanHub.Entities.pdb
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.csproj.AssemblyReference.cache
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.AssemblyInfoInputs.cache
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.AssemblyInfo.cs
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.csproj.CoreCompileInputs.cache
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.sourcelink.json
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.dll
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\refint\UrbanHub.Entities.dll
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.pdb
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\UrbanHub.Entities.genruntimeconfig.cache
+C:\Urbanhub\Urbanhub.Entities\obj\Debug\net9.0\ref\UrbanHub.Entities.dll
