@@ -40,13 +40,26 @@ if (loginBtn) { loginBtn.addEventListener("click", function (event) {
   })
     .then((res) => res.json())
     .then((data) => {
-      //console.log(data);
-      showNotification(data);
-      if (data.status) {
-        window.location.href = "/home";
-      } else {
-        showNotification(data);
-      }
+        //console.log(data);
+        document.getElementById("SpanEmail").innerHTML = null;
+        document.getElementById("SpanPass").innerHTML = null;
+
+        if (data.errors) {
+            //console.log(data.errors);
+            if (data.errors.Email) {
+                document.getElementById("SpanEmail").innerHTML = data.errors.Email.errors[0].errorMessage;
+            }
+            if (data.errors.Password) {
+                document.getElementById("SpanPass").innerHTML = data.errors.Password.errors[0].errorMessage;
+            }
+        }
+        else if (data.status) {
+            window.location.href="Home"
+        }
+        else {
+
+            showNotification(data);
+        }
     })
     .catch((err) => console.log(err));
 });

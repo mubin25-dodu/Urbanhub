@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {}
+    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {}
   },
   "projects": {
-    "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {
+    "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
         "projectName": "UrbanHub.DTO",
-        "projectPath": "C:\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
+        "projectPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\UrbanHub.DTO.csproj",
         "packagesPath": "C:\\Users\\amimu\\.nuget\\packages\\",
-        "outputPath": "C:\\Urbanhub\\UrbanHub.DTO\\obj\\",
+        "outputPath": "C:\\Users\\amimu\\OneDrive - American International University-Bangladesh\\uni\\10 sem\\A .NET\\Urbanhub\\UrbanHub.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
