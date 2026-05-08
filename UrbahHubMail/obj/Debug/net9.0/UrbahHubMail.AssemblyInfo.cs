@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrbahHubMail")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1c83ad35b0a41885b9ef0c77ab4722bb55da6da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+071cadbf4bc06e3676770413045ecc54d2e6ea98")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrbahHubMail")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrbahHubMail")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

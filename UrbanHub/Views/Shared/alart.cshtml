@@ -1,0 +1,20 @@
+﻿
+@if(ViewBag.Error != null){
+	if (ViewBag.Error == false)
+	{
+		<div class="alert alert-dismissible alert-success">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong>
+				<h1 class="display-4 fw-medium"></h1>@ViewBag.MessageTitle</strong>
+			<p class="lead fw-normal">@ViewBag.message</p>
+		</div>
+	}
+	else
+	{
+		<div class="alert alert-dismissible alert-danger">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong> <h1 class="display-4 fw-medium">@ViewBag.MessageTitle</h1></strong> <p class="lead fw-normal">@ViewBag.Message</p>
+		</div>
+	}
+}
+

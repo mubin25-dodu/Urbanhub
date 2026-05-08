@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace UrbanHubManagement.repo
 {
-    public class result<Table>
+    public class Result<Table>
     {
-        public Table? data { get; set; }
-        public bool status { get; set; }
-        public string message { get; set; }
-        public string AdditionalMessage { get; set; }
+        public Table? Data { get; set; }
+        public bool Status { get; set; }
+        public string? Message { get; set; }
+        public string? AdditionalMessage { get; set; }
 
     }
 }
