@@ -1,0 +1,13 @@
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\bin\Debug\net9.0\UrbahHubMail.deps.json
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\bin\Debug\net9.0\UrbahHubMail.dll
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\bin\Debug\net9.0\UrbahHubMail.pdb
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.csproj.AssemblyReference.cache
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.AssemblyInfoInputs.cache
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.AssemblyInfo.cs
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.csproj.CoreCompileInputs.cache
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.sourcelink.json
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.dll
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\refint\UrbahHubMail.dll
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\UrbahHubMail.pdb
+c:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbahHubMail\obj\Debug\net9.0\ref\UrbahHubMail.dll

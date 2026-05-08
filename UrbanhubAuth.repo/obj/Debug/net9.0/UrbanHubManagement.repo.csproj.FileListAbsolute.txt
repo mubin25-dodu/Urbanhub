@@ -42,3 +42,6 @@ C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\refint\UrbanHubManagement.repo.dl
 C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.pdb
 C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\UrbanHubManagement.repo.genruntimeconfig.cache
 C:\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\ref\UrbanHubManagement.repo.dll
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanhubAuth.repo\obj\Debug\net9.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.shared.dll
+C:\Users\amimu\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Urbanhub\UrbanhubAuth.repo\bin\Debug\net9.0\UrbanHub.shared.pdb

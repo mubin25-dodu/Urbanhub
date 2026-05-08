@@ -1,6 +1,4 @@
-﻿using UrbanHub.DTO;
-
-namespace UrbanHub.Models;
+﻿namespace UrbanHub.DTO;
 
 public class login_reg
 {

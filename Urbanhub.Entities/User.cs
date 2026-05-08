@@ -16,7 +16,6 @@ public partial class User
     public string Email { get; set; } = null!;
 
     public string Password { get; set; } = null!;
-    //[ValidateNever]
     public string Role { get; set; } = "User";
 
     public string Address { get; set; } = null!;
@@ -30,4 +29,8 @@ public partial class User
     public int? Logid { get; set; }
 
     public string Phone { get; set; } = null!;
+
+    [ForeignKey("Logid")]
+    public virtual Log ID { get; set; }
+
 }

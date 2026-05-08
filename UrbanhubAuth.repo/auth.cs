@@ -1,60 +1,64 @@
-﻿using Microsoft.EntityFrameworkCore.Design;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Design;
 using UrbanHub.Data;
 using UrbanHub.DTO;
 using UrbanHub.Entities;
-using UrbanHub.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace UrbanHubManagement.repo
 {
-    public class Auth( UrbanHubDbContext context )
+    public class Auth(UrbanHubDbContext context)
     {
-        public result<List<User>> UserExist(LoginDTO data)
+        public Result<User> UserExist(LoginDTO data)
         {
-            var result = new result<List<User>>();
+            var result = new Result<User>();
             try
             {
-                var check = context.Users.Where(x => x.Email == data.Email && x.Password == data.Password).FirstOrDefault();
+                var check = context.Users.FirstOrDefault(x => x.Email == data.Email && x.Password == data.Password);
                 if (check == null)
                 {
-                    result.data=null;
-                    result.message = "Wrong email or password";
-                    result.status = false;
+                    result.Data = null;
+                    result.Message = "Wrong email or password";
+                    result.Status = false;
                 }
                 else
                 {
-                    result.data = null;
-                    result.message = "User found";
-                    result.status = true;
+                    result.Data = check;
+                    result.Message = "User found";
+                    result.Status = true;
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                result.data = null;
-                result.message = "An error occurred while checking user existence.";
-                result.status = false;
+                //Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while checking user existence.";
+                result.Status = false;
                 throw;
             }
+
             return result;
         }
 
-        public result<List<Registration>> register(Registration data)
+        public Result<List<Registration>> register(Registration data)
         {
-            var result = new result<List<Registration>>();
+            var result = new Result<List<Registration>>();
             try
             {
-                var check = context.Users.Where(x => x.Email == data.Email).FirstOrDefault();
-                var checkreg = context.Registrations.Where(x => x.Email != null && x.Email == data.Email).ToList();
-                if (check != null )
+                var check = context.Users.FirstOrDefault(x => x.Email == data.Email);
+                var checkreg = context.Registrations.FirstOrDefault(x => x.Email != null && x.Email == data.Email);
+                if (check != null)
                 {
-                    result.data = null;
-                    result.message = "User already exists";
-                    result.status = false;
+                    result.Data = null;
+                    result.Message = "User already exists";
+                    result.Status = false;
                 }
                 else
                 {
                     int id = new Random().Next(1, 1000000);
-                    if (checkreg.Count == 0)
+                    if (checkreg == null)
                     {
                         var newdata = new Registration()
                         {
@@ -65,11 +69,17 @@ namespace UrbanHubManagement.repo
                         context.Registrations.Add(newdata);
                         context.SaveChanges();
                     }
+                    else
+                    {
+                        checkreg.Rid = id;
+                        context.SaveChanges();
+
+                    }
 
                     //mail sending
-                    result.data = null;
-                    result.message = "An Email hase been send to you please confirm";
-                    result.status = true;
+                    result.Data = null;
+                    result.Message = "An Email hase been send to you please confirm";
+                    result.Status = true;
                     result.AdditionalMessage = id.ToString();
                 }
             }
@@ -78,10 +88,54 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 throw;
             }
+
             return result;
         }
-        
 
-    }  
-   
+        public Result<User> Save(User data)
+        {
+            var result = new Result<User>();
+            try
+            {
+                var check = context.Registrations.Where(u => u.Email == data.Email);
+                var usercheck = context.Users.FirstOrDefault(e => e.Email == data.Email);
+                if (check.Count() != 0 && usercheck == null)
+                {
+                    data.JoinDate = DateTime.Now;
+                    context.Users.Add(data);
+                    context.Registrations.Remove(check.First());
+                    context.SaveChanges();
+
+                    result.Data = null;
+                    result.Status = true;
+                    result.Message = "Registration Successful";
+                }
+                else if (usercheck != null)
+                {
+                    if (usercheck.Email == data.Email)
+                    {
+                        result.Data = data;
+                        result.Status = false;
+                        result.Message = "Email already Registered";
+                    }
+                    else if (usercheck.Phone == data.Phone)
+                    {
+                        result.Data = data;
+                        result.Status = false;
+                        result.Message = "Phone Number already Registered";
+                    }
+                }
+                return result;
+            }
+            catch (Exception e)
+            {
+                result.Data = data;
+                result.Status = false;
+                result.Message = e.ToString();
+                throw;
+            }
+
+        }
+    }
+
 }
