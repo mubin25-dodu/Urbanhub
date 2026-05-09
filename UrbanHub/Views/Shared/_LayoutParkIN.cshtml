@@ -16,13 +16,19 @@
 <header>
 	@if (ViewData["Title"] != "Login")
 	{
+		<div style="height: 80px;"></div>
 		<nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 transition-base position-fixed top-0 start-0 w-100 z-3">
 			<div class="container-fluid px-4 px-lg-5">
 				<!-- Brand -->
 				<a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" asp-controller="Home" asp-action="Index">
 					<img src="~/assets/img/logo.png" alt="UrbanHub Logo" class="logo"/>
-					<span class="fw-bold fs-4 text-dark mb-0">UrbanHub</span>
+					<span class="fw-bold fs-4 text-dark mb-0">UrbanHub</span> 
 				</a>
+				<i class="fa-solid fa-pause"></i> &nbsp;
+				<a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" asp-controller="ParkINHome" asp-action="Browse">
+					<span class="fw-bold fs-4 text-dark mb-0 text-primary" style="color: #007bff;">ParkIN</span>
+				</a>
+				
 
 
 				<!-- Mobile Toggle -->
@@ -75,6 +81,7 @@
 			</div>
 		</nav>
 	}
+
 </header>
 
 <div id="Notification" class="notification" role="status" aria-live="polite">

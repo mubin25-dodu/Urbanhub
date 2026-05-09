@@ -25,6 +25,7 @@ builder.Services.AddSession();
 builder.Services.AddScoped<Auth>();
 builder.Services.AddScoped<ParkinHome>();
 builder.Services.AddScoped<LoginDTO>();
+builder.Services.AddScoped<ParkinViewDetails>();
 builder.Services.AddAuthentication("UrbanAuth").AddCookie("UrbanAuth",
     opt =>
     {
@@ -48,10 +49,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 app.MapStaticAssets();
-app.UseAuthentication();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

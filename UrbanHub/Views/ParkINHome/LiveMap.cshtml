@@ -1,4 +1,9 @@
-﻿<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+﻿@{
+    ViewBag.Title = "Live Map";
+    Layout = "_LayoutParkIN";
+    ViewData["FullWidth"] = true;
+}
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <div id="map" style="height: 500px; width: 100%;"></div>

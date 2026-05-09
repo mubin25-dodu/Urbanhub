@@ -128,13 +128,13 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         else
         {
             var result = repo.Save(data);
-            if (!result.Status)
+            if (result.Status)
             {
                return RedirectToAction("login_reg");
             }
             else
             {
-                ViewBag.Error = false;
+                ViewBag.Status = result.Status;
                 ViewBag.Message = result.Message;
             }
         }
