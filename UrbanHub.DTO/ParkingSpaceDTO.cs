@@ -10,10 +10,8 @@ using UrbanHub.Entities;
 
 namespace UrbanHub.DTO
 {
-    [Table("ParkingSpace")]
     public class ParkingSpaceDTO
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         public string Address { get; set; } = null!;
@@ -28,7 +26,7 @@ namespace UrbanHub.DTO
         [StringLength(50)]
         public string VehicleType { get; set; }= null!;
         public int OwnerId { get; set; }
-
+        //holding distance from user to parking space, not stored in database
         public double Distance { get; set; }
 
         [ForeignKey("OwnerId")]
