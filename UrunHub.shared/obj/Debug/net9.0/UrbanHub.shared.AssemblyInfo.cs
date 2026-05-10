@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrbanHub.shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03305232ea99391abd99566a1ba608dad27e3077")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d30d037f8429dde62a6ff46829be0c29989c31e")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrbanHub.shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrbanHub.shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
