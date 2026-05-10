@@ -1,4 +1,4 @@
-﻿@model ParkINBrowseDTO
+﻿@model ParkInBrowseModel
 @{
 	ViewBag.Title = "ParkIN";
 	Layout = "_LayoutParkIN";
@@ -52,7 +52,7 @@ background-size: cover; background-position: center; background-repeat: no-repea
 		<div class="col-12 col-lg-3">
 			<label class="form-label fw-semibold text-secondary">Select Time Slot</label>
 			<input asp-for="SearchSpaces.DateAndTime" type="datetime-local" class="form-control form-control-lg" 
-			       value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+					   value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
 		</div>
 
 		<div class="col-12 col-lg-3 d-flex align-items-end">
