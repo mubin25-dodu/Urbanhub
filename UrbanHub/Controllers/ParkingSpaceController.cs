@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NetTopologySuite.Geometries;
 using UrbanHub.Data;
 using UrbanHub.Entities;
@@ -6,6 +7,7 @@ using UrbanHub.ViewModels;
 
 namespace UrbanHub.web.Controllers
 {
+    [Authorize]
     public class ParkingSpaceController : Controller
     {
         private readonly UrbanHubDbContext _context;
@@ -43,25 +45,31 @@ namespace UrbanHub.web.Controllers
                 SRID = 4326
             };
 
-            var parking = new ParkingSpace
+            ParkingSpace? parking = null;
+            try
             {
-                Address = vm.Address,
-                Location = point,
-                RentPerHour = vm.RentPerHour,
-                VehicleType = vm.VehicleType,
-                Available = vm.Available,
-                IsAvailable = vm.IsAvailable,
-                Description = vm.Description,
-                Image = imagePath,
-
-                // temporary static owner
-                OwnerId = 1
-            };
+                parking = new ParkingSpace
+                {
+                    Address = vm.Address,
+                    Location = point,
+                    RentPerHour = vm.RentPerHour,
+                    VehicleType = vm.VehicleType,
+                    Available = vm.Available,
+                    IsAvailable = vm.IsAvailable,
+                    Description = vm.Description,
+                    Image = imagePath,
+                    OwnerId = int.Parse(User?.Claims.FirstOrDefault(c => c.Type == "UserID")?.Value ?? "0")
+                };
+            }
+            catch (ArgumentNullException exception)
+            {
+                // 'type' is 'null'.
+            }
 
             _context.ParkingSpaces.Add(parking);
 
             await _context.SaveChangesAsync();
-
+            TempData["Error"] = false;
             TempData["success"] =
                 "Parking Space Added Successfully";
 

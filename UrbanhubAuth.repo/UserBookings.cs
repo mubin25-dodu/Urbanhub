@@ -1,0 +1,48 @@
+﻿using System.Drawing;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Metadata;
+using UrbanHub.Data;
+using UrbanHub.DTO;
+using UrbanHub.Entities;
+using UrbanHub.shared;
+using System.Text.Json;
+
+namespace UrbanHubManagement.repo
+{
+    public class UserBookings(UrbanHubDbContext context , UserCard userCard)
+    {
+        public Result<List<ParkingBooking>> GetAll()
+        {
+            var result = new Result<List<ParkingBooking>>();
+            try
+            {
+                var Bookings = context.ParkingBookings.Where(p => p.RenterID == userCard.UserId )
+                    .Include(p => p.Parking).ToList();
+                if(Bookings == null || Bookings.Count == 0)
+                {
+                    result.Data = null;
+                    result.Message = "No bookings found.";
+                    result.Status = false;
+                    return result;
+                }
+                
+
+                result.Data = Bookings;
+                result.Message = "";
+                result.Status = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while retrieving parking spaces.";
+                result.Status = false;
+                throw;
+            }
+
+            return result;
+        }
+    }
+}

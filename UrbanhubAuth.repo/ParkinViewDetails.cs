@@ -68,15 +68,7 @@ namespace UrbanHubManagement.repo
             {
                 //if already send a request
                 var check = context.ParkingBookings.Any(e => e.ParkingID == data.ParkingID && e.RenterID == card.UserId);
-                if (check)
-                {
-                    result.Data = null;
-                    result.Message = "You have already requested a booking for this parking space. " +
-                                     "Cancel it first or wait for owner's response.";
-                    result.Status = false;
-                    return result;
-                }
-
+               
                 //if the time slot is already booked in backend check... 
                 //infrontend checking is not enough maybe another user is looking for this same spot same time 
                 // faster internet owala winns  
@@ -86,6 +78,41 @@ namespace UrbanHubManagement.repo
                                 && b.StartingTime < data.EndingTime
                                 && b.EndingTime > data.StartingTime)
                     .ToList();
+
+                var startday = data.StartingTime.DayOfWeek.ToString();
+                var endday = data.EndingTime.DayOfWeek.ToString();
+                var starttime = TimeOnly.FromDateTime(data.StartingTime);
+                var endtime = TimeOnly.FromDateTime(data.EndingTime);
+
+
+
+                //not checking end date its on the user if he wants to 
+                //share his parking space for 1 day or 1 month or 1 year (and yes i'm lazy)
+
+                var ceckavailable = context.ParkingSpaces
+                    .AsEnumerable()
+                    .Where(b => { 
+                        if (string.IsNullOrWhiteSpace(b.Available)) return false;
+                        var jsondata = JsonSerializer.Deserialize<List<AvailabeSchadule>>(b.Available); 
+                        return jsondata?.Any(c => c.Day == startday && 
+                                               c.StartTime >= starttime && c.EndTime <= endtime ) ?? false;
+                    }).ToList();
+                if (ceckavailable==null || !ceckavailable.Any() )
+                {
+                    result.Data = null;
+                    result.Message = "Slot Not available";
+                    result.Status = false;
+                    return result;
+                }
+
+                if (check)
+                {
+                    result.Data = null;
+                    result.Message = "You have already requested a booking for this parking space. " +
+                                     "Cancel it first or wait for owner's response.";
+                    result.Status = false;
+                    return result;
+                }
 
                 if (existingBookings.Count > 0)
                 {
