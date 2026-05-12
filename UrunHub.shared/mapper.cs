@@ -10,6 +10,8 @@ namespace UrbanHub.shared
         {
             CreateMap<ParkingSpace, ParkingSpaceDTO>();
             CreateMap<ParkingSpaceDTO, ParkingSpace>();
+            //CreateMap<ParkingBooking, ParkingBookingDTO>();
+            //CreateMap<ParkingBookingDTO, ParkingBooking>();
         }
 
     }

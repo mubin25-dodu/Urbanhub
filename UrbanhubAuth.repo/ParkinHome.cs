@@ -13,14 +13,14 @@ namespace UrbanHubManagement.repo
 {
     public class ParkinHome(UrbanHubDbContext context , IMapper mapper )
     {
-        public Result<ParkINBrowseDTO> GetAllParkingSpaces()
+        public Result<ParkInBrowseModel> GetAllParkingSpaces()
         {
-            var result = new Result<ParkINBrowseDTO>();
+            var result = new Result<ParkInBrowseModel>();
             try
             {
                 var parkingSpaces =  context.ParkingSpaces.Where(p=>p.IsAvailable==true).ToList();
                 var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(parkingSpaces);
-                result.Data = new ParkINBrowseDTO
+                result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = mappedSpaces,
                     SearchSpaces = new SearchParkingSpace
@@ -43,9 +43,9 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        public async Task<Result<ParkINBrowseDTO>> NearBy( int distance , double lat , double lon)
+        public async Task<Result<ParkInBrowseModel>> NearBy( int distance , double lat , double lon)
         {
-            var result = new Result<ParkINBrowseDTO>();
+            var result = new Result<ParkInBrowseModel>();
             var currentLocation = new NetTopologySuite.Geometries.Point(lon ,lat  ) { SRID = 4326 };
             try
             {
@@ -69,7 +69,7 @@ namespace UrbanHubManagement.repo
                     i.Distance = Math.Round(new HeversineFormula().GetDistanceKm(lat, lon, space!.Location!.Y, space.Location!.X), 1);
                 }
 
-                result.Data = new ParkINBrowseDTO
+                result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = newdata,
                     SearchSpaces = new SearchParkingSpace
@@ -93,14 +93,15 @@ namespace UrbanHubManagement.repo
             return result;
         }
 
-        public async Task<Result<ParkINBrowseDTO>> Search(SearchParkingSpace data)
+        public async Task<Result<ParkInBrowseModel>> Search(SearchParkingSpace data)
         {
-            var result = new Result<ParkINBrowseDTO>();
+            var result = new Result<ParkInBrowseModel>();
             try
             {
                 var nearby = await context.ParkingSpaces
                     .Where(c => c.VehicleType == data.Type && c.IsAvailable == true && c.Address.Contains(data.SearchText))
                     .ToListAsync();
+
                 
                 //day 4 of trying
 
@@ -124,8 +125,20 @@ namespace UrbanHubManagement.repo
                     })
                     .ToList();
 
+                //lets check if the time slot is available in that time 
+                //aaaaahhh logic is hard but ill be there soon i guess
+
+                //var Booking = await context.ParkingBookings
+                //    .Where(c => filteredSpaces.Any(f => f.ID == c.ID
+                //    &&
+                //    c.Status == "Booked") && (
+                //         JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available)
+
+                //        ))
+                //    .ToListAsync();
+
                 var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(filteredSpaces);
-                result.Data = new ParkINBrowseDTO
+                result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = mappedSpaces,
                     SearchSpaces = data
@@ -145,7 +158,6 @@ namespace UrbanHubManagement.repo
         }
 
         // Haversine formula. km distance
-        
 
     }
    
