@@ -18,7 +18,9 @@ namespace UrbanHubManagement.repo
             var result = new Result<List<ParkingSpace>>();
             try
             {
-                var spaces = context.ParkingSpaces.Where(p => p.OwnerId == userCard.UserId )
+                //some lazy work ill update it letter exam ache
+                var spaces = context.ParkingSpaces.Where(p => p.OwnerId == userCard.UserId
+                && p.Available.ToLower() != "Removed by Owner")
                     .ToList();
                 if(spaces == null || spaces.Count == 0)
                 {
@@ -58,18 +60,21 @@ namespace UrbanHubManagement.repo
                     return result;
                 }
 
-                context.ParkingSpaces.Remove(spaces);
+                spaces.IsAvailable = false;
+                spaces.Available = "Removed by Owner";
+                
+                context.ParkingSpaces.Update(spaces);
                 context.SaveChanges();
 
                 result.Data = null;
-                result.Message = "Parking space deleted.";
+                result.Message = "Parking space marked as removed.";
                 result.Status = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
-                result.Message = "An error occurred while retrieving parking spaces.";
+                result.Message = "An error occurred while removing parking space.";
                 result.Status = false;
                 throw;
             }

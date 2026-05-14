@@ -27,6 +27,7 @@ namespace UrbanHub.Entities
         [StringLength(50)]
         public string VehicleType { get; set; }= null!;
         public int OwnerId { get; set; }
+        public DateTime Date { get; set; }
 
         [ForeignKey("OwnerId")]
         public virtual User Owner { get; set; } = null!;

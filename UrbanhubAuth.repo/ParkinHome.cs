@@ -99,52 +99,68 @@ namespace UrbanHubManagement.repo
             try
             {
                 var nearby = await context.ParkingSpaces
-                    .Where(c => c.VehicleType == data.Type && c.IsAvailable == true && c.Address.Contains(data.SearchText))
+                    .Where(c => c.VehicleType == data.Type && c.IsAvailable == true &&
+                                c.Address.Contains(data.SearchText))
                     .ToListAsync();
 
-                
+
                 //day 4 of trying
 
-                // okay so lets catch the time and then lets try to filter out the extended data by matching the times and the day
-                var targetDay = data.DateAndTime.DayOfWeek;
-                //found the bug heheheeey..... it was comparing the time with
-                //the date and time so i just need to extract the time
-                //from the date and time and then compare it with the start and end time in the schedule
-                var targetTime = TimeOnly.FromDateTime(data.DateAndTime);
-                var filteredSpaces = nearby
-                    .Where(p =>
-                    {
-                        //
-                        var schedules = JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available);
-
-                        // validating day and time 
-                        return schedules.Any(e =>
-                            e.Day == targetDay.ToString() &&
-                            e.StartTime <= targetTime &&
-                            e.EndTime >= targetTime);
-                    })
-                    .ToList();
-
-                //lets check if the time slot is available in that time 
-                //aaaaahhh logic is hard but ill be there soon i guess
-
-                //var Booking = await context.ParkingBookings
-                //    .Where(c => filteredSpaces.Any(f => f.ID == c.ID
-                //    &&
-                //    c.Status == "Booked") && (
-                //         JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available)
-
-                //        ))
-                //    .ToListAsync();
-
-                var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(filteredSpaces);
-                result.Data = new ParkInBrowseModel
+                if (data.DateAndTime != default || data.DateAndTime != null)
                 {
-                    ParkingSpaces = mappedSpaces,
-                    SearchSpaces = data
-                };
-                result.Message = "Parking spaces retrieved successfully.";
-                result.Status = true;
+                    // okay so lets catch the time and then lets try to filter out the extended data by matching the times and the day
+                    var targetDay = data.DateAndTime?.DayOfWeek;
+                    //found the bug heheheeey..... it was comparing the time with
+                    //the date and time so i just need to extract the time
+                    //from the date and time and then compare it with the start and end time in the schedule
+                    var targetTime = TimeOnly.FromDateTime(data.DateAndTime.Value);
+                    var filteredSpaces = nearby
+                        .Where(p =>
+                        {
+                            //
+                            var schedules = JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available);
+
+                            // validating day and time 
+                            return schedules.Any(e =>
+                                e.Day == targetDay.ToString() &&
+                                e.StartTime <= targetTime &&
+                                e.EndTime >= targetTime);
+                        })
+                        .ToList();
+
+                    //lets check if the time slot is available in that time 
+                    //aaaaahhh logic is hard but ill be there soon i guess
+
+                    //var Booking = await context.ParkingBookings
+                    //    .Where(c => filteredSpaces.Any(f => f.ID == c.ID
+                    //    &&
+                    //    c.Status == "Booked") && (
+                    //         JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available)
+
+                    //        ))
+                    //    .ToListAsync();
+
+                    var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(filteredSpaces);
+                    result.Data = new ParkInBrowseModel
+                    {
+                        ParkingSpaces = mappedSpaces,
+                        SearchSpaces = data
+                    };
+                    result.Message = "Parking spaces retrieved successfully.";
+                    result.Status = true;
+                }
+                else
+                {
+                    var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(nearby);
+                    result.Data = new ParkInBrowseModel
+                    {
+                        ParkingSpaces = mappedSpaces,
+                        SearchSpaces = data
+                    };
+                    result.Message = "Parking spaces retrieved successfully.";
+                    result.Status = true;
+
+                }
             }
             catch (Exception e)
             {
@@ -154,6 +170,7 @@ namespace UrbanHubManagement.repo
                 result.Status = false;
                 throw;
             }
+
             return result;
         }
 

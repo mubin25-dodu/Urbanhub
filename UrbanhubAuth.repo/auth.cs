@@ -16,11 +16,23 @@ namespace UrbanHubManagement.repo
             var result = new Result<User>();
             try
             {
-                var check = context.Users.FirstOrDefault(x => x.Email == data.Email && x.Password == data.Password);
+                var check = context.Users.FirstOrDefault(x => x.Email == data.Email);
                 if (check == null)
                 {
                     result.Data = null;
-                    result.Message = "Wrong email or password";
+                    result.Message = "NO User Found";
+                    result.Status = false;
+                }
+                else if (check != null && check.Email!=data.Email)
+                {
+                    result.Data = null;
+                    result.Message = "Wrong email Try again";
+                    result.Status = false;
+                }
+                else if (check != null && check.Password != data.Password)
+                {
+                    result.Data = null;
+                    result.Message = "Wrong password Try again";
                     result.Status = false;
                 }
                 else

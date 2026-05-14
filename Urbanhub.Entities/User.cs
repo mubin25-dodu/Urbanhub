@@ -31,6 +31,6 @@ public partial class User
     public string Phone { get; set; } = null!;
 
     [ForeignKey("Logid")]
-    public virtual Log ID { get; set; }
+    public virtual Log ID { get; set; } =null!;
 
 }
