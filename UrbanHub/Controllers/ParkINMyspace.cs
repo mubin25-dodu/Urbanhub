@@ -21,37 +21,23 @@ namespace UrbanHub.web.Controllers
             return View(result.Data);
         }
 
-        //[HttpGet]
-        //public IActionResult Edit(int id)
-        //{
-        //    //var result = repo.CancelBooking(id);
-        //    //if (result.Status == false)
-        //    //{
-        //    //    TempData["Error"] = true;
-        //    //    TempData["Message"] = result.Message;
-        //    //    return RedirectToAction("MyBookings");
-        //    //}
-        //    //TempData["Error"] = false;
-        //    //TempData["Message"] = result.Message;
-
-        //    //return RedirectToAction("MyBookings");
-        //}
-        
-        [HttpPost]
-        public IActionResult FilterResult(ParkINBookings booking)
+        [HttpGet]
+        public IActionResult Delete(int id)
         {
-            //var result = repo.Filter(booking);
-            //if (result.Status == false)
-            //{
-            //    TempData["Error"] = true;
-            //    TempData["Message"] = result.Message;
-            //    return RedirectToAction("MyBookings");
-            //}
-            //TempData["Error"] = false;
-            //TempData["Message"] = result.Message;
+            var result = repo.Delete(id);
+            if (result.Status == false)
+            {
+                TempData["Error"] = true;
+                TempData["Message"] = result.Message;
+                return RedirectToAction("MySpace");
+            }
+            TempData["Error"] = false;
+            TempData["Message"] = result.Message;
 
-            return RedirectToAction("MyBookings");
+            return RedirectToAction("MySpace");
         }
+
+       
     }
 }
 

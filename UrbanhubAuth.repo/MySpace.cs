@@ -44,6 +44,38 @@ namespace UrbanHubManagement.repo
 
             return result;
         }
-        
+        public Result<List<ParkingSpace>> Delete( int id)
+        {
+            var result = new Result<List<ParkingSpace>>();
+            try
+            {
+                var spaces = context.ParkingSpaces.Find(id);
+                if (spaces == null)
+                {
+                    result.Data = null;
+                    result.Message = "No Parking Space found.";
+                    result.Status = false;
+                    return result;
+                }
+
+                context.ParkingSpaces.Remove(spaces);
+                context.SaveChanges();
+
+                result.Data = null;
+                result.Message = "Parking space deleted.";
+                result.Status = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while retrieving parking spaces.";
+                result.Status = false;
+                throw;
+            }
+
+            return result;
+        }
+
     }
 }
