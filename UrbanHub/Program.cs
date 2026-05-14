@@ -30,6 +30,7 @@ builder.Services.AddScoped<ParkingDetailsModel>();
 builder.Services.AddScoped<UserCard>();
 builder.Services.AddScoped<UserBookings>();
 builder.Services.AddScoped<MySpace>();
+builder.Services.AddScoped<ManageBookings>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAuthentication("UrbanAuth").AddCookie("UrbanAuth",
