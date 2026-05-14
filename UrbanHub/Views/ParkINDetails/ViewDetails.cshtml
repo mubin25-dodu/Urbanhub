@@ -32,14 +32,16 @@
 				<div class="card-body p-4 p-lg-5">
 					<!-- Title & Address -->
 					<h1 class="fs-2 fw-bold mb-2 text-primary">@(Model.ParkingSpaces.Address)</h1>
-					<p class="fs-2 fw-bold mb-2 text-secondary"> <span id ="RentperHour">@(Model.ParkingSpaces.RentPerHour) </span>BDT</p>
+					<p class="fs-2 fw-bold mb-2 text-secondary"> <span id="RentperHour">@(Model.ParkingSpaces.RentPerHour) </span>BDT</p>
 
 					<!-- Description -->
 					<div class="mb-4">
 						<h5 class="fw-bold mb-2 text-primary">About this parking</h5>
 						<p class="text-secondary">@Model.ParkingSpaces.Description</p>
 					</div>
+					
 					<form method="post">
+
 					<!-- Time Selection -->
 					<div class="bg-light border-start border-5 border-primary p-3 rounded-3 mb-4">
 						<div class="d-flex align-items-center gap-2 mb-3">
@@ -49,48 +51,46 @@
 						<div class="row g-2 mb-3">
 							<div class="col-md-6">
 								<label class="form-label small fw-bold">Entry Date & Time</label>
-									<input asp-for="ParkingBookingDTO.StartingTime" type="datetime-local" class="form-control rounded-2 form-control-sm"
-									       value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" 
-									       min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")"
-									       id="entryTime">
+								<input asp-for="ParkingBookingDTO.StartingTime" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="entryTime">
 							</div>
 							<div class="col-md-6">
-								<label class="form-label small fw-bold">Exit Date & Time</label> 
-
-								<input asp-for="ParkingBookingDTO.EndingTime" type="datetime-local" class="form-control rounded-2 form-control-sm"
-								       min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" 
-								       value="@DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm")" id="exitTime">
+								<label class="form-label small fw-bold">Exit Date & Time</label>
+								<input asp-for="ParkingBookingDTO.EndingTime" value="@DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="exitTime">
 							</div>
 						</div>
-					</div>
-					
-					<!-- Availability Status -->
-					<div class="alert alert-warning d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilityStatus">
-						<i class="fa-solid fa-exclamation-circle flex-shrink-0 mt-1"></i>
-						<div>
-							<small class="fw-semibold">This time slot is not available</small>
-							<p class="mb-0 small mt-1" id="bookedInfo">Please select a different time.</p>
-						</div>
-					</div>
-					
-					<div class="alert alert-success d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilitySuccess" >
-						<i class="fa-solid fa-check-circle flex-shrink-0 mt-1"></i>
-						<div>
-							<small class="fw-semibold">This time slot is available!</small>
-							<p class="mb-0 small mt-1" id="availableInfo">You can proceed with booking.</p>
-						</div>
-					</div>
+						
 
-					<input asp-for="ParkingBookingDTO.ParkingID" type="hidden"  value="@Model.ParkingSpaces.ID" />
-					<input asp-for="ParkingBookingDTO.OwnerID" type="hidden" value="@Model.ParkingSpaces.OwnerId" />
-						<input asp-for="ParkingBookingDTO.PaymentAmount" type="hidden" value="@Model.ParkingSpaces.RentPerHour" />
-					<button disabled asp-action="RequestBooking" asp-controller="ParkINDetails" type="submit" 
-					        class="btn btn-primary btn-lg w-100 rounded-3 fw-bold" id="requestBookingBtn">
-						<i class="fa-solid fa-calendar-check me-2"></i>Request Booking
-					</button>
+					</div>
+					
+						<!-- Availability Status -->
+						<div class="alert alert-warning d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilityStatus">
+							<i class="fa-solid fa-exclamation-circle flex-shrink-0 mt-1"></i>
+							<div>
+								<small class="fw-semibold">This time slot is not available</small>
+								<p class="mb-0 small mt-1" id="bookedInfo">Please select a different time.</p>
+							</div>
+						</div>
+					
+						<div class="alert alert-success d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilitySuccess" >
+							<i class="fa-solid fa-check-circle flex-shrink-0 mt-1"></i>
+							<div>
+								<small class="fw-semibold">This time slot is available!</small>
+								<p class="mb-0 small mt-1" id="availableInfo">You can proceed with booking.</p>
+							</div>
+						</div>
+						<input asp-for="ParkingBookingDTO.OwnerID" value="@Model.ParkingSpaces.OwnerId" type="hidden"/>
+						<input asp-for="ParkingBookingDTO.ParkingID" value="@Model.ParkingSpaces.ID" type="hidden"/>
+
+						<button disabled asp-action="RequestBooking" asp-controller="ParkINDetails"
+								class="btn btn-primary btn-lg w-100 rounded-3 fw-bold" id="requestBookingBtn">
+							<i class="fa-solid fa-calendar-check me-2"></i>Request Booking
+						</button>
 					</form>
+
 				</div>
+
 			</div>
+
 		</div>
 		<div class="mt-4">
 			<h6 class="fw-bold mb-3 text-primary">
@@ -173,8 +173,9 @@
 	<!-- Leaflet Routing Machine for real road routes -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
-	<script src="~/js/ParkinDetails.js"></script>
+		<script src="~/js/ParkinDetails.js"></script>
 	
+
 <script>
 
 // Map initialization script

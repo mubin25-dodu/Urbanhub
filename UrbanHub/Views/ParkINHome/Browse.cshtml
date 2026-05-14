@@ -36,7 +36,7 @@ background-size: cover; background-position: center; background-repeat: no-repea
 	
 		<div class="col-12 col-lg-3">
 			<label class="form-label fw-semibold text-secondary">Enter your location</label>
-				<input asp-for="SearchSpaces.SearchText" type="text" class="form-control form-control-lg" placeholder="City, Address, Area" />
+				<input  asp-for="SearchSpaces.SearchText" type="text" class="form-control form-control-lg" placeholder="City, Address, Area" />
 		</div>
 
 		<div class="col-12 col-lg-3">
@@ -50,9 +50,9 @@ background-size: cover; background-position: center; background-repeat: no-repea
 		</div>
 
 		<div class="col-12 col-lg-3">
-			<label class="form-label fw-semibold text-secondary">Select Time Slot</label>
+			<label class="form-label fw-semibold text-secondary">Select Time Slot <span class="text-muted">(Optional)</span></label>
 			<input asp-for="SearchSpaces.DateAndTime" type="datetime-local" class="form-control form-control-lg" 
-					   value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+					   value="" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
 		</div>
 
 		<div class="col-12 col-lg-3 d-flex align-items-end">

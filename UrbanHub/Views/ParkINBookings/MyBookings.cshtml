@@ -68,6 +68,7 @@
 							<th class="text-center">Duration</th>
 							<th class="text-center">Amount</th>
 							<th class="text-center">Payment</th>
+							<th class="text-center">Requested at</th>
 							<th class="text-center">Actions</th>
 						</tr>
 						</thead>
@@ -84,7 +85,7 @@
 									}
 									else
 									{
-										<span class="badge bg-warning">Occupied</span>
+										<span class="badge bg-warning">Not Available</span>
 									}
 								</td>
 								<td class="text-center">
@@ -112,21 +113,31 @@
 									}
 									<span class="badge @paymentClass">@booking.PaymentStatus</span>
 								</td>
+								<td class="text-center">@booking.Date.ToString("dd MMM, HH:mm")</td>
 								<td class="text-center">
 									<div class="d-flex gap-2  flex-wrap">
-										@if (booking.PaymentStatus != "Completed")
-										{
-											<button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#paymentModal" onclick="setBookingId(@booking.ID)">
-												<i class="fas fa-credit-card"></i> Pay
-											</button>
-										}
-										@if (booking.Status == "Pending" || booking.Status == "Booked")
-										{
-											<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Cancel" asp-route-id="@booking.ID"
-											   asp-controller="ParkINBookings" class="btn btn-sm btn-outline-danger">
-												<i class="fas fa-times"></i> Cancel
-											</a>
-										}
+											@if (!booking.Parking.IsAvailable)
+											{
+												<span class="text-danger">Parking Space Not Available</span>
+											}
+											else
+											{
+											@if (booking.PaymentStatus != "Completed")
+												{
+													<button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#paymentModal" onclick="setBookingId(@booking.ID)">
+														<i class="fas fa-credit-card"></i> Pay
+													</button>
+												}
+
+												@if (booking.Status == "Pending" || booking.Status == "Booked")
+												{
+													<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Cancel" asp-route-id="@booking.ID"
+													   asp-controller="ParkINBookings" class="btn btn-sm btn-outline-danger">
+														<i class="fas fa-times"></i> Cancel
+													</a>
+												}
+												
+											}
 									</div>
 								</td>
 							</tr>

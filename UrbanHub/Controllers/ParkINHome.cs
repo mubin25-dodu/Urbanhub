@@ -26,7 +26,7 @@ namespace UrbanHub.web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search(ParkInBrowseModel data)
+        public async Task<IActionResult> Search( ParkInBrowseModel data)
         {
             if (data.SearchSpaces == null)
             {

@@ -41,12 +41,12 @@ namespace UrbanHub.web.Controllers
 
             if (!result.Status )
             {
-                TempData["Error"] = false;
+                TempData["Error"] = true;
                 TempData["Message"] = result.Message;
             }
             else
             {
-                TempData["Error"] = true;
+                TempData["Error"] = false;
                 TempData["Message"] = result.Message;
             }
             

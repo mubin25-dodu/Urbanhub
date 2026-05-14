@@ -4,6 +4,7 @@ using NetTopologySuite.Geometries;
 using UrbanHub.Data;
 using UrbanHub.Entities;
 using UrbanHub.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace UrbanHub.web.Controllers
 {
@@ -22,9 +23,13 @@ namespace UrbanHub.web.Controllers
         }
 
         // GET
-        [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int? id)
         {
+            if (id != null)
+            {
+                ViewBag.ParkingId = id;
+            }
+
             return View("ParkingSpace");
         }
 
@@ -45,27 +50,20 @@ namespace UrbanHub.web.Controllers
                 SRID = 4326
             };
 
-            ParkingSpace? parking = null;
-            try
+            var parking = new ParkingSpace
             {
-                parking = new ParkingSpace
-                {
-                    Address = vm.Address,
-                    Location = point,
-                    RentPerHour = vm.RentPerHour,
-                    VehicleType = vm.VehicleType,
-                    Available = vm.Available,
-                    IsAvailable = vm.IsAvailable,
-                    Description = vm.Description,
-                    Image = imagePath,
-                    OwnerId = int.Parse(User?.Claims.FirstOrDefault(c => c.Type == "UserID")?.Value ?? "0")
-                };
-            }
-            catch (ArgumentNullException exception)
-            {
-                // 'type' is 'null'.
-            }
-
+                Address = vm.Address,
+                Location = point,
+                RentPerHour = vm.RentPerHour,
+                VehicleType = vm.VehicleType,
+                Available = vm.Available,
+                IsAvailable = vm.IsAvailable,
+                Description = vm.Description,
+                Image = imagePath,
+                Date = DateTime.Now,
+                // temporary static owner
+                OwnerId = int.Parse(User?.Claims.FirstOrDefault(c => c.Type == "UserID")?.Value ?? "0")
+            };
             var Role = _context.Users.Find(int.Parse(User?.FindFirst("UserID").Value));
             if (Role==null)
             {
@@ -76,11 +74,38 @@ namespace UrbanHub.web.Controllers
             _context.ParkingSpaces.Add(parking);
 
             await _context.SaveChangesAsync();
+            ViewBag.ParkingId = parking.ID;
             TempData["Error"] = false;
             TempData["success"] =
                 "Parking Space Added Successfully";
 
             return RedirectToAction("Create");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> MyParking()
+        {
+            // temporary static owner
+            int ownerId = 1;
+
+            var parking = _context.ParkingSpaces
+                .Where(x => x.OwnerId == ownerId)
+                .OrderByDescending(x => x.ID)
+                .FirstOrDefault();
+
+            if (parking == null)
+            {
+                TempData["error"] =
+                    "You did not add any parking space yet.";
+
+                return RedirectToAction("Create");
+            }
+
+            return RedirectToAction(
+                "Edit",
+                new { id = parking.ID }
+            );
         }
 
         // SAVE IMAGE
@@ -111,6 +136,81 @@ namespace UrbanHub.web.Controllers
             }
 
             return "/uploads/parking/" + fileName;
+        }
+
+        // EDIT PAGE LOAD
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var parking = await _context.ParkingSpaces
+                .FirstOrDefaultAsync(x => x.ID == id);
+
+            if (parking == null)
+            {
+                return NotFound();
+            }
+
+            var vm = new ParkingSpaceEditVM
+            {
+                ID = parking.ID,
+                Address = parking.Address,
+                Latitude = parking.Location!.Y,
+                Longitude = parking.Location.X,
+                RentPerHour = parking.RentPerHour,
+                VehicleType = parking.VehicleType,
+                Available = parking.Available,
+                IsAvailable = parking.IsAvailable,
+                Description = parking.Description,
+                ExistingImage = parking.Image
+            };
+
+            return View(vm);
+        }
+
+        // UPDATE PARKING
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(ParkingSpaceEditVM vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
+
+            var parking = await _context.ParkingSpaces
+                .FirstOrDefaultAsync(x => x.ID == vm.ID);
+
+            if (parking == null)
+            {
+                return NotFound();
+            }
+
+            // UPDATE IMAGE
+            if (vm.ImageFile != null)
+            {
+                string imagePath = await SaveImage(vm.ImageFile);
+
+                parking.Image = imagePath;
+            }
+
+            var point = new Point(vm.Longitude, vm.Latitude)
+            {
+                SRID = 4326
+            };
+
+            parking.Address = vm.Address;
+            parking.Location = point;
+            parking.RentPerHour = vm.RentPerHour;
+            parking.VehicleType = vm.VehicleType;
+            parking.Available = vm.Available;
+            parking.IsAvailable = vm.IsAvailable;
+            parking.Description = vm.Description;
+
+            await _context.SaveChangesAsync();
+
+            TempData["success"] = "Parking Updated Successfully";
+
+            return RedirectToAction("Create",new { id = parking.ID });
         }
     }
 }
