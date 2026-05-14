@@ -120,8 +120,8 @@ namespace UrbanHubManagement.repo
                         // validating day and time 
                         return schedules.Any(e =>
                             e.Day == targetDay.ToString() &&
-                            TimeOnly.Parse(e.StartTime) <= targetTime &&
-                            TimeOnly.Parse(e.EndTime) >= targetTime);
+                            e.StartTime <= targetTime &&
+                            e.EndTime >= targetTime);
                     })
                     .ToList();
 

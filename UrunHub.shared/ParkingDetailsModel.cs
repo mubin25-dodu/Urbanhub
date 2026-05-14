@@ -8,4 +8,5 @@ public class ParkingDetailsModel
     public List<ParkingBooking>? ParkingBookings { get; set; }
     public ParkingBookingDTO ? ParkingBookingDTO { get; set; }
 
+
 }

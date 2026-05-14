@@ -22,6 +22,7 @@ namespace UrbanHub.Entities
         public int? ReviewID { get; set; }
         [StringLength(50)]
         public string Status { get; set; } = null!;
+        public int? OTP { get; set; } 
         public decimal PaymentAmount { get; set; } 
         [StringLength(50)]
         public string? PaymentDetails { get; set; } = null!;
