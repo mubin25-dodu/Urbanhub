@@ -1,4 +1,4 @@
-﻿@model ParkINBrowseDTO
+﻿@model ParkInBrowseModel
 @{
 	ViewBag.Title = "ParkIN";
 	Layout = "_LayoutParkIN";
@@ -20,12 +20,12 @@ background-size: cover; background-position: center; background-repeat: no-repea
 		</p>
 
 		<div class="d-flex gap-4 ">
-			<button class=" btn btn-primary  rounded-4 px-4 py-2 mt-3" style="font-size: 1.1rem;">
+			<a asp-controller="ParkingSpace" asp-action="Create" class=" btn btn-primary  rounded-4 px-4 py-2 mt-3" style="font-size: 1.1rem;">
 				<i class="fa-solid fa-location-dot"></i> &nbsp; Share Your Space
-			</button>
-			<button class="btn btn-light rounded-4 px-4 py-2 mt-3" style="font-size: 1.1rem;">
+			</a>
+			<a class="btn btn-light rounded-4 px-4 py-2 mt-3" style="font-size: 1.1rem;">
 				<i class="fa-solid fa-compass"></i> &nbsp; Explore ParkIN
-			</button>
+			</a>
 			<br/>
 		</div>
 	</div>
@@ -36,7 +36,7 @@ background-size: cover; background-position: center; background-repeat: no-repea
 	
 		<div class="col-12 col-lg-3">
 			<label class="form-label fw-semibold text-secondary">Enter your location</label>
-				<input asp-for="SearchSpaces.SearchText" type="text" class="form-control form-control-lg" placeholder="City, Address, Area" />
+				<input  asp-for="SearchSpaces.SearchText" type="text" class="form-control form-control-lg" placeholder="City, Address, Area" />
 		</div>
 
 		<div class="col-12 col-lg-3">
@@ -50,9 +50,9 @@ background-size: cover; background-position: center; background-repeat: no-repea
 		</div>
 
 		<div class="col-12 col-lg-3">
-			<label class="form-label fw-semibold text-secondary">Select Time Slot</label>
+			<label class="form-label fw-semibold text-secondary">Select Time Slot <span class="text-muted">(Optional)</span></label>
 			<input asp-for="SearchSpaces.DateAndTime" type="datetime-local" class="form-control form-control-lg" 
-			       value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+					   value="" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
 		</div>
 
 		<div class="col-12 col-lg-3 d-flex align-items-end">

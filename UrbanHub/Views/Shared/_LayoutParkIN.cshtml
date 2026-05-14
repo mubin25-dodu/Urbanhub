@@ -16,46 +16,68 @@
 <header>
 	@if (ViewData["Title"] != "Login")
 	{
-		<div style="height: 80px;"></div>
-		<nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 transition-base position-fixed top-0 start-0 w-100 z-3">
-			<div class="container-fluid px-4 px-lg-5">
+		<div style="height: 85px;"></div>
+		<nav class="navbar navbar-expand-lg navbar-premium py-3 transition-base position-fixed top-0 start-0 w-100 z-3">
+			<div class="container-fluid px-3 px-md-4 px-lg-5">
 				<!-- Brand -->
-				<a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" asp-controller="Home" asp-action="Index">
-					<img src="~/assets/img/logo.png" alt="UrbanHub Logo" class="logo"/>
-					<span class="fw-bold fs-4 text-dark mb-0">UrbanHub</span> 
+				<a class="navbar-brand d-flex align-items-center gap-3 text-decoration-none brand-wrapper" asp-controller="Home" asp-action="Index">
+					<img src="~/assets/img/logo.png" alt="UrbanHub Logo" class="logo logo-hover"/>
+					<span class="fw-bold fs-5 text-dark mb-0">UrbanHub</span> 
 				</a>
-				<i class="fa-solid fa-pause"></i> &nbsp;
+				<span class="navbar-divider">|</span>
 				<a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" asp-controller="ParkINHome" asp-action="Browse">
-					<span class="fw-bold fs-4 text-dark mb-0 text-primary" style="color: #007bff;">ParkIN</span>
+					<span class="fw-bold fs-5 text-dark mb-0 park-badge">ParkIN</span>
 				</a>
 				
 
 
 				<!-- Mobile Toggle -->
-				<button class="navbar-toggler border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler border-0 shadow-none p-2 toggler-icon-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<!-- Nav Items -->
 				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1 gap-lg-3 align-items-center">
 						<li class="nav-item">
-							<a class="nav-link fw-bold text-dark nav-hover-effect active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+						<a class="nav-link fw-600 text-dark nav-hover-effect" 
+						   asp-controller="Home" asp-action="Index">
+							Home
+						</a>
+						<li class="nav-item">
+						<a class="nav-link fw-600 text-dark nav-hover-effect" 
+						   asp-controller="ParkINHome" asp-action="Browse">
+							ParkIN
+						</a>
+						<li class="nav-item">
+										<a class="nav-link fw-600 text-dark nav-hover-effect "
+							   asp-controller="ParkINBookings" asp-action="MyBookings">
+											My bookings
+							</a>
+						</li>	
+					@if (User.IsInRole("Owner"))
+						{
+						<li class="nav-item">
+											<a class="nav-link fw-600 text-dark nav-hover-effect"
+												   asp-controller="ParkINMySpace" asp-action="MySpace">
+												My Space
+							</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold text-dark nav-hover-effect" href="#">Pricing</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold text-dark nav-hover-effect disabled" aria-disabled="true">Disabled</a>
+						}
+						</li>	<li class="nav-item">
+									<a class="nav-link fw-600 text-dark nav-hover-effect"
+							   asp-controller="ParkINHome" asp-action="LiveMap">
+								Map View
+							</a>
 						</li>
 					</ul>
 
 					<!-- Right side tools -->
-					<div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+					<div class="d-flex align-items-center gap-3 ms-lg-4 mt-3 mt-lg-0 ps-lg-3 border-lg-start">
 						<!-- Notification Icon -->
-						<a href="#" class="text-dark position-relative nav-icon-hover transition-base text-decoration-none">
+						<a href="#" class="text-dark position-relative nav-icon-hover transition-base text-decoration-none icon-wrapper">
 							<i class="fa-regular fa-bell fs-5"></i>
-							<span class="position-absolute top-1 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+							<span class="position-absolute top-1 start-100 translate-middle p-1 bg-danger border border-light rounded-circle notification-badge">
 								<span class="visually-hidden">New notifications</span>
 							</span>
 						</a>
@@ -63,17 +85,17 @@
 						@if (!User.Identity.IsAuthenticated)
 						{
 							<!-- Login Button -->
-							<a class="btn btn-dark fw-bold rounded-pill px-4 shadow-sm login-btn-hover transition-base"
+							<a class="btn btn-auth btn-login fw-600 px-4 shadow-sm login-btn-hover transition-base ms-2"
 									   asp-action="login_reg" asp-controller="login_regisration">
-								Login
+								<i class="fa-solid fa-arrow-right-to-bracket me-2"></i>Login
 							</a>
 						}
 						else
 						{
-							<a class="btn btn-dark fw-bold rounded-pill px-4 shadow-sm login-btn-hover transition-base"
+							<a class="btn btn-auth btn-logout fw-600 px-4 shadow-sm login-btn-hover transition-base ms-2"
 									   asp-action="logout" asp-controller="login_regisration"
 							   onclick="return confirm('Are you sure you want to Logout!')">
-								Logout
+								<i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout
 							</a>
 						}
 					</div>
@@ -105,9 +127,18 @@ else
 }
 @if (ViewData["Title"] != "Login")
 {
-	<footer class="border-top footer text-muted">
-		<div class="container">
-			&copy; 2026 - UrbanHub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+	<footer class="footer-premium border-top mt-5 pt-5 pb-4">
+		<div class="container-fluid px-3 px-md-4 px-lg-5">
+			<div class="row align-items-center">
+				<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+					<p class="mb-0 text-muted fw-500">
+						<span class="fw-600 text-dark">© 2026 UrbanHub</span> - All rights reserved
+					</p>
+				</div>
+				<div class="col-md-6 text-center text-md-end">
+					<a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-muted footer-link fw-500">Privacy Policy</a>
+				</div>
+			</div>
 		</div>
 	</footer>
 }

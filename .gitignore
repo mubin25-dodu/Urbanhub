@@ -2,3 +2,6 @@ urbanhub/bin/
 urbanhub/obj/
 urbanhub/.vs/
 .vs/
+*/obj
+*/bin
+*/.vs

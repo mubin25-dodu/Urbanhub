@@ -26,6 +26,12 @@ builder.Services.AddScoped<Auth>();
 builder.Services.AddScoped<ParkinHome>();
 builder.Services.AddScoped<LoginDTO>();
 builder.Services.AddScoped<ParkinViewDetails>();
+builder.Services.AddScoped<ParkingDetailsModel>();
+builder.Services.AddScoped<UserCard>();
+builder.Services.AddScoped<UserBookings>();
+builder.Services.AddScoped<MySpace>();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddAuthentication("UrbanAuth").AddCookie("UrbanAuth",
     opt =>
     {

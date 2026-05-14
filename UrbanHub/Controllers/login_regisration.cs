@@ -58,7 +58,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
                 new Claim(ClaimTypes.Name, userExist.Data.Name),
                 new Claim(ClaimTypes.Email,userExist.Data.Email),
                 new Claim(ClaimTypes.Role,userExist.Data.Role),
-                new Claim(ClaimTypes.Actor,userExist.Data.Uid.ToString())
+                new Claim("UserID", userExist.Data.Uid.ToString()),
             };
             var identity = new ClaimsIdentity(Claim, "UrbanAuth");
             var principal = new ClaimsPrincipal(identity);

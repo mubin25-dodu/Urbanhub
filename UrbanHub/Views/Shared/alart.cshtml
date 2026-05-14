@@ -1,6 +1,6 @@
 ﻿
 @if(ViewBag.Status != null){
-	if (ViewBag.Status == true)
+	if (ViewBag.Error == false)
 	{
 		<div class="alert alert-dismissible alert-success mt-4">
 			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -14,6 +14,27 @@
 		<div class="alert alert-dismissible alert-danger mt-4">
 			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 			<strong> <h1 class="display-4 fw-medium">@ViewBag.MessageTitle</h1></strong> <p class="lead fw-normal">@ViewBag.Message</p>
+		</div>
+	}
+}
+
+
+@if(TempData["Error"] != null && TempData["Message"]!=""){
+	if ((bool?)TempData["Error"] == false)
+	{
+		<div class="alert alert-dismissible alert-success mt-4">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong>
+				<h1 class="display-4 fw-medium"></h1>@TempData["MesssageTitle"]</strong>
+			<p class="lead fw-normal">@TempData["Message"]</p>
+		</div>
+	}
+	else
+	{
+		<div class="alert alert-dismissible alert-danger mt-4">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong> <h1 class="display-4 fw-medium">@TempData["MesssageTitle"]</h1></strong> 
+			<p class="lead fw-normal">@TempData["Message"]</p>
 		</div>
 	}
 }

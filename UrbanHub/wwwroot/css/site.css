@@ -22,8 +22,17 @@ html {
 }
 
 body {
-/*    margin-top: 80px;
-    margin-bottom: 60px;*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, .container {
+    flex: 1;
+}
+
+.footer-premium {
+    margin-top: auto;
 }
 
 .form-floating>.form-control-plaintext::placeholder,
@@ -35,6 +44,43 @@ body {
 .form-floating>.form-control-plaintext:focus::placeholder,
 .form-floating>.form-control:focus::placeholder {
     text-align: start;
+}
+
+.footer-premium {
+    background: linear-gradient(180deg, #f8f9fa 0%, #f0f1f3 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer-link {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #0F6DF0 !important;
+    text-decoration: underline;
+    transform: translateX(2px);
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.border-lg-start {
+    border-left: none;
+}
+
+@media (min-width: 992px) {
+    .border-lg-start {
+        border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
 }
 
 /*login hover card*/
