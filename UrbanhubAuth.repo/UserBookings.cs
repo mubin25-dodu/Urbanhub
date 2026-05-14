@@ -19,7 +19,7 @@ namespace UrbanHubManagement.repo
             try
             {
                 var Bookings = context.ParkingBookings.Where(p => p.RenterID == userCard.UserId )
-                    .Include(p => p.Parking).ToList();
+                    .Include(p => p.Parking).OrderBy(p => p.StartingTime).ToList();
                 if(Bookings == null || Bookings.Count == 0)
                 {
                     result.Data = null;
@@ -31,6 +31,37 @@ namespace UrbanHubManagement.repo
 
                 result.Data = Bookings;
                 result.Message = "";
+                result.Status = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while retrieving parking spaces.";
+                result.Status = false;
+                throw;
+            }
+
+            return result;
+        }
+        public Result<ParkingBooking> CancelBooking( int id)
+        {
+            var result = new Result<ParkingBooking>();
+            try
+            {
+                var cancel = context.ParkingBookings.Find(id);
+                if(cancel == null)
+                {
+                    result.Data = null;
+                    result.Message = "No bookings found.";
+                    result.Status = false;
+                    return result;
+                }
+                cancel.Status ="Cancelled";
+                context.SaveChanges();
+
+                result.Data = null;
+                result.Message = "Booking cancelled successfully.";
                 result.Status = true;
             }
             catch (Exception e)

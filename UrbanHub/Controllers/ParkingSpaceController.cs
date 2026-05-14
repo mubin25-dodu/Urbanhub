@@ -66,6 +66,13 @@ namespace UrbanHub.web.Controllers
                 // 'type' is 'null'.
             }
 
+            var Role = _context.Users.Find(int.Parse(User?.FindFirst("UserID").Value));
+            if (Role==null)
+            {
+                return null;
+            }
+
+            Role.Role = "Owner";
             _context.ParkingSpaces.Add(parking);
 
             await _context.SaveChangesAsync();

@@ -40,24 +40,34 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1 gap-lg-3 align-items-center">
 						<li class="nav-item">
-						<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewBag.Title == "Home" ? "active" : "")" 
+						<a class="nav-link fw-600 text-dark nav-hover-effect" 
 						   asp-controller="Home" asp-action="Index">
 							Home
 						</a>
 						<li class="nav-item">
-						<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewBag.Title == "Pricing" ? "active" : "")" 
+						<a class="nav-link fw-600 text-dark nav-hover-effect" 
 						   asp-controller="ParkINHome" asp-action="Browse">
 							ParkIN
 						</a>
 						<li class="nav-item">
-							<a class="nav-link fw-600 text-muted nav-hover-effect @(ViewBag.Title == "Disabled" ? "active" : "")"
+										<a class="nav-link fw-600 text-muted nav-hover-effect "
 							   asp-controller="ParkINBookings" asp-action="MyBookings">
 											My bookings
 							</a>
+						</li>	
+					@if (User.IsInRole("Owner"))
+						{
+						<li class="nav-item">
+							<a class="nav-link fw-600 text-muted nav-hover-effect "
+							   asp-controller="ParkINMyspace" asp-action="Myspace">
+												My Space
+							</a>
+						</li>
+						}
 						</li>	<li class="nav-item">
-							<a class="nav-link fw-600 text-muted nav-hover-effect @(ViewBag.Title == "Disabled" ? "active" : "")"
+							<a class="nav-link fw-600 text-muted nav-hover-effect "
 							   asp-controller="ParkINHome" asp-action="LiveMap">
-											Map View
+								Map View
 							</a>
 						</li>
 					</ul>

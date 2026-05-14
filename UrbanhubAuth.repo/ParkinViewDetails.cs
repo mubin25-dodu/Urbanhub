@@ -67,8 +67,18 @@ namespace UrbanHubManagement.repo
             try
             {
                 //if already send a request
-                var check = context.ParkingBookings.Any(e => e.ParkingID == data.ParkingID && e.RenterID == card.UserId);
-               
+                var check = context.ParkingBookings.Where(e => e.Status.ToLower() =="pending" && e.ParkingID == data.ParkingID && e.RenterID == card.UserId);
+
+                var checkowner = context.ParkingSpaces.Where(e => e.ID == data.ParkingID && e.OwnerId == card.UserId);
+
+                if(checkowner.Any())
+                {
+                    result.Data = null;
+                    result.Message = "You cannot book your own parking space. \n Nice try";
+                    result.Status = false;
+                    return result;
+                }
+
                 //if the time slot is already booked in backend check... 
                 //infrontend checking is not enough maybe another user is looking for this same spot same time 
                 // faster internet owala winns  
@@ -97,7 +107,7 @@ namespace UrbanHubManagement.repo
                         return jsondata?.Any(c => c.Day == startday && 
                                                c.StartTime >= starttime && c.EndTime <= endtime ) ?? false;
                     }).ToList();
-                if (ceckavailable==null || !ceckavailable.Any() )
+                if (ceckavailable==null || ceckavailable.Any() )
                 {
                     result.Data = null;
                     result.Message = "Slot Not available";
@@ -105,7 +115,7 @@ namespace UrbanHubManagement.repo
                     return result;
                 }
 
-                if (check)
+                if (check.Any())
                 {
                     result.Data = null;
                     result.Message = "You have already requested a booking for this parking space. " +
