@@ -50,7 +50,7 @@
 							ParkIN
 						</a>
 						<li class="nav-item">
-										<a class="nav-link fw-600 text-muted nav-hover-effect "
+										<a class="nav-link fw-600 text-dark nav-hover-effect "
 							   asp-controller="ParkINBookings" asp-action="MyBookings">
 											My bookings
 							</a>
@@ -58,14 +58,14 @@
 					@if (User.IsInRole("Owner"))
 						{
 						<li class="nav-item">
-							<a class="nav-link fw-600 text-muted nav-hover-effect "
-							   asp-controller="ParkINMyspace" asp-action="Myspace">
+											<a class="nav-link fw-600 text-dark nav-hover-effect"
+												   asp-controller="ParkINMySpace" asp-action="MySpace">
 												My Space
 							</a>
 						</li>
 						}
 						</li>	<li class="nav-item">
-							<a class="nav-link fw-600 text-muted nav-hover-effect "
+									<a class="nav-link fw-600 text-dark nav-hover-effect"
 							   asp-controller="ParkINHome" asp-action="LiveMap">
 								Map View
 							</a>
