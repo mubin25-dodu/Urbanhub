@@ -40,26 +40,26 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1 gap-lg-3 align-items-center">
 						<li class="nav-item">
-						<a class="nav-link fw-600 text-dark nav-hover-effect" 
-						   asp-controller="Home" asp-action="Index">
-							Home
-						</a>
+							<a class="nav-link fw-600 text-dark nav-hover-effect" 
+							   asp-controller="Home" asp-action="Index">
+								Home
+							</a>
 						</li>
 
 						<li class="nav-item">
-						<a class="nav-link fw-600 text-dark nav-hover-effect" 
-						   asp-controller="ParkINHome" asp-action="Browse">
-							ParkIN
-						</a>
+							<a class="nav-link fw-600 text-dark nav-hover-effect" 
+							   asp-controller="ParkINHome" asp-action="Browse">
+								ParkIN
+							</a>
 						</li>
 
 						<li class="nav-item">
 							<a class="nav-link fw-600 text-dark nav-hover-effect "
 							   asp-controller="ParkINBookings" asp-action="MyBookings">
 								My bookings
-										</a>
-									</li>
-					@if (User.IsInRole("Owner"))
+							</a>
+						</li>
+						@if (User.IsInRole("Owner"))
 						{
 							<li class="nav-item">
 								<a class="nav-link fw-600 text-dark nav-hover-effect"
@@ -75,7 +75,7 @@
 
 						}
 						<li class="nav-item">
-									<a class="nav-link fw-600 text-dark nav-hover-effect"
+							<a class="nav-link fw-600 text-dark nav-hover-effect"
 							   asp-controller="ParkINHome" asp-action="LiveMap">
 								Map View
 							</a>
@@ -85,25 +85,24 @@
 					<!-- Right side tools -->
 					<div class="d-flex align-items-center gap-3 ms-lg-4 mt-3 mt-lg-0 ps-lg-3 border-lg-start">
 						<!-- Notification Icon -->
-						<a href="#" class="text-dark position-relative nav-icon-hover transition-base text-decoration-none icon-wrapper">
-							<i class="fa-regular fa-bell fs-5"></i>
-							<span class="position-absolute top-1 start-100 translate-middle p-1 bg-danger border border-light rounded-circle notification-badge">
-								<span class="visually-hidden">New notifications</span>
-							</span>
-						</a>
-
+					<button id="notificationbtn" class="btn btn-link text-dark position-relative nav-icon-hover transition-base text-decoration-none icon-wrapper border-0 p-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+						<i class="fa-regular fa-bell fs-5"></i>
+						<span class="position-absolute top-1 start-100 translate-middle p-1 bg-danger border border-light rounded-circle notification-badge">
+							<span class="visually-hidden">New notifications</span>
+						</span>
+					</button>
 						@if (!User.Identity.IsAuthenticated)
 						{
 							<!-- Login Button -->
 							<a class="btn btn-auth btn-login fw-600 px-4 shadow-sm login-btn-hover transition-base ms-2"
-									   asp-action="login_reg" asp-controller="login_regisration">
+							   asp-action="login_reg" asp-controller="login_regisration">
 								<i class="fa-solid fa-arrow-right-to-bracket me-2"></i>Login
 							</a>
 						}
 						else
 						{
 							<a class="btn btn-auth btn-logout fw-600 px-4 shadow-sm login-btn-hover transition-base ms-2"
-									   asp-action="logout" asp-controller="login_regisration"
+							   asp-action="logout" asp-controller="login_regisration"
 							   onclick="return confirm('Are you sure you want to Logout!')">
 								<i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout
 							</a>
@@ -112,6 +111,28 @@
 				</div>
 			</div>
 		</nav>
+
+		<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+				<div class="offcanvas-header d-flex flex-column gap-3 mt-3">
+					
+					<div class="d-flex gap-5">
+						<h5 id="offcanvasRightLabel">Notifications</h5>
+						<a id="Refreash">Refresh</a>
+						<button  type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+
+				<div id="notificationList" class="d-flex flex-column gap-3 mt-3">
+					<!-- Notifications will be dynamically added here -->
+				</div>
+				
+				
+			</div>
+			<div class="offcanvas-body">
+				
+			</div>
+		</div>
 	}
 
 </header>
@@ -152,6 +173,8 @@ else
 		</div>
 	</footer>
 }
+	<script src="~/js/SignalRnotification.js"></script>
+	<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
@@ -160,6 +183,7 @@ else
 </body>
 
 </html>
-@section Scripts{
-@Html.Partial("_ValidationScriptsPartial")
-}
+<script>
+	
+
+</script>

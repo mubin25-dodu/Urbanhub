@@ -51,7 +51,7 @@ namespace UrbanHubManagement.repo
             var result = new Result<ParkingBooking>();
             try
             {
-                var spaces = context.ParkingBookings.Find(id);
+                var spaces = context.ParkingBookings.Include(p=>p.Parking).FirstOrDefault(a=>a.ID == id);
                 if (spaces == null)
                 {
                     result.Data = null;
@@ -59,8 +59,24 @@ namespace UrbanHubManagement.repo
                     result.Status = false;
                     return result;
                 }
+
                 spaces.Status = "Accepted";
+
                 
+                var notification = new Notification()
+                {
+                    From = userCard.UserId,
+                    To = spaces.RenterID ?? 0,
+                    Title = "Parking Booking Accepted",
+                    Message = $"Your parking booking has been accepted! Pay the rent to confirm your parking space."  +
+                              $"Address: {spaces.Parking.Address}. " +
+                              $"Rent: {spaces.Parking.RentPerHour} BDT/hour.",
+                    Date = DateTime.Now
+                };
+
+                context.Notifications.Add(notification);
+
+
                 context.ParkingBookings.Update(spaces);
                 context.SaveChanges();
 
@@ -94,7 +110,16 @@ namespace UrbanHubManagement.repo
                     return result;
                 }
                 spaces.Status = "Canceled";
-                
+
+                var notification = new Notification()
+                {
+                    From = userCard.UserId,
+                    To = spaces.RenterID ?? 0,
+                    Message = $"❌ Your parking booking request for {spaces.Parking.Address} has been declined. Please try booking another parking space. For assistance, contact support.",
+                    Date = DateTime.Now
+                };
+
+                context.Notifications.Add(notification);
                 context.ParkingBookings.Update(spaces);
                 context.SaveChanges();
 
