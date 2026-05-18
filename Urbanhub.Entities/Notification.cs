@@ -14,7 +14,7 @@ namespace UrbanHub.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
-        public int From { get; set; } 
+        public String From { get; set; } 
         public int To { get; set; } 
 
         public string? Message { get; set; }
@@ -24,8 +24,7 @@ namespace UrbanHub.Entities
 
         [ForeignKey("To")]
         public virtual User ToUserID { get; set; }    
-        [ForeignKey("From")]
-        public virtual User FromUserID { get; set; }
+       
 
     }
 }

@@ -24,6 +24,7 @@ namespace UrbanHub.Entities
         public string Status { get; set; } = null!;
         public int? OTP { get; set; } 
         public decimal PaymentAmount { get; set; } 
+        public decimal? TotalBill { get; set; } 
         [StringLength(50)]
         public string? PaymentDetails { get; set; } = null!;
         [StringLength(50)]

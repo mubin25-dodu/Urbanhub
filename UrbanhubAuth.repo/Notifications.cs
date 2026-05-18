@@ -45,5 +45,50 @@ namespace UrbanHubManagement.repo
             return result;
         }
         
+        public Result<List<Notification>> MarkAsSeenResult(int id)
+        {
+            var result = new Result<List<Notification>>();
+            try
+            {
+                var notifications = context.Notifications.Where(p => p.To == userCard.UserId).
+                    OrderByDescending(p => p.Date)
+                    .ToList();
+                if(notifications == null || notifications.Count == 0)
+                {
+                    result.Data = null;
+                    result.Message = "No Notifications found.";
+                    result.Status = false;
+                    return result;
+                }
+                var mark = notifications.Find(n => n.ID == id);
+
+                if (mark == null)
+                {
+                    result.Data = null;
+                    result.Message = "Notification not found.";
+                    result.Status = false;
+                    return result;
+                }
+
+                mark.Seen= true;
+                context.Notifications.Update(mark);
+                context.SaveChanges();
+
+                result.Data = notifications;
+                result.Message = "Notifications retrieved successfully.";
+                result.Status = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while retrieving Bookings.";
+                result.Status = false;
+                throw;
+            }
+
+            return result;
+        }
+        
     }
 }

@@ -93,7 +93,7 @@
 								</td>
 								<td class="text-center">
 									@{
-										string statusClass = booking.Status == "Active" ? "bg-success" :
+										string statusClass = booking.Status == "Accepted" ? "bg-success" :
 											booking.Status == "Completed" ? "bg-secondary" :
 											booking.Status == "Cancelled" ? "bg-danger" : "bg-warning";
 									}
@@ -107,7 +107,7 @@
 								<td class="text-center fw-bold text-info">৳@booking.PaymentAmount</td>
 								<td class="text-center">
 									@{
-										string paymentClass = booking.PaymentStatus == "Completed" ? "bg-success" :
+										string paymentClass = booking.PaymentStatus == "Paid" ? "bg-success" :
 											booking.PaymentStatus == "Pending" ? "bg-warning" :
 											booking.PaymentStatus == "Failed" ? "bg-danger" : "bg-secondary";
 									}
@@ -122,14 +122,14 @@
 											}
 											else
 											{
-											@if (booking.PaymentStatus != "Completed")
+												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() == "accepted")
 												{
-													<button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#paymentModal" onclick="setBookingId(@booking.ID)">
+													<a asp-controller="ParkINPayment" asp-action="PaymentDetails" class="btn btn-sm btn-info"  asp-route-id="@booking.ID">
 														<i class="fas fa-credit-card"></i> Pay
-													</button>
+													</a>
 												}
 
-												@if (booking.Status == "Pending" || booking.Status == "Booked")
+												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() == "accepted")
 												{
 													<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Cancel" asp-route-id="@booking.ID"
 													   asp-controller="ParkINBookings" class="btn btn-sm btn-outline-danger">

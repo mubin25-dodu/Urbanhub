@@ -13,5 +13,13 @@ namespace UrbanHub.web.Controllers
             var result = repo.GetAll();
             return Json(result);
         }
+
+        //[Route("api/Notification/{id}")]
+        //[HttpPut]
+        //public IActionResult MarkAsSeen(int id)
+        //{
+        //    var result = repo.MarkAsSeenResult(id);
+        //    return Json(result);
+        //}
     }
 }

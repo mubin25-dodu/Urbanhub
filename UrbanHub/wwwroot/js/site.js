@@ -18,20 +18,62 @@ if (refreashbtn) {
   });
 }
 
+
 async function loaddata() {
-  const response = await fetch("api/Notification");
+    const response = await fetch("api/Notification");
+    console.log(response);
   const data = await response.json();
   console.log(data);
-  //Get a container
 
     let container = document.getElementById("notificationList");
     container.innerHTML = "";
   for (let item of data.data) {
-    container.innerHTML += `<div class="card border-primary mb-3" style="max-width: 20rem;">
-               <div class="card-header">${item.title}</div>
+      container.innerHTML += `
+               <div class="card border-primary mb-3" style="max-width: 20rem;">
+               <div class="card-header">${item.title} <span class=" end-0 badge bg-primary ">${new Date(item.date).toLocaleString()}</span></div> 
                <div class="card-body">
                  <p class="card-text">${item.message}</p>
+                 ${item.seen == false ? `<button type="button" buttonid="${item.id}" class="btn getthebtn btn-outline-primary "> 
+                 <i class="fa-solid fa-check"></i>Mark as seen</button>` : ""}
                </div>
              </div>`;
   }
 }
+
+
+
+//let BtnID = document.querySelectorAll(".getthebtn");
+
+//if (BtnID) {
+//    console.log("eh!!");
+//    BtnID.addEventListener("click", () => {
+//        BtnID.Foreach((btn) =>{
+//            console.log(BtnID.buttonid);
+//        });
+//    });
+//}
+
+
+
+//async function markAsSeen(id) {
+//    const response = await fetch(`api/Notification/${id}`, {
+//        method: "PUT"
+//    });
+//    const data = await response.json();
+//    console.log(data);
+//    //Get a container
+
+//    let container = document.getElementById("notificationList");
+//    container.innerHTML = "";
+//    for (let item of data.data) {
+//        container.innerHTML += `
+//               <div class="card border-primary mb-3" style="max-width: 20rem;">
+//               <div class="card-header">${item.title} <span class=" end-0 badge bg-primary ">${new Date(item.date).toLocaleString()}</span></div> 
+//               <div class="card-body">
+//                 <p class="card-text">${item.message}</p>
+//                 ${item.seen == false ? `<button type="button" buttonid="${item.id}" class="btn getthebtn btn-outline-primary "> 
+//                 <i class="fa-solid fa-check"></i>Mark as seen</button>` : ""}
+//               </div>
+//             </div>`;
+//    }
+//}

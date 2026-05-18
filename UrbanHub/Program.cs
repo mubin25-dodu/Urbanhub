@@ -33,6 +33,7 @@ builder.Services.AddScoped<UserBookings>();
 builder.Services.AddScoped<MySpace>();
 builder.Services.AddScoped<ManageBookings>();
 builder.Services.AddScoped<Notifications>();
+builder.Services.AddScoped<Payment>();
 builder.Services.AddHttpContextAccessor();
 //testing
 // although everything is for testing for me now
