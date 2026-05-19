@@ -166,6 +166,13 @@ namespace UrbanHubManagement.repo
                     Status = true
                 };
 
+                var bookings= context.ParkingBookings.Find(data.ID);
+                if(bookings != null)
+                {
+                    bookings.OTP = null;
+                    bookings.Withdrawn= true;
+                }
+
                 var notification = new Notification()
                 {
                     From = "UrbanHub",
@@ -176,6 +183,7 @@ namespace UrbanHubManagement.repo
                 };
 
                 context.Notifications.Add(notification);
+                context.ParkingBookings.Update(bookings);
                 context.Wallets.Add(wallet);
                 context.SaveChanges();
 

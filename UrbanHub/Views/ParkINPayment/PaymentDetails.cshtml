@@ -4,15 +4,16 @@
 	Layout = "_LayoutParkIN";
 }
 
-
 <partial name="alart" />
+
+
 <div class="container py-5">
 	<!-- Main Content Grid - Image Left, Details Right -->
 	<div class="row g-4 mb-5">
 		<!-- Left Column - Image -->
 		<div class="col-lg-6">
 			<div class="position-relative rounded-4 overflow-hidden shadow" style="aspect-ratio: 1/1;">
-				<img src='@(string.IsNullOrEmpty(Model.ParkingSpaces?.Image) ? "/assets/img/Broken.png" : Model.ParkingSpaces?.Image)'
+				<img src='@(string.IsNullOrEmpty(Model.ParkingSpaces.Image) ? "/assets/img/Broken.png" : Model.ParkingSpaces.Image)'
 					 alt="Parking spot image" class="w-100 h-100" style="object-fit: cover;">
 				<!-- SECURE Badge -->
 				<span class="position-absolute top-0 start-0 m-3 badge bg-primary rounded-2">
@@ -31,31 +32,36 @@
 			<div class="card border-0 shadow-sm rounded-4 h-100">
 				<div class="card-body p-4 p-lg-5">
 					<!-- Title & Address -->
-				<h1 class="fs-2 fw-bold mb-2 text-primary">@(Model.ParkingSpaces?.Address ?? "N/A")</h1>
-				<p class="fs-2 fw-bold mb-2 text-secondary"> <span id="RentperHour">@(Model.ParkingSpaces?.RentPerHour ?? 0) </span>BDT</p>
+					<h1 class="fs-2 fw-bold mb-2 text-primary">@(Model.ParkingSpaces.Address)</h1>
+					<p class="fs-2 fw-bold mb-2 text-secondary"> <span id="RentperHour">@(Model.ParkingSpaces.RentPerHour) </span>BDT</p>
+
 					<!-- Description -->
 					<div class="mb-4">
 						<h5 class="fw-bold mb-2 text-primary">About this parking</h5>
-						<p class="text-secondary">@(Model.ParkingSpaces?.Description ?? "No description available")</p>
+						<p class="text-secondary">@Model.ParkingSpaces.Description</p>
+					</div>
+
+					<form method="post">
 
 						<!-- Time Selection -->
 						<div class="bg-light border-start border-5 border-primary p-3 rounded-3 mb-4">
 							<div class="d-flex align-items-center gap-2 mb-3">
 								<i class="fa-solid fa-clock fs-5 text-primary"></i>
-								<h6 class="fw-bold mb-0 text-primary">Selected Parking Time</h6>
+								<h6 class="fw-bold mb-0 text-primary">Select Parking Time</h6>
 							</div>
 							<div class="row g-2 mb-3">
 								<div class="col-md-6">
 									<label class="form-label small fw-bold">Entry Date & Time</label>
-									<input asp-for="ParkingBooking.StartingTime" value="@(Model.ParkingBooking?.StartingTime.ToString("yyyy-MM-ddTHH:mm") ?? string.Empty)" type="datetime-local" class="form-control rounded-2 form-control-sm" id="entryTime">
+									<input asp-for="ParkingBookingDTO.StartingTime" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="entryTime">
 								</div>
 								<div class="col-md-6">
 									<label class="form-label small fw-bold">Exit Date & Time</label>
-									<input asp-for="ParkingBooking.EndingTime" value="@(Model.ParkingBooking?.EndingTime.ToString("yyyy-MM-ddTHH:mm") ?? string.Empty)" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="exitTime">
+									<input asp-for="ParkingBookingDTO.EndingTime" value="@DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="exitTime">
 								</div>
 							</div>
+
+						
 						</div>
-						<form asp-action="ProcessPayment" asp-controller="ParkINPayment" method="post">
 
 						<!-- Availability Status -->
 						<div class="alert alert-warning d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilityStatus">
@@ -73,17 +79,17 @@
 								<p class="mb-0 small mt-1" id="availableInfo">You can proceed with booking.</p>
 							</div>
 						</div>
-						<input asp-for="ParkingBooking.OwnerID" value="@(Model.ParkingSpaces?.OwnerId ?? 0)" type="hidden" />
-						<input asp-for="ParkingBooking.ParkingID" value="@(Model.ParkingSpaces?.ID ?? 0)" type="hidden" />
-						<input asp-for="ParkingSpaces.RentPerHour" value="@(Model.ParkingSpaces?.RentPerHour ?? 0)" type="hidden" />
-						
-						<button type="submit" class="btn btn-primary w-100 fw-bold" id="bookNowBtn" disabled>
-						<i class="fa-solid fa-calendar-check me-2"></i>Request Booking
+						<input asp-for="ParkingBookingDTO.OwnerID" value="@Model.ParkingSpaces.OwnerId" type="hidden" />
+						<input asp-for="ParkingBookingDTO.ParkingID" value="@Model.ParkingSpaces.ID" type="hidden" />
+						<input asp-for="ParkingBookingDTO.RentPerHour" value="@Model.ParkingSpaces.RentPerHour" type="hidden" />
+
+						<button disabled asp-action="RequestBooking" asp-controller="ParkINDetails"
+								class="btn btn-primary btn-lg w-100 rounded-3 fw-bold" id="requestBookingBtn">
+							<i class="fa-solid fa-calendar-check me-2"></i>Request Booking
 						</button>
 					</form>
 
-
-					</div>
+				</div>
 
 			</div>
 
@@ -146,7 +152,7 @@
 					@*Navigation Button *@
 					@if (Model.ParkingSpaces.Location != null)
 					{
-						<a href='@($"https://www.google.com/maps/dir/?api=1&destination={Model.ParkingSpaces?.Location?.Y},{Model.ParkingSpaces?.Location?.X}")'  
+						<a href='@($"https://www.google.com/maps/dir/?api=1&destination={Model.ParkingSpaces.Location.Y},{Model.ParkingSpaces.Location.X}")'
 						   target="_blank"
 						   class="position-absolute btn btn-primary btn-sm rounded-pill fw-bold"
 						   style="bottom: 20px; right: 20px; z-index: 1000;">
@@ -179,12 +185,12 @@
 
 	let LocationDistance = document.getElementById('distance');
 	// Initialize map with Leaflet & OpenStreetMap (no API key required)
-	@if (Model.ParkingSpaces?.Location != null)
+	@if (Model.ParkingSpaces.Location != null)
 	{
 
 		<text>
-			const parkingLatitude = @(Model.ParkingSpaces?.Location?.Y.ToString("F6") ?? "0");
-			const parkingLongitude = @(Model.ParkingSpaces?.Location?.X.ToString("F6") ?? "0");
+			const parkingLatitude = @Model.ParkingSpaces.Location.Y.ToString("F6");
+			const parkingLongitude = @Model.ParkingSpaces.Location.X.ToString("F6");
 
 			// Create map centered on parking location
 			const map = L.map('map').setView([parkingLatitude, parkingLongitude], 15);
@@ -192,7 +198,7 @@
 			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 			maxZoom: 19
-			}).ad(map);
+			}).addTo(map);
 
 			// Add marker for parking location with custom styling
 			const parkingMarker = L.marker([parkingLatitude, parkingLongitude], {
@@ -204,8 +210,8 @@
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
 			})
-			}).ad(map)
-			.bindPopup('<b>Parking Location</b><br>@(Model.ParkingSpaces?.Address ?? "Parking Location")');
+			}).addTo(map)
+			.bindPopup('<b>Parking Location</b><br>@Model.ParkingSpaces.Address');
 
 			let routingControl = null;
 
@@ -226,7 +232,7 @@
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
 			})
-			}).ad(map)
+			}).addTo(map)
 			.bindPopup('<b>Your Location</b>');
 
 			// Clear existing routing if any
@@ -255,7 +261,7 @@
 			},
 			show: false,
 			collapsedClassName: 'leaflet-routing-collapsed'
-			}).ad(map);
+			}).addTo(map);
 
 			// Listen for route found and show summary
 			routingControl.on('routesfound', function(e) {
@@ -282,7 +288,7 @@
 			L.DomEvent.disableClickPropagation(div);
 			return div;
 			};
-			summaryControl.ad(map);
+			summaryControl.addTo(map);
 			});
 
 			// Fit map to show both markers and route

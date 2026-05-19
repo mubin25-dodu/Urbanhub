@@ -16,16 +16,16 @@ namespace UrbanHub.Entities
         public int ID { get; set; }
 
         public string Address { get; set; } = null!;
-       
+
         public Point? Location { get; set; }
         public decimal RentPerHour { get; set; }
         public string Available { get; set; } = null!;
-        public bool IsAvailable  { get; set; } 
+        public bool IsAvailable { get; set; }
         public string Image { get; set; } = null!;
         [StringLength(250)]
         public string Description { get; set; } = null!;
         [StringLength(50)]
-        public string VehicleType { get; set; }= null!;
+        public string VehicleType { get; set; } = null!;
         public int OwnerId { get; set; }
         public DateTime Date { get; set; }
 

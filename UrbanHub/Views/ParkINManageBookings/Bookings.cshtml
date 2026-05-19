@@ -29,7 +29,7 @@
 				<option value="" disabled selected>Select a booking </option>
 				@foreach (var item in Model)
 				{
-					if (item.Parking.IsAvailable && item.PaymentStatus.ToLower() == "paid")
+					if (item.Parking.IsAvailable && item.PaymentStatus.ToLower() == "paid" && !item.Withdrawn)
 					{
 						<option value="@item.ID">@item.Parking.Address</option>
 					}
@@ -45,7 +45,7 @@
 		</div>
 	</form>
 
-	@if ( Model.Count > 0)
+	@if (Model.Count > 0)
 	{
 		<div class="card border-0 shadow-sm" style="max-height:95vh">
 			<div class="card-body p-0">
@@ -60,6 +60,7 @@
 								<th class="text-center">Duration</th>
 								<th class="text-center">Payment Amount</th>
 								<th class="text-center">Payment Status</th>
+								<th class="text-center">Withdrawn Status</th>
 								<th class="text-center">Actions</th>
 							</tr>
 						</thead>
@@ -96,6 +97,12 @@
 												booking.PaymentStatus == "Failed" ? "bg-danger" : "bg-secondary";
 										}
 										<span class="badge @paymentClass">@booking.PaymentStatus</span>
+									</td>
+									<td class="text-center">
+										@{
+											string withdrawnClass = booking.Withdrawn ? "bg-danger" : "bg-success";
+										}
+										<span class="badge @withdrawnClass">@(booking.Withdrawn ? "Yes" : "No")</span>
 									</td>
 									<td class="text-center">
 										<div class="d-flex gap-2  flex-wrap">
@@ -160,30 +167,30 @@
 		});
 	}
 
-	if(formsubmit){
-    formsubmit.addEventListener('click', function(e){
-        let otpElement = document.getElementById("OTP");
-        let selectElement = document.getElementById("select");
-        let otpValue = otpElement.value;
-        let selectValue = selectElement.value;
-        
-        otpElement.style.border = "";
-        selectElement.style.border = "";
-        
-        let isValid = true;
-        if(otpValue == ""){
-            otpElement.style.border = "1px solid red";
-            isValid = false;
-        }
-        if(selectValue == "") {
-            selectElement.style.border = "1px solid red";
-            isValid = false;
-        }
-        
-        if(!isValid){
-            e.preventDefault(); 
-        }
-    });
-}
+	if (formsubmit) {
+		formsubmit.addEventListener('click', function (e) {
+			let otpElement = document.getElementById("OTP");
+			let selectElement = document.getElementById("select");
+			let otpValue = otpElement.value;
+			let selectValue = selectElement.value;
+
+			otpElement.style.border = "";
+			selectElement.style.border = "";
+
+			let isValid = true;
+			if (otpValue == "") {
+				otpElement.style.border = "1px solid red";
+				isValid = false;
+			}
+			if (selectValue == "") {
+				selectElement.style.border = "1px solid red";
+				isValid = false;
+			}
+
+			if (!isValid) {
+				e.preventDefault();
+			}
+		});
+	}
 
 </script>
