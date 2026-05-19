@@ -8,17 +8,8 @@ namespace UrbanHub.shared
     {
         public mapper()
         {
-            // ParkingSpace mappings
             CreateMap<ParkingSpace, ParkingSpaceDTO>();
             CreateMap<ParkingSpaceDTO, ParkingSpace>();
-
-            // ParkingBooking mappings
-            CreateMap<ParkINBooking, ParkingBookingDTO>();
-            CreateMap<ParkingBookingDTO, ParkINBooking>();
-
-            // User mappings
-            CreateMap<User, UserDTO>();
-            CreateMap<UserDTO, User>();
         }
 
     }

@@ -13,9 +13,9 @@ namespace UrbanHubManagement.repo
 {
     public class UserBookings(UrbanHubDbContext context , UserCard userCard)
     {
-        public Result<List<ParkINBooking>> GetAll()
+        public Result<List<ParkingBooking>> GetAll()
         {
-            var result = new Result<List<ParkINBooking>>();
+            var result = new Result<List<ParkingBooking>>();
             try
             {
                 var Bookings = context.ParkingBookings.Where(p => p.RenterID == userCard.UserId )
@@ -44,9 +44,9 @@ namespace UrbanHubManagement.repo
 
             return result;
         }
-        public Result<ParkINBooking> CancelBooking( int id)
+        public Result<ParkingBooking> CancelBooking( int id)
         {
-            var result = new Result<ParkINBooking>();
+            var result = new Result<ParkingBooking>();
             try
             {
                 var cancel = context.ParkingBookings.Find(id);

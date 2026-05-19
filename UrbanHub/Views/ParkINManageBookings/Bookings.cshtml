@@ -1,4 +1,4 @@
-﻿@model List<ParkINBooking>
+﻿@model List<ParkingBooking>
 @{
 	ViewBag.Title = "Manage Bookings";
 	Layout = "_LayoutParkIN";
@@ -14,40 +14,9 @@
 		</div>
 	</div>
 
-	<button class="btn btn-secondary m-2" id="RecivePayment"
-			style="width:fit-content; margin-left:auto; margin-right:0px;">
-		<i class="fa-solid fa-money-bill-transfer"></i>
-		Receive Payment
-	</button>
-
-	<form method="post">
-		<div id="payment" class="d-none col-6 shadow m-2 p-4 rounded d-flex flex-column gap-2 align-content-center
-			justify-content-center" style="transition: all 1.5s ease;">
-
-			<label>Choose Your Booking For Payment</label>
-			<select name="ID" class="form-control" id="select">
-				<option value="" disabled selected>Select a booking </option>
-				@foreach (var item in Model)
-				{
-					if (item.Parking.IsAvailable && item.PaymentStatus.ToLower() == "paid")
-					{
-						<option value="@item.ID">@item.Parking.Address</option>
-					}
-				}
-			</select>
-			<label>Enter the OTP From the Renter</label>
-			<input id="OTP" name="OTP" type="text" class="form-control" placeholder="Enter OTP" />
-			<button type="submit" id="formsubmit" asp-controller="ParkINManageBookings" asp-action="RequestPayment"
-					class="col-3 btn btn-primary" style="width:fit-content;">
-				<i class="fa-solid fa-money-bill-transfer"></i>
-				Request Payment
-			</button>
-		</div>
-	</form>
-
-	@if ( Model.Count > 0)
+	@if (Model != null && Model.Count > 0)
 	{
-		<div class="card border-0 shadow-sm" style="max-height:95vh">
+		<div class="card border-0 shadow-sm">
 			<div class="card-body p-0">
 				<div class="table-responsive">
 					<table class="table table-hover mb-0">
@@ -68,10 +37,8 @@
 							{
 								<tr class="align-middle">
 									<td class="fw-500 text-info">@booking.Renter.Name.ToUpper()</td>
-									<td class="text-center"> <a href="mailto:@booking.Renter.Email">@booking.Renter.Email</a>
-										<br />
-										<a href="tel:@booking.Renter.Phone">@booking.Renter.Phone</a>
-									</td>
+									<td class="text-center"> <a href="mailto:@booking.Renter.Email">@booking.Renter.Email</a> <br/> 
+										<a href="tel:@booking.Renter.Phone">@booking.Renter.Phone</a></td>
 									<td class="text-center">
 										@{
 											string statusClass = booking.Status == "Active" ? "bg-success" :
@@ -105,22 +72,19 @@
 											}
 											else if (booking.Status.ToLower() == "pending")
 											{
-												<a onclick="return confirm('Are you sure you want to cancel this booking?');"
-												   asp-action="Accept" asp-route-id="@booking.ID"
-												   asp-controller="ParkINManageBookings" class="btn btn-success">
+													<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Accept" asp-route-id="@booking.ID"
+													   asp-controller="ParkINManageBookings" class="btn btn-success">
 													<i class="fa-solid fa-check"></i> Accept
-												</a>
-												<a onclick="return confirm('Are you sure you want to cancel this booking?');"
-												   asp-action="Cancel" asp-route-id="@booking.ID"
-												   asp-controller="ParkINManageBookings" class="btn  btn-outline-danger">
-													<i class="fas fa-times"></i> Cancel
-												</a>
+													</a>
+												<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Cancel" asp-route-id="@booking.ID"
+														   asp-controller="ParkINManageBookings" class="btn  btn-outline-danger">
+														<i class="fas fa-times"></i> Cancel
+													</a>
 											}
-											else if (booking.Status.ToLower() == "accepted")
+											else if (booking.Status.ToLower() =="accepted" )
 											{
-												<a onclick="return confirm('Are you sure you want to cancel this booking?');"
-												   asp-action="Cancel" asp-route-id="@booking.ID" asp-controller="ParkINBookings"
-												   class="btn  btn-outline-danger">
+												<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Cancel" asp-route-id="@booking.ID"
+												   asp-controller="ParkINBookings" class="btn  btn-outline-danger">
 													<i class="fas fa-times"></i> Cancel
 												</a>
 											}
@@ -143,47 +107,3 @@
 		</div>
 	}
 </div>
-<script>
-	let receivePaymentBtn = document.getElementById('RecivePayment');
-	let paymentSection = document.getElementById('payment');
-	let formsubmit = document.getElementById('formsubmit');
-	let otp = document.getElementById("OTP").value;
-	let select = document.getElementById("select").value;
-	if (receivePaymentBtn) {
-		receivePaymentBtn.addEventListener('click', function (e) {
-
-			if (paymentSection.classList.contains('d-none')) {
-				paymentSection.classList.remove('d-none');
-			} else {
-				paymentSection.classList.add('d-none');
-			}
-		});
-	}
-
-	if(formsubmit){
-    formsubmit.addEventListener('click', function(e){
-        let otpElement = document.getElementById("OTP");
-        let selectElement = document.getElementById("select");
-        let otpValue = otpElement.value;
-        let selectValue = selectElement.value;
-        
-        otpElement.style.border = "";
-        selectElement.style.border = "";
-        
-        let isValid = true;
-        if(otpValue == ""){
-            otpElement.style.border = "1px solid red";
-            isValid = false;
-        }
-        if(selectValue == "") {
-            selectElement.style.border = "1px solid red";
-            isValid = false;
-        }
-        
-        if(!isValid){
-            e.preventDefault(); 
-        }
-    });
-}
-
-</script>
