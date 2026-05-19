@@ -66,7 +66,7 @@ namespace UrbanHubManagement.repo
                 var notification = new Notification()
                 {
                     From = userCard.UserId.ToString(),
-                    To = spaces.RenterID ?? 0,
+                    To = spaces.RenterID ,
                     Title = "Parking Booking Accepted",
                     Message = $"Your parking booking has been accepted! Pay the rent to confirm your parking space."  +
                               $"Address: {spaces.Parking.Address}. " +
@@ -112,7 +112,7 @@ namespace UrbanHubManagement.repo
                 var notification = new Notification()
                 {
                     From = userCard.UserId.ToString(),
-                    To = spaces.RenterID ?? 0,
+                    To = spaces.RenterID ,
                     Message = $"Your parking booking request for {spaces.Parking.Address} has been declined." +
                               $" Please try booking another parking space. For assistance, contact support.",
                     Date = DateTime.Now

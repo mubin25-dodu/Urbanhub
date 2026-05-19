@@ -41,105 +41,48 @@
 						<p class="text-secondary">@Model.ParkingSpaces.Description</p>
 					</div>
 
-					<form method="post">
-
-						<!-- Time Selection -->
-						<div class="bg-light border-start border-5 border-primary p-3 rounded-3 mb-4">
+						<div class="bg-light p-3 rounded-3 mb-4">
 							<div class="d-flex align-items-center gap-2 mb-3">
 								<i class="fa-solid fa-clock fs-5 text-primary"></i>
-								<h6 class="fw-bold mb-0 text-primary">Select Parking Time</h6>
+								<h6 class="fw-bold mb-0 text-primary">Billing Summary</h6>
 							</div>
-							<div class="row g-2 mb-3">
-								<div class="col-md-6">
-									<label class="form-label small fw-bold">Entry Date & Time</label>
-									<input asp-for="ParkingBookingDTO.StartingTime" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="entryTime">
-								</div>
-								<div class="col-md-6">
-									<label class="form-label small fw-bold">Exit Date & Time</label>
-									<input asp-for="ParkingBookingDTO.EndingTime" value="@DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm")" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="exitTime">
-								</div>
+							<div class="d-flex justify-content-between">
+								<span>Rent per Hour:</span>
+								<span>@(Model.ParkingSpaces.RentPerHour) BDT</span>
 							</div>
-
+							<div class="d-flex justify-content-between">
+								<span>Booking Duration:</span>
+								<span>@((Model.ParkingBooking.EndingTime - Model.ParkingBooking.StartingTime).TotalHours) hours</span>
+							</div>
+							<div class="d-flex justify-content-between">
+                            <span> Rent:</span>
+                            <span>@(Model.ParkingBooking.PaymentAmount) BDT</span>
+                        </div>
+							<div class="d-flex justify-content-between">
+								<span>Platform Fee:</span>
+								<span>@(Model.Platformfee?.ToString("F2") ?? "0.00") BDT</span>
+							</div>
+							
+							<div class="d-flex justify-content-between">
+								<span>Total Bill:</span>
+								<span>@(Model.TotalBill?.ToString("F2") ?? "0.00") BDT</span>
+                            </div>//will add api letter
+                        </div>
 						
-						</div>
 
-						<!-- Availability Status -->
-						<div class="alert alert-warning d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilityStatus">
-							<i class="fa-solid fa-exclamation-circle flex-shrink-0 mt-1"></i>
-							<div>
-								<small class="fw-semibold">This time slot is not available</small>
-								<p class="mb-0 small mt-1" id="bookedInfo">Please select a different time.</p>
-							</div>
-						</div>
-
-						<div class="alert alert-success d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilitySuccess">
-							<i class="fa-solid fa-check-circle flex-shrink-0 mt-1"></i>
-							<div>
-								<small class="fw-semibold">This time slot is available!</small>
-								<p class="mb-0 small mt-1" id="availableInfo">You can proceed with booking.</p>
-							</div>
-						</div>
-						<input asp-for="ParkingBookingDTO.OwnerID" value="@Model.ParkingSpaces.OwnerId" type="hidden" />
-						<input asp-for="ParkingBookingDTO.ParkingID" value="@Model.ParkingSpaces.ID" type="hidden" />
-						<input asp-for="ParkingBookingDTO.RentPerHour" value="@Model.ParkingSpaces.RentPerHour" type="hidden" />
-
-						<button disabled asp-action="RequestBooking" asp-controller="ParkINDetails"
+						<label>Enter Your Bkash Number</label>
+						<input type="text" class="form-control mb-3" placeholder="Enter your Bkash number" />
+						<label>Enter Your Pin Number</label>
+						<input type="text" class="form-control mb-3" placeholder="Enter your Pin number" />
+						<a asp-action="ProcessPayment" asp-route-id="@Model.ParkingBooking.ID" asp-controller="ParkINPayment"
 								class="btn btn-primary btn-lg w-100 rounded-3 fw-bold" id="requestBookingBtn">
-							<i class="fa-solid fa-calendar-check me-2"></i>Request Booking
-						</button>
-					</form>
+                        <i class="fa-solid fa-calendar-check me-2"></i>Pay & Book Now
+						</a>
 
 				</div>
 
 			</div>
 
-		</div>
-		<div class="mt-4">
-			<h6 class="fw-bold mb-3 text-primary">
-				<i class="fa-solid fa-timeline me-2"></i>Booking Timeline
-			</h6>
-			<div class="bg-white border rounded-3 p-3 shadow-sm" style="max-height: 250px; overflow-y: auto;">
-				<div class="d-flex flex-column gap-2" id="bookingTimeline">
-					@if (Model.ParkingBookings != null && Model.ParkingBookings.Count > 0)
-					{
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">Status</th>
-									<th scope="col">Starting Time</th>
-									<th scope="col">Ending Time</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach (var i in Model.ParkingBookings)
-								{
-									if (i.Status.ToLower() == "booked")
-									{
-										<tr class="table-danger">
-											<td cla>@i.Status.ToUpper()</td>
-											<td class="startingtime">@i.StartingTime</td>
-											<td class="endingtime">@i.EndingTime</td>
-										</tr>
-									}
-									@* else if(i.Status.ToLower()=="pending"){
-											<tr class="table-warning">
-												<td cla>@i.Status.ToUpper()</td>
-												<td class="startingtime">@i.StartingTime</td>
-												<td class="endingtime">@i.EndingTime</td>
-											</tr>
-								} *@
-								}
-							</tbody>
-						</table>
-					}
-					else
-					{
-						<div class="text-center text-muted py-4">
-							<small>No Bookings to show</small>
-						</div>
-					}
-				</div>
-			</div>
 		</div>
 	</div>
 

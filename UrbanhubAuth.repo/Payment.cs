@@ -19,25 +19,28 @@ namespace UrbanHubManagement.repo
             var result = new Result<ParkingDetailsModel>();
             try
             {
-                //getting booking infos
                 var bookings = context.ParkingBookings.Include(p => p.Parking).
-                        FirstOrDefault(p=>p.ID==id)
-;
+                        FirstOrDefault(p => p.ID == id)
+                    ;
                 if (bookings == null)
                 {
                     result.Status = false;
                     result.Message = "No Bookings Found";
-
+                    return result;
                 }
 
-                //the bug i always face
-                result.Data = new ParkingDetailsModel()
+                var fee = context.PlatformWallets.Select(w => w.PlatformFee).FirstOrDefault()
+                          * bookings.PaymentAmount;
+                var newdata = new ParkingDetailsModel()
                 {
-                    ParkingBooking = bookings ?? new ParkingBooking(),
-                    ParkingSpaces = bookings?.Parking
+                    ParkingSpaces = bookings?.Parking,
+                    ParkingBooking = bookings,
+                    Platformfee = fee,
+                    TotalBill = (fee + bookings.PaymentAmount)
                 };
-                result.Status = true;
 
+                result.Data = newdata;
+                result.Status = true;
 
             }
             catch (Exception e)
@@ -55,25 +58,43 @@ namespace UrbanHubManagement.repo
             var result = new Result<ParkingDetailsModel>();
             try
             {
-                //getting booking infos
-                var bookings = context.ParkingBookings.Include(p => p.Parking).
-                        FirstOrDefault(p=>p.ID==id)
-;
+                var bookings = context.ParkingBookings.Include(
+                    p => p.Parking).FirstOrDefault(p=>p.ID ==id);
                 if (bookings == null)
                 {
                     result.Status = false;
                     result.Message = "No Bookings Found";
-
+                    return result;
                 }
+                var fee = context.PlatformWallets.Select(w => w.PlatformFee).FirstOrDefault()
+                          * bookings.PaymentAmount;
+                var OTP =  new Random().Next(100000, 1000000);
 
-                //the bug i always face
-                result.Data = new ParkingDetailsModel()
+                bookings.OTP = OTP;
+                bookings.PaymentStatus = "Paid";
+                bookings.TotalBill = (fee + bookings.PaymentAmount);
+                var addmoney = new PlatformWallet()
                 {
-                    ParkingBooking = bookings ?? new ParkingBooking(),
-                    ParkingSpaces = bookings?.Parking
+                    UID = userCard.UserId,
+                    AddMoney = (bookings.PaymentAmount+fee),
                 };
-                result.Status = true;
 
+                var notif = new Notification()
+                {
+                    To = bookings.RenterID,
+                    Message = $"Your payment for parking booking {bookings.Parking.Address} has been processed. " +
+                              $"Your OTP is {OTP}.Please provide this OTP to the Owner to complete the transaction.",
+                    From = "UrbanHub",
+                    Date = DateTime.Now
+                };
+                context.Notifications.Add(notif);
+                context.PlatformWallets.Add(addmoney);
+                context.ParkingBookings.Update(bookings);
+                context.SaveChanges();
+                result.Message = $"Your payment for parking booking {bookings.Parking.Address} has been processed. " +
+                                 $"Your OTP is {OTP}.Please provide this OTP to the Owner to complete the transaction.";
+                result.Data = null;
+                result.Status = true;
 
             }
             catch (Exception e)

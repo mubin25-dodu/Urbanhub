@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UrbanHub.Entities;
 using UrbanHub.shared;
 using UrbanHubManagement.repo;
 
@@ -12,17 +13,9 @@ namespace UrbanHub.web.Controllers
         public async Task<IActionResult> MyWallet()
         {
             var result = await repo.GetWalletDetails();
-            if (result.Data == null )
-            {
-                result.Data.TotalWithdrawals = 0;
-                result.Data.Withdrawals = null ;
-                result.Data.AccountBalance = 0 ;
-                result.Data.Amount = 0 ;
-                result.Data.TotalEarnings = 0;
-                result.Data.CurrentWithdrawalRequest = 0;
-            }
+            
 
-            return View(result.Data);
+            return View(result.Data ?? new WithdrawalModel());
         }
 
         [HttpPost]

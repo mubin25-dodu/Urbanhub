@@ -13,10 +13,13 @@ namespace UrbanHub.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        public int UID { get; set; }
 
-        public decimal BankBalance { get; set; } 
+        public decimal? AddMoney { get; set; } 
         public decimal PlatformFee { get; set; } 
-        public decimal EarnedPlatformFee { get; set; } 
+        public decimal? WithdrawMoney { get; set; }
+        [ForeignKey("UID")]
+        public virtual User User { get; set; }
 
     }
 }
