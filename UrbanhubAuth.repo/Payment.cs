@@ -12,7 +12,7 @@ using Microsoft.Data.SqlClient.DataClassification;
 
 namespace UrbanHubManagement.repo
 {
-    public class Payment(UrbanHubDbContext context , UserCard userCard , IMapper mapper)
+    public class Payment(UrbanHubDbContext context, UserCard userCard, IMapper mapper)
     {
         public Result<ParkingDetailsModel> Getbooking(int id)
         {
@@ -21,7 +21,7 @@ namespace UrbanHubManagement.repo
             {
                 //getting booking infos
                 var bookings = context.ParkingBookings.Include(p => p.Parking).
-                        FirstOrDefault(p=>p.ID==id)
+                        FirstOrDefault(p => p.ID == id)
 ;
                 if (bookings == null)
                 {
@@ -50,20 +50,20 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        public Result<ParkingBooking> CancelBooking( int id)
+        public Result<ParkingBooking> CancelBooking(int id)
         {
             var result = new Result<ParkingBooking>();
             try
             {
                 var cancel = context.ParkingBookings.Find(id);
-                if(cancel == null)
+                if (cancel == null)
                 {
                     result.Data = null;
                     result.Message = "No bookings found.";
                     result.Status = false;
                     return result;
                 }
-                cancel.Status ="Cancelled";
+                cancel.Status = "Cancelled";
                 context.SaveChanges();
 
                 result.Data = null;

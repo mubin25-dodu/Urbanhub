@@ -31,50 +31,62 @@
 			<div class="card border-0 shadow-sm rounded-4 h-100">
 				<div class="card-body p-4 p-lg-5">
 					<!-- Title & Address -->
-				<h1 class="fs-2 fw-bold mb-2 text-primary">@(Model.ParkingSpaces?.Address ?? "N/A")</h1>
-				<p class="fs-2 fw-bold mb-2 text-secondary"> <span id="RentperHour">@(Model.ParkingSpaces?.RentPerHour ?? 0) </span>BDT</p>
-					<!-- Description -->
-					<div class="mb-4">
-						<h5 class="fw-bold mb-2 text-primary">About this parking</h5>
-					<p class="text-secondary">@(Model.ParkingSpaces?.Description ?? "No description available")</p>
+					<h1 class="fs-2 fw-bold mb-2 text-primary">@(Model.ParkingSpaces?.Address ?? "N/A")</h1>
+					<p class="fs-2 fw-bold mb-2 text-secondary"> <span
+						id="RentperHour">@(Model.ParkingSpaces?.RentPerHour ?? 0) </span>BDT</p>
+						<!-- Description -->
+						<div class="mb-4">
+							<h5 class="fw-bold mb-2 text-primary">About this parking</h5>
+							<p class="text-secondary">@(Model.ParkingSpaces?.Description ?? "No description available")</p>
 
-						<!-- Time Selection -->
-						<div class="bg-light border-start border-5 border-primary p-3 rounded-3 mb-4">
-							<div class="d-flex align-items-center gap-2 mb-3">
-								<i class="fa-solid fa-clock fs-5 text-primary"></i>
-								<h6 class="fw-bold mb-0 text-primary">Selected Parking Time</h6>
-							</div>
-							<div class="row g-2 mb-3">
-								<div class="col-md-6">
-									<label class="form-label small fw-bold">Entry Date & Time</label>
-								<input asp-for="ParkingBooking.StartingTime" value="@(Model.ParkingBooking?.StartingTime?.ToString("yyyy-MM-ddTHH:mm") ?? string.Empty)" type="datetime-local" class="form-control rounded-2 form-control-sm" id="entryTime">
-							</div>
-							<div class="col-md-6">
-								<label class="form-label small fw-bold">Exit Date & Time</label>
-								<input asp-for="ParkingBooking.EndingTime" value="@(Model.ParkingBooking?.EndingTime?.ToString("yyyy-MM-ddTHH:mm") ?? string.Empty)" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control rounded-2 form-control-sm" id="exitTime">
+							<!-- Time Selection -->
+							<div class="bg-light border-start border-5 border-primary p-3 rounded-3 mb-4">
+								<div class="d-flex align-items-center gap-2 mb-3">
+									<i class="fa-solid fa-clock fs-5 text-primary"></i>
+									<h6 class="fw-bold mb-0 text-primary">Selected Parking Time</h6>
+								</div>
+								<div class="row g-2 mb-3">
+									<div class="col-md-6">
+										<label class="form-label small fw-bold">Entry Date & Time</label>
+										<input asp-for="ParkingBooking.StartingTime"
+											   value="@(Model.ParkingBooking?.StartingTime?.ToString("yyyy-MM-ddTHH:mm") ?? string.Empty)"
+											   type="datetime-local" class="form-control rounded-2 form-control-sm"
+											   id="entryTime">
+									</div>
+									<div class="col-md-6">
+										<label class="form-label small fw-bold">Exit Date & Time</label>
+										<input asp-for="ParkingBooking.EndingTime"
+											   value="@(Model.ParkingBooking?.EndingTime?.ToString("yyyy-MM-ddTHH:mm") ?? string.Empty)"
+											   min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local"
+											   class="form-control rounded-2 form-control-sm" id="exitTime">
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<!-- Availability Status -->
-						<div class="alert alert-warning d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilityStatus">
-							<i class="fa-solid fa-exclamation-circle flex-shrink-0 mt-1"></i>
-							<div>
-								<small class="fw-semibold">This time slot is not available</small>
-								<p class="mb-0 small mt-1" id="bookedInfo">Please select a different time.</p>
+							<!-- Availability Status -->
+							<div class="alert alert-warning d-flex align-items-start gap-2 rounded-2 mb-4 d-none"
+								 role="alert" id="availabilityStatus">
+								<i class="fa-solid fa-exclamation-circle flex-shrink-0 mt-1"></i>
+								<div>
+									<small class="fw-semibold">This time slot is not available</small>
+									<p class="mb-0 small mt-1" id="bookedInfo">Please select a different time.</p>
+								</div>
 							</div>
-						</div>
 
-						<div class="alert alert-success d-flex align-items-start gap-2 rounded-2 mb-4 d-none" role="alert" id="availabilitySuccess">
-							<i class="fa-solid fa-check-circle flex-shrink-0 mt-1"></i>
-							<div>
-								<small class="fw-semibold">This time slot is available!</small>
-								<p class="mb-0 small mt-1" id="availableInfo">You can proceed with booking.</p>
+							<div class="alert alert-success d-flex align-items-start gap-2 rounded-2 mb-4 d-none"
+								 role="alert" id="availabilitySuccess">
+								<i class="fa-solid fa-check-circle flex-shrink-0 mt-1"></i>
+								<div>
+									<small class="fw-semibold">This time slot is available!</small>
+									<p class="mb-0 small mt-1" id="availableInfo">You can proceed with booking.</p>
+								</div>
 							</div>
-						</div>
-					<input asp-for="ParkingBooking.OwnerID" value="@(Model.ParkingSpaces?.OwnerId ?? 0)" type="hidden" />
-					<input asp-for="ParkingBooking.ParkingID" value="@(Model.ParkingSpaces?.ID ?? 0)" type="hidden" />
-					<input asp-for="ParkingSpaces.RentPerHour" value="@(Model.ParkingSpaces?.RentPerHour ?? 0)" type="hidden" />
+							<input asp-for="ParkingBooking.OwnerID" value="@(Model.ParkingSpaces?.OwnerId ?? 0)"
+								   type="hidden" />
+							<input asp-for="ParkingBooking.ParkingID" value="@(Model.ParkingSpaces?.ID ?? 0)"
+								   type="hidden" />
+							<input asp-for="ParkingSpaces.RentPerHour" value="@(Model.ParkingSpaces?.RentPerHour ?? 0)"
+								   type="hidden" />
 							<i class="fa-solid fa-calendar-check me-2"></i>Request Booking
 						</button>
 					</form>
@@ -137,14 +149,14 @@
 	<div class="row mb-5">
 		<div class="col-12">
 			<div class="card border-0 shadow-sm rounded-4">
-				<div class="card-body p-0" style="height: 400px; position: relative; border-radius: 1rem; overflow: hidden;">
+				<div class="card-body p-0"
+					 style="height: 400px; position: relative; border-radius: 1rem; overflow: hidden;">
 					<div id="map" style="width: 100%; height: 100%;"></div>
 					@*Navigation Button *@
 					@if (Model.ParkingSpaces.Location != null)
 					{
-						<a href='@($"https://www.google.com/maps/dir/?api=1&destination={Model.ParkingSpaces?.Location?.Y},{Model.ParkingSpaces?.Location?.X}")'  
-						   target="_blank"
-						   class="position-absolute btn btn-primary btn-sm rounded-pill fw-bold"
+						<a href='@($"https://www.google.com/maps/dir/?api=1&destination={Model.ParkingSpaces?.Location?.Y},{Model.ParkingSpaces?.Location?.X}")'
+						   target="_blank" class="position-absolute btn btn-primary btn-sm rounded-pill fw-bold"
 						   style="bottom: 20px; right: 20px; z-index: 1000;">
 							<i class="fa-solid fa-location-arrow me-2"></i>Go to Navigation
 						</a>
@@ -163,8 +175,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 
 <!-- Leaflet Routing Machine for real road routes -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+<link rel="stylesheet"
+	  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.css" />
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
 <script src="~/js/ParkinDetails.js"></script>
 
 	
@@ -208,7 +222,7 @@
 			// Get user's current location
 			if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
-			function(position) {
+			function (position) {
 			const userLatitude = position.coords.latitude;
 			const userLongitude = position.coords.longitude;
 
@@ -246,7 +260,7 @@
 			fitSelectedRoutes: true,
 			lineOptions: {
 			styles: [
-			{color: '#007bff', opacity: 0.8, weight: 4}
+			{ color: '#007bff', opacity: 0.8, weight: 4 }
 			]
 			},
 			show: false,
@@ -254,7 +268,7 @@
 			}).ad(map);
 
 			// Listen for route found and show summary
-			routingControl.on('routesfound', function(e) {
+			routingControl.on('routesfound', function (e) {
 			const route = e.routes[0];
 			const distance = (route.summary.totalDistance / 1000).toFixed(1);
 			const time = Math.round(route.summary.totalTime / 60);
@@ -271,8 +285,8 @@
 			`;
 
 			// Add summary to map top-left
-			const summaryControl = L.control({position: 'topleft'});
-			summaryControl.onAdd = function(map) {
+			const summaryControl = L.control({ position: 'topleft' });
+			summaryControl.onAdd = function (map) {
 			const div = L.DomUtil.create('div');
 			div.innerHTML = summaryHTML;
 			L.DomEvent.disableClickPropagation(div);
@@ -285,7 +299,7 @@
 			const group = L.featureGroup([userMarker, parkingMarker]);
 			map.fitBounds(group.getBounds().pad(0.15));
 			},
-			function(error) {
+			function (error) {
 			console.log('Location access denied or unavailable:', error.message);
 			// Just show parking location if user denies location access
 			parkingMarker.openPopup();
