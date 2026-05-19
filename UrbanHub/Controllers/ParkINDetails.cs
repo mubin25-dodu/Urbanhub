@@ -8,7 +8,6 @@ using UrbanHubManagement.repo;
 
 namespace UrbanHub.web.Controllers
 {
-    [Authorize]
     public class ParkINDetails (ParkinViewDetails repo) : Controller
     {
         [HttpGet]
@@ -30,6 +29,7 @@ namespace UrbanHub.web.Controllers
             return NotFound();
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult RequestBooking(ParkingDetailsModel data)
         {
@@ -37,7 +37,7 @@ namespace UrbanHub.web.Controllers
             {
                 return BadRequest();
             } 
-            var result = repo.RequestBooking(data.ParkingBookingDTO ?? new ParkingBookingDTO());
+            var result = repo.RequestBooking(data.ParkingBookingDTO);
 
             if (!result.Status )
             {

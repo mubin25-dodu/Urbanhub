@@ -18,12 +18,14 @@ namespace UrbanHub.Entities
         public int? OwnerID { get; set; }
         public DateTime StartingTime { get; set; } 
         public DateTime EndingTime { get; set; }
-        public int? RenterID { get; set; }
+        public int RenterID { get; set; }
         public int? ReviewID { get; set; }
         [StringLength(50)]
         public string Status { get; set; } = null!;
+        public bool Withdrawn { get; set; } 
         public int? OTP { get; set; } 
         public decimal PaymentAmount { get; set; } 
+        public decimal? TotalBill { get; set; } 
         [StringLength(50)]
         public string? PaymentDetails { get; set; } = null!;
         [StringLength(50)]

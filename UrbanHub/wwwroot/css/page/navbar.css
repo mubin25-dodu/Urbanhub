@@ -288,5 +288,11 @@
     font-weight: 500;
 }
 
+#notificationList {
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 
 

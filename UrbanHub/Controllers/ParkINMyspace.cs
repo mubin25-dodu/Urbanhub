@@ -5,9 +5,10 @@ using UrbanHub.Entities;
 
 namespace UrbanHub.web.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Owner")]
     public class ParkINMySpace (MySpace repo): Controller
     {
+        [Route("MySpace")]
         public IActionResult MySpace()
         {
             var result = repo.GetAll();

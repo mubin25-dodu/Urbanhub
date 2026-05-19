@@ -19,7 +19,7 @@ namespace UrbanHubManagement.repo
             try
             {
                 var Bookings = context.ParkingBookings.Where(p => p.RenterID == userCard.UserId )
-                    .Include(p => p.Parking).OrderBy(p => p.StartingTime).ToList();
+                    .Include(p => p.Parking).OrderByDescending(p => p.Date).ToList();
                 if(Bookings == null || Bookings.Count == 0)
                 {
                     result.Data = null;

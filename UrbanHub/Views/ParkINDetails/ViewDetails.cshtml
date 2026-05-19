@@ -80,6 +80,7 @@
 						</div>
 						<input asp-for="ParkingBookingDTO.OwnerID" value="@Model.ParkingSpaces.OwnerId" type="hidden"/>
 						<input asp-for="ParkingBookingDTO.ParkingID" value="@Model.ParkingSpaces.ID" type="hidden"/>
+						<input asp-for="ParkingBookingDTO.RentPerHour" value="@Model.ParkingSpaces.RentPerHour" type="hidden" />
 
 						<button disabled asp-action="RequestBooking" asp-controller="ParkINDetails"
 								class="btn btn-primary btn-lg w-100 rounded-3 fw-bold" id="requestBookingBtn">
