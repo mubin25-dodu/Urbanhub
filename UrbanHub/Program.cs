@@ -34,6 +34,7 @@ builder.Services.AddScoped<MySpace>();
 builder.Services.AddScoped<ManageBookings>();
 builder.Services.AddScoped<Notifications>();
 builder.Services.AddScoped<Payment>();
+builder.Services.AddScoped<ParkinWallet>();
 builder.Services.AddHttpContextAccessor();
 //testing
 // although everything is for testing for me now
@@ -47,7 +48,7 @@ builder.Services.AddAuthentication("UrbanAuth").AddCookie("UrbanAuth",
         opt.LoginPath = "/Login";
         opt.ExpireTimeSpan = TimeSpan.FromMinutes(300);
     });
-    
+
 
 var app = builder.Build();
 

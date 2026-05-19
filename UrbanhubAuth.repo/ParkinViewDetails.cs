@@ -43,7 +43,7 @@ namespace UrbanHubManagement.repo
                 result.Data = new ParkingDetailsModel()
                 {
                     ParkingSpaces = parkingSpace ?? new ParkingSpace(),
-                    ParkingBookings = bookings ?? new List<ParkingBooking>()
+                    ParkingBookings = bookings ?? new List<ParkINBooking>()
                 };
                 result.Status = true;
 
@@ -131,7 +131,7 @@ namespace UrbanHubManagement.repo
                 TimeSpan amount = data.EndingTime-data.StartingTime;
                 double hours = amount.TotalHours;
 
-                var save = new ParkingBooking();
+                var save = new ParkINBooking();
                 save.ParkingID = data.ParkingID;
                 save.OwnerID = data.OwnerID;
                 save.StartingTime = data.StartingTime;

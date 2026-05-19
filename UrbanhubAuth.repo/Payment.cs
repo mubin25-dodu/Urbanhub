@@ -29,13 +29,12 @@ namespace UrbanHubManagement.repo
                     result.Message = "No Bookings Found";
 
                 }
-                var Platformfee = Math.Round(context.PlatformWallets.Sum(w => w.PlatformFee)
-                                             * bookings.PaymentAmount, 2);
+
+                //the bug i always face
                 result.Data = new ParkingDetailsModel()
                 {
-                    ParkingBooking = bookings,
-                    Platformfee = Platformfee,
-                    TotalBill = Math.Round(bookings.PaymentAmount + Platformfee, 2)
+                    ParkingBooking = bookings ?? new ParkingBooking(),
+                    ParkingSpaces = bookings?.Parking
                 };
                 result.Status = true;
 
@@ -51,48 +50,25 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        
-        public Result<ParkingDetailsModel> ProcessPayment(int id)
+        public Result<ParkingBooking> CancelBooking( int id)
         {
-            var result = new Result<ParkingDetailsModel>();
+            var result = new Result<ParkingBooking>();
             try
             {
-                //getting booking infos
-                var bookings = context.ParkingBookings.Include(p => p.Parking).
-                        FirstOrDefault(p=>p.ID==id)
-;
-                if (bookings == null)
+                var cancel = context.ParkingBookings.Find(id);
+                if(cancel == null)
                 {
+                    result.Data = null;
+                    result.Message = "No bookings found.";
                     result.Status = false;
-                    result.Message = "No Bookings Found";
-
+                    return result;
                 }
-                var Platformfee = Math.Round(context.PlatformWallets.Sum(w => w.PlatformFee)
-                                             * bookings.PaymentAmount, 2);
-                bookings.PaymentStatus = "Paid";
-                bookings.TotalBill = Math.Round(bookings.PaymentAmount + Platformfee, 2);
-                bookings.OTP = new Random().Next(100000, 999999);
-
-                var notification = new Notification()
-                {
-                    From = "System",
-                    To = bookings.RenterID ?? 0,
-                    Title = "Parking Booking Accepted",
-                    Message = $"Your parking booking has been accepted! Pay the rent to confirm your parking space." +
-                              $"Address: {bookings.Parking.Address}. " +
-                              $"Rent: {bookings.Parking.RentPerHour} BDT/hour." +
-                              $"OTP: {bookings.OTP}",
-                    Date = DateTime.Now
-
-                };
-
-                context.Notifications.Add(notification);
+                cancel.Status ="Cancelled";
                 context.SaveChanges();
+
+                result.Data = null;
+                result.Message = "Booking cancelled successfully.";
                 result.Status = true;
-                result.Message = "Payment processed successfully. And Your OTP is: " 
-                                 + bookings.OTP +"This will help you to enter the parking space";
-
-
             }
             catch (Exception e)
             {
@@ -102,6 +78,7 @@ namespace UrbanHubManagement.repo
                 result.Status = false;
                 throw;
             }
+
             return result;
         }
     }

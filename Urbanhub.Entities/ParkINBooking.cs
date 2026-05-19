@@ -10,7 +10,7 @@ using NetTopologySuite.Geometries;
 namespace UrbanHub.Entities
 {
     [Table("ParkinBooking")]
-    public class ParkingBooking
+    public class ParkINBooking
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }

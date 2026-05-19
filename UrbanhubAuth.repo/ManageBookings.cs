@@ -13,9 +13,9 @@ namespace UrbanHubManagement.repo
 {
     public class ManageBookings(UrbanHubDbContext context , UserCard userCard)
     {
-        public Result<List<ParkingBooking>> GetAll()
+        public Result<List<ParkINBooking>> GetAll()
         {
-            var result = new Result<List<ParkingBooking>>();
+            var result = new Result<List<ParkINBooking>>();
             try
             {
                 var bookings = context.ParkingBookings.Where(p => p.OwnerID == userCard.UserId).
@@ -31,7 +31,7 @@ namespace UrbanHubManagement.repo
                 }
                 
 
-                result.Data = bookings ?? new List<ParkingBooking>() ;
+                result.Data = bookings ?? new List<ParkINBooking>() ;
                 result.Message = "Parking Bookings retrieved successfully.";
                 result.Status = true;
             }
@@ -46,9 +46,9 @@ namespace UrbanHubManagement.repo
 
             return result;
         }
-        public Result<ParkingBooking> Accept( int id)
+        public Result<ParkINBooking> Accept( int id)
         {
-            var result = new Result<ParkingBooking>();
+            var result = new Result<ParkINBooking>();
             try
             {
                 var spaces = context.ParkingBookings.Include(p=>p.Parking).FirstOrDefault(a=>a.ID == id);
@@ -94,9 +94,9 @@ namespace UrbanHubManagement.repo
             return result;
         }
 
-        public Result<ParkingBooking> Cancel( int id)
+        public Result<ParkINBooking> Cancel( int id)
         {
-            var result = new Result<ParkingBooking>();
+            var result = new Result<ParkINBooking>();
             try
             {
                 var spaces = context.ParkingBookings.Find(id);
@@ -124,6 +124,63 @@ namespace UrbanHubManagement.repo
 
                 result.Data = null;
                 result.Message = "Parking request Canceled.";
+                result.Status = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while removing parking space.";
+                result.Status = false;
+                throw;
+            }
+
+            return result;
+        } 
+        public Result<ParkINBooking> RequestPayment( ParkINBooking data)
+        {
+            var result = new Result<ParkINBooking>();
+            try
+            {
+                var booking = context.ParkingBookings.Find(data.ID);
+                if (booking == null)
+                {
+                    result.Data = null;
+                    result.Message = "No Parking Space found.";
+                    result.Status = false;
+                    return result;
+                }
+                else if (booking.OTP != data.OTP)
+                {
+                    result.Data = null;
+                    result.Message = "Invalid OTP.";
+                    result.Status = false;
+                    return result;
+                }
+
+                var wallet = new Wallet()
+                {
+                    UserID = userCard.UserId,
+                    Amount = booking.PaymentAmount,
+                    Date = DateTime.Now,
+                    Status = true
+                };
+
+                var notification = new Notification()
+                {
+                    From = "UrbanHub",
+                    To = userCard.UserId,
+                    Message = $"🔔 Payment Received – Your payment has been successfully credited to your wallet. " +
+                              $"You may withdraw your funds at any time.",
+                    Date = DateTime.Now
+                };
+
+                context.Notifications.Add(notification);
+                context.Wallets.Add(wallet);
+                context.SaveChanges();
+
+                result.Data = null;
+                result.Message = "🔔 Payment Received – Your payment has been successfully credited to your wallet.";
                 result.Status = true;
             }
             catch (Exception e)

@@ -18,7 +18,7 @@ namespace UrbanHub.web.Controllers
                 return View();
             }
 
-            return View(result.Data ?? new List<ParkingBooking>());
+            return View(result.Data ?? new List<ParkINBooking>());
         }
 
         [HttpGet]
@@ -50,8 +50,22 @@ namespace UrbanHub.web.Controllers
 
             return RedirectToAction("Bookings");
         }
+        [HttpPost]
+        public IActionResult RequestPayment(ParkINBooking data)
+        { 
+            var result = repo.RequestPayment(data);
+            if (result.Status == false)
+            {
+                TempData["Error"] = true;
+                TempData["Message"] = result.Message;
+                return RedirectToAction("Bookings");
+            }
+            TempData["Error"] = false;
+            TempData["Message"] = result.Message;
+
+            return RedirectToAction("Bookings");
+        }
 
 
     }
 }
-
