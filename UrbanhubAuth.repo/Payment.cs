@@ -29,12 +29,13 @@ namespace UrbanHubManagement.repo
                     result.Message = "No Bookings Found";
 
                 }
-
-                //the bug i always face
+                var Platformfee = Math.Round(context.PlatformWallets.Sum(w => w.PlatformFee)
+                                             * bookings.PaymentAmount, 2);
                 result.Data = new ParkingDetailsModel()
                 {
-                    ParkingBooking = bookings ?? new ParkingBooking(),
-                    ParkingSpaces = bookings?.Parking
+                    ParkingBooking = bookings,
+                    Platformfee = Platformfee,
+                    TotalBill = Math.Round(bookings.PaymentAmount + Platformfee, 2)
                 };
                 result.Status = true;
 
@@ -50,25 +51,26 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        public Result<ParkingBooking> CancelBooking(int id)
+        public Result<ParkingBooking> CancelBooking( int id)
         {
-            var result = new Result<ParkingBooking>();
+            var result = new Result<ParkingDetailsModel>();
             try
             {
                 var cancel = context.ParkingBookings.Find(id);
-                if (cancel == null)
+                if(cancel == null)
                 {
                     result.Data = null;
                     result.Message = "No bookings found.";
                     result.Status = false;
                     return result;
                 }
-                cancel.Status = "Cancelled";
+                cancel.Status ="Cancelled";
                 context.SaveChanges();
-
-                result.Data = null;
-                result.Message = "Booking cancelled successfully.";
                 result.Status = true;
+                result.Message = "Payment processed successfully. And Your OTP is: " 
+                                 + bookings.OTP +"This will help you to enter the parking space";
+
+
             }
             catch (Exception e)
             {
@@ -78,7 +80,6 @@ namespace UrbanHubManagement.repo
                 result.Status = false;
                 throw;
             }
-
             return result;
         }
     }
