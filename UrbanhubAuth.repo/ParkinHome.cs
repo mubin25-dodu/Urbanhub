@@ -1,34 +1,37 @@
-﻿using System.Drawing;
-using AutoMapper;
+﻿using AutoMapper;
+using Azure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.Drawing;
+using System.Text.Json;
 using UrbanHub.Data;
 using UrbanHub.DTO;
 using UrbanHub.Entities;
 using UrbanHub.shared;
-using System.Text.Json;
 
 namespace UrbanHubManagement.repo
 {
-    public class ParkinHome(UrbanHubDbContext context , IMapper mapper )
+    public class ParkinHome(UrbanHubDbContext context, IMapper mapper)
     {
-        public Result<ParkInBrowseModel> GetAllParkingSpaces()
+        public async Task<Result<ParkInBrowseModel>> GetAllParkingSpaces( int page)
         {
             var result = new Result<ParkInBrowseModel>();
             try
             {
-                var parkingSpaces =  context.ParkingSpaces.Where(p=>p.IsAvailable==true).ToList();
+                var Available = context.ParkingSpaces.Count();
+                var parkingSpaces = await context.ParkingSpaces
+                    .Where(p => p.IsAvailable == true)
+                    .Skip((page - 1)*21).Take(21).ToListAsync();
+
                 var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(parkingSpaces);
+
                 result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = mappedSpaces,
-                    SearchSpaces = new SearchParkingSpace
-                    {
-                        DateAndTime = DateTime.Now,
-                        SearchText = string.Empty,
-                        Type = string.Empty
-                    }
+                    TotalResults = Available,
+                    CurrentPage = page
+                    
                 };
                 result.Message = "Parking spaces retrieved successfully.";
                 result.Status = true;
@@ -43,15 +46,14 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        public async Task<Result<ParkInBrowseModel>> NearBy( int distance , double lat , double lon)
+        public async Task<Result<ParkInBrowseModel>> NearBy(int distance, double lat, double lon)
         {
             var result = new Result<ParkInBrowseModel>();
-            var currentLocation = new NetTopologySuite.Geometries.Point(lon ,lat  ) { SRID = 4326 };
+            var currentLocation = new NetTopologySuite.Geometries.Point(lon, lat) { SRID = 4326 };
             try
             {
-
                 var nearby = await context.ParkingSpaces
-                    .Where(c => c.Location.Distance(currentLocation) <= distance )
+                    .Where(c => c.Location.Distance(currentLocation) <= distance && c.IsAvailable == true)
                     .ToListAsync();
 
                 var filtered = nearby
@@ -72,12 +74,7 @@ namespace UrbanHubManagement.repo
                 result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = newdata,
-                    SearchSpaces = new SearchParkingSpace
-                    {
-                        DateAndTime = DateTime.Now,
-                        SearchText = string.Empty,
-                        Type = string.Empty
-                    }
+                    TotalResults = newdata.Count
                 };
                 result.Message = "Parking spaces retrieved successfully.";
                 result.Status = true;
@@ -117,7 +114,7 @@ namespace UrbanHubManagement.repo
                     var filteredSpaces = nearby
                         .Where(p =>
                         {
-                            //
+
                             var schedules = JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available);
 
                             // validating day and time 
@@ -177,5 +174,5 @@ namespace UrbanHubManagement.repo
         // Haversine formula. km distance
 
     }
-   
+
 }

@@ -9,24 +9,36 @@ using UrbanHubManagement.repo;
 
 namespace UrbanHub.web.Controllers
 {
-    public class ParkINHome( ParkinHome repo) : Controller
+    public class ParkINHome(ParkinHome repo) : Controller
     {
         [Route("ParkIN")]
-        public IActionResult Browse()
+        public async Task<IActionResult> Browse(int page)
         {
-            var result = repo.GetAllParkingSpaces();
-            return View(result.Data ?? new ParkInBrowseModel());
+            if (page == 0)
+            {
+                page = 1;
+            }
+
+            var result = await repo.GetAllParkingSpaces( page );
+            return View(result.Data);
         }
+
+        //[HttpGet]
+        //public async Task<IActionResult> Pagination(int page)
+        //{
+        //    var result = await repo.GetParkingSpaces(page);
+        //    return RedirectToAction("Browse", result.Data);
+        //}
 
         [HttpGet("ParkIN/Nearby")]
         public async Task<IActionResult> BrowseNearby(double lat, double lng)
         {
             var result = await repo.NearBy(5000, lat, lng);
-            return View("Browse" , result.Data ?? new ParkInBrowseModel());
+            return View("Browse", result.Data);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search( ParkInBrowseModel data)
+        public async Task<IActionResult> Search(ParkInBrowseModel data)
         {
             if (data.SearchSpaces == null)
             {
@@ -47,7 +59,7 @@ namespace UrbanHub.web.Controllers
             return View();
         }
 
-       
+
     }
-   
+
 }

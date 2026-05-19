@@ -136,6 +136,63 @@ namespace UrbanHubManagement.repo
             }
 
             return result;
+        } 
+        public Result<ParkingBooking> RequestPayment( ParkingBooking data)
+        {
+            var result = new Result<ParkingBooking>();
+            try
+            {
+                var booking = context.ParkingBookings.Find(data.ID);
+                if (booking == null)
+                {
+                    result.Data = null;
+                    result.Message = "No Parking Space found.";
+                    result.Status = false;
+                    return result;
+                }
+                else if (booking.OTP != data.OTP)
+                {
+                    result.Data = null;
+                    result.Message = "Invalid OTP.";
+                    result.Status = false;
+                    return result;
+                }
+
+                var wallet = new Wallet()
+                {
+                    UserID = userCard.UserId,
+                    Amount = booking.PaymentAmount,
+                    Date = DateTime.Now,
+                    Status = true
+                };
+
+                var notification = new Notification()
+                {
+                    From = "UrbanHub",
+                    To = userCard.UserId,
+                    Message = $"🔔 Payment Received – Your payment has been successfully credited to your wallet. " +
+                              $"You may withdraw your funds at any time.",
+                    Date = DateTime.Now
+                };
+
+                context.Notifications.Add(notification);
+                context.Wallets.Add(wallet);
+                context.SaveChanges();
+
+                result.Data = null;
+                result.Message = "🔔 Payment Received – Your payment has been successfully credited to your wallet.";
+                result.Status = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                result.Data = null;
+                result.Message = "An error occurred while removing parking space.";
+                result.Status = false;
+                throw;
+            }
+
+            return result;
         }
 
     }

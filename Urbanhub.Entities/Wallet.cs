@@ -14,9 +14,9 @@ namespace UrbanHub.Entities
         [Key , DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public int UserID { get; set; } 
-        [Required]
         public decimal Amount { get; set; } 
-        public string Status { get; set; }
+        public bool Status { get; set; }
+        public DateTime Date { get; set; }
 
         [ForeignKey("UserID")]
         public virtual User User { get; set; } 

@@ -27,8 +27,13 @@ async function loaddata() {
 
     let container = document.getElementById("notificationList");
     container.innerHTML = "";
-  for (let item of data.data) {
-      container.innerHTML += `
+
+    if (data.data == null || data.data.length === 0) {
+        container.innerHTML = "<p>No notifications available.</p>";
+    } else {
+
+        for (let item of data.data) {
+            container.innerHTML += `
                <div class="card border-primary mb-3" style="max-width: 20rem;">
                <div class="card-header">${item.title} <span class=" end-0 badge bg-primary ">${new Date(item.date).toLocaleString()}</span></div> 
                <div class="card-body">
@@ -37,7 +42,8 @@ async function loaddata() {
                  <i class="fa-solid fa-check"></i>Mark as seen</button>` : ""}
                </div>
              </div>`;
-  }
+        }
+    }
 }
 
 

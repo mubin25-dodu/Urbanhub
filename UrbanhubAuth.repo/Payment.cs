@@ -12,7 +12,7 @@ using Microsoft.Data.SqlClient.DataClassification;
 
 namespace UrbanHubManagement.repo
 {
-    public class Payment(UrbanHubDbContext context, UserCard userCard, IMapper mapper)
+    public class Payment(UrbanHubDbContext context , UserCard userCard , IMapper mapper)
     {
         public Result<ParkingDetailsModel> Getbooking(int id)
         {
@@ -21,7 +21,7 @@ namespace UrbanHubManagement.repo
             {
                 //getting booking infos
                 var bookings = context.ParkingBookings.Include(p => p.Parking).
-                        FirstOrDefault(p => p.ID == id)
+                        FirstOrDefault(p=>p.ID==id)
 ;
                 if (bookings == null)
                 {
@@ -29,13 +29,12 @@ namespace UrbanHubManagement.repo
                     result.Message = "No Bookings Found";
 
                 }
-                var Platformfee = Math.Round(context.PlatformWallets.Sum(w => w.PlatformFee)
-                                             * bookings.PaymentAmount, 2);
+
+                //the bug i always face
                 result.Data = new ParkingDetailsModel()
                 {
-                    ParkingBooking = bookings,
-                    Platformfee = Platformfee,
-                    TotalBill = Math.Round(bookings.PaymentAmount + Platformfee, 2)
+                    ParkingBooking = bookings ?? new ParkingBooking(),
+                    ParkingSpaces = bookings?.Parking
                 };
                 result.Status = true;
 
@@ -51,24 +50,29 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        public Result<ParkingBooking> CancelBooking( int id)
+        public Result<ParkingDetailsModel> ProcessPayment(int id)
         {
             var result = new Result<ParkingDetailsModel>();
             try
             {
-                var cancel = context.ParkingBookings.Find(id);
-                if(cancel == null)
+                //getting booking infos
+                var bookings = context.ParkingBookings.Include(p => p.Parking).
+                        FirstOrDefault(p=>p.ID==id)
+;
+                if (bookings == null)
                 {
-                    result.Data = null;
-                    result.Message = "No bookings found.";
                     result.Status = false;
-                    return result;
+                    result.Message = "No Bookings Found";
+
                 }
-                cancel.Status ="Cancelled";
-                context.SaveChanges();
+
+                //the bug i always face
+                result.Data = new ParkingDetailsModel()
+                {
+                    ParkingBooking = bookings ?? new ParkingBooking(),
+                    ParkingSpaces = bookings?.Parking
+                };
                 result.Status = true;
-                result.Message = "Payment processed successfully. And Your OTP is: " 
-                                 + bookings.OTP +"This will help you to enter the parking space";
 
 
             }
@@ -82,5 +86,6 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
+       
     }
 }
