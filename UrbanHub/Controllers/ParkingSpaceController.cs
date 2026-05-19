@@ -43,6 +43,13 @@ namespace UrbanHub.web.Controllers
                 return View("ParkingSpace", vm);
             }
 
+           
+            var userIdClaim = User?.FindFirst("UserID")?.Value;
+            if (!int.TryParse(userIdClaim, out var currentUserId) || currentUserId <= 0)
+            {
+                return BadRequest("Invalid user identity.");
+            }
+
             string imagePath = await SaveImage(vm.ImageFile);
 
             var point = new Point(vm.Longitude, vm.Latitude)
@@ -61,23 +68,24 @@ namespace UrbanHub.web.Controllers
                 Description = vm.Description,
                 Image = imagePath,
                 Date = DateTime.Now,
-                // temporary static owner
-                OwnerId = int.Parse(User?.Claims.FirstOrDefault(c => c.Type == "UserID")?.Value ?? "0")
+                // use the safely parsed owner id
+                OwnerId = currentUserId
             };
-            var Role = _context.Users.Find(int.Parse(User?.FindFirst("UserID").Value));
-            if (Role==null)
+
+            var roleUser = await _context.Users.FindAsync(currentUserId);
+            if (roleUser == null)
             {
-                return null;
+                return NotFound();
             }
 
-            Role.Role = "Owner";
+            roleUser.Role = "Owner";
+
             _context.ParkingSpaces.Add(parking);
 
             await _context.SaveChangesAsync();
             ViewBag.ParkingId = parking.ID;
             TempData["Error"] = false;
-            TempData["success"] =
-                "Parking Space Added Successfully";
+            TempData["Message"] = "Parking Space Added Successfully";
 
             return RedirectToAction("Create");
         }

@@ -18,5 +18,9 @@ public partial class UrbanHubDbContext(DbContextOptions<UrbanHubDbContext> optio
     public virtual DbSet<ParkingSpace> ParkingSpaces{ get; set; }
     public virtual DbSet<Log> Logs { get; set; }
     public virtual DbSet<ParkingBooking> ParkingBookings { get; set; }
+    public virtual DbSet<Notification> Notifications { get; set; }
+    public virtual DbSet<Wallet> Wallets { get; set; }
+    public virtual DbSet<PlatformWallet> PlatformWallets { get; set; }
+    public virtual DbSet<Withdrawal> Withdrawals { get; set; }
 
 }

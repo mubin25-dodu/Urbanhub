@@ -60,21 +60,28 @@ namespace UrbanHubManagement.repo
             return result;
         }
 
-        public Result<ParkingBookingDTO> RequestBooking(ParkingBookingDTO data)
+        public Result<ParkingBookingDTO> RequestBooking(ParkingBookingDTO data )
         {
             var result = new Result<ParkingBookingDTO>();
 
             try
             {
-                //if already send a request
-                var check = context.ParkingBookings.Where(e => e.Status.ToLower() =="pending" && e.ParkingID == data.ParkingID && e.RenterID == card.UserId);
-
-                var checkowner = context.ParkingSpaces.Where(e => e.ID == data.ParkingID && e.OwnerId == card.UserId);
-
-                if(checkowner.Any())
+                var owner = context.ParkingSpaces.Where(e =>e.ID ==data.ParkingID && e.OwnerId == card.UserId);
+                if (owner.Any())
                 {
                     result.Data = null;
-                    result.Message = "You cannot book your own parking space. \n Nice try";
+                    result.Message = "You cannot request a booking for your own parking space.";
+                    result.Status = false;
+                    return result;
+                }
+                //if already send a request
+                var check = context.ParkingBookings.Any(e => e.ParkingID == data.ParkingID && e.RenterID == card.UserId
+                && e.Status.ToLower()=="pending");
+                if (check)
+                {
+                    result.Data = null;
+                    result.Message = "You have already requested a booking for this parking space. " +
+                                     "Cancel it first or wait for owner's response.";
                     result.Status = false;
                     return result;
                 }
@@ -88,42 +95,6 @@ namespace UrbanHubManagement.repo
                                 && b.StartingTime < data.EndingTime
                                 && b.EndingTime > data.StartingTime)
                     .ToList();
-
-                var startday = data.StartingTime.DayOfWeek.ToString();
-                var endday = data.EndingTime.DayOfWeek.ToString();
-                var starttime = TimeOnly.FromDateTime(data.StartingTime);
-                var endtime = TimeOnly.FromDateTime(data.EndingTime);
-
-
-
-                //not checking end date its on the user if he wants to 
-                //share his parking space for 1 day or 1 month or 1 year (and yes i'm lazy)
-
-                var ceckavailable = context.ParkingSpaces
-                    .AsEnumerable()
-                    .Where(b => { 
-                        if (string.IsNullOrWhiteSpace(b.Available)) return false;
-                        var jsondata = JsonSerializer.Deserialize<List<AvailabeSchadule>>(b.Available); 
-                        return jsondata?.Any(c => c.Day == startday && 
-                                               c.StartTime >= starttime && c.EndTime <= endtime ) ?? false;
-                    }).ToList();
-                if (ceckavailable==null || ceckavailable.Any() )
-                {
-                    result.Data = null;
-                    result.Message = "Slot Not available";
-                    result.Status = false;
-                    return result;
-                }
-
-                if (check.Any())
-                {
-                    result.Data = null;
-                    result.Message = "You have already requested a booking for this parking space. " +
-                                     "Cancel it first or wait for owner's response.";
-                    result.Status = false;
-                    return result;
-                }
-
                 if (existingBookings.Count > 0)
                 {
                     result.Data = data;
@@ -131,6 +102,31 @@ namespace UrbanHubManagement.repo
                     result.Message = "This time slot conflicts with an existing booking.";
                     return result;
                 }
+
+                var startday = data.StartingTime.DayOfWeek.ToString();
+                var endday = data.EndingTime.DayOfWeek.ToString();
+                var starttime = TimeOnly.FromDateTime(data.StartingTime);
+                var endtime = TimeOnly.FromDateTime(data.EndingTime);
+
+                //not checking end date its on the user if he wants to 
+                //share his parking space for 1 day or 1 month or 1 year (and yes i'm lazy)
+                var ceckavailable = context.ParkingSpaces
+                    .AsEnumerable()
+                    .Where(b => {
+                        if (string.IsNullOrWhiteSpace(b.Available)) return false;
+                        var jsondata = JsonSerializer.Deserialize<List<AvailabeSchadule>>(b.Available);
+                        return jsondata?.Any(c => c.Day == startday &&
+                                                  c.StartTime <= starttime &&
+                                                  c.EndTime >= starttime) ?? false;
+                    });
+                if (!ceckavailable.Any())
+                {
+                    result.Data = null;
+                    result.Message = "Slot Not available";
+                    result.Status = false;
+                    return result;
+                }
+
 
                 TimeSpan amount = data.EndingTime-data.StartingTime;
                 double hours = amount.TotalHours;
@@ -142,7 +138,7 @@ namespace UrbanHubManagement.repo
                 save.EndingTime = data.EndingTime;
                 save.Status = "Pending";
                 save.RenterID = card.UserId;
-                save.PaymentAmount= decimal.Parse((hours * (double)data.PaymentAmount).ToString());
+                save.PaymentAmount= decimal.Parse((hours * (double)data.RentPerHour).ToString());
                 save.PaymentStatus = "Pending";
                 save.Date = DateTime.Now;
                 context.ParkingBookings.Add(save);

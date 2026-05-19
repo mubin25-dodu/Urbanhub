@@ -19,7 +19,7 @@
 		<div class="card border-0 shadow-sm">
 			<div class="card-body p-0">
 				<div class="table-responsive">
-					
+
 					@* <form method="post">
 						<div class="d-flex gap-4 m-2">
 							<h4>Filter by :</h4>
@@ -51,7 +51,8 @@
 									<option value="Bicycle">Bicycle</option>
 								</select>
 							</div>
-							<button asp-controller="ParkINBookings" asp-action="FilterResult" type="submit" class="btn btn-primary align-self-end">
+							<button asp-controller="ParkINBookings" asp-action="FilterResult" type="submit" class="btn btn-primary
+				align-self-end">
 								<i class="fas fa-filter"></i> Apply
 							</button>
 						</div>
@@ -59,89 +60,93 @@
 
 					<table class="table table-hover mb-0">
 						<thead class="table-light">
-						<tr>
-							<th class="text-center">Address</th>
-							<th class="text-center">Rent/Hour</th>
-							<th class="text-center">Available</th>
-							<th class="text-center">Vehicle</th>
-							<th class="text-center">Status</th>
-							<th class="text-center">Duration</th>
-							<th class="text-center">Amount</th>
-							<th class="text-center">Payment</th>
-							<th class="text-center">Requested at</th>
-							<th class="text-center">Actions</th>
-						</tr>
+							<tr>
+								<th class="text-center">Address</th>
+								<th class="text-center">Rent/Hour</th>
+								<th class="text-center">Available</th>
+								<th class="text-center">Vehicle</th>
+								<th class="text-center">Status</th>
+								<th class="text-center">Duration</th>
+								<th class="text-center">Amount</th>
+								<th class="text-center">Payment</th>
+								<th class="text-center">Requested at</th>
+								<th class="text-center">Actions</th>
+							</tr>
 						</thead>
 						<tbody>
-						@foreach (var booking in Model)
-						{
-							<tr class="align-middle">
-								<td class="fw-500 text-info">@booking.Parking.Address</td>
-								<td class="text-center">৳@booking.Parking.RentPerHour</td>
-								<td class="text-center">
-									@if (booking.Parking.IsAvailable)
-									{
-										<span class="badge bg-success">Available</span>
-									}
-									else
-									{
-										<span class="badge bg-warning">Not Available</span>
-									}
-								</td>
-								<td class="text-center">
-									<span class="badge bg-info">@booking.Parking.VehicleType</span>
-								</td>
-								<td class="text-center">
-									@{
-										string statusClass = booking.Status == "Active" ? "bg-success" :
-											booking.Status == "Completed" ? "bg-secondary" :
-											booking.Status == "Cancelled" ? "bg-danger" : "bg-warning";
-									}
-									<span class="badge @statusClass">@booking.Status</span>
-								</td>
-								<td class="text-center small">
-									<div>@booking.StartingTime.ToString("dd MMM, HH:mm")</div>
-									<div class="text-muted">→</div>
-									<div>@booking.EndingTime.ToString("dd MMM, HH:mm")</div>
-								</td>
-								<td class="text-center fw-bold text-info">৳@booking.PaymentAmount</td>
-								<td class="text-center">
-									@{
-										string paymentClass = booking.PaymentStatus == "Completed" ? "bg-success" :
-											booking.PaymentStatus == "Pending" ? "bg-warning" :
-											booking.PaymentStatus == "Failed" ? "bg-danger" : "bg-secondary";
-									}
-									<span class="badge @paymentClass">@booking.PaymentStatus</span>
-								</td>
-								<td class="text-center">@booking.Date.ToString("dd MMM, HH:mm")</td>
-								<td class="text-center">
-									<div class="d-flex gap-2  flex-wrap">
+							@foreach (var booking in Model)
+							{
+								<tr class="align-middle">
+									<td class="fw-500 text-info">@booking.Parking.Address</td>
+									<td class="text-center">৳@booking.Parking.RentPerHour</td>
+									<td class="text-center">
+										@if (booking.Parking.IsAvailable)
+										{
+											<span class="badge bg-success">Available</span>
+										}
+										else
+										{
+											<span class="badge bg-warning">Not Available</span>
+										}
+									</td>
+									<td class="text-center">
+										<span class="badge bg-info">@booking.Parking.VehicleType</span>
+									</td>
+									<td class="text-center">
+										@{
+											string statusClass = booking.Status == "Accepted" ? "bg-success" :
+												booking.Status == "Completed" ? "bg-secondary" :
+												booking.Status == "Cancelled" ? "bg-danger" : "bg-warning";
+										}
+										<span class="badge @statusClass">@booking.Status</span>
+									</td>
+									<td class="text-center small">
+										<div>@booking.StartingTime.ToString("dd MMM, HH:mm")</div>
+										<div class="text-muted">→</div>
+										<div>@booking.EndingTime.ToString("dd MMM, HH:mm")</div>
+									</td>
+									<td class="text-center fw-bold text-info">৳@booking.PaymentAmount</td>
+									<td class="text-center">
+										@{
+											string paymentClass = booking.PaymentStatus == "Paid" ? "bg-success" :
+												booking.PaymentStatus == "Pending" ? "bg-warning" :
+												booking.PaymentStatus == "Failed" ? "bg-danger" : "bg-secondary";
+										}
+										<span class="badge @paymentClass">@booking.PaymentStatus</span>
+									</td>
+									<td class="text-center">@booking.Date.ToString("dd MMM, HH:mm")</td>
+									<td class="text-center">
+										<div class="d-flex gap-2  flex-wrap">
 											@if (!booking.Parking.IsAvailable)
 											{
 												<span class="text-danger">Parking Space Not Available</span>
 											}
 											else
 											{
-											@if (booking.PaymentStatus != "Completed")
+												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() ==
+									"accepted")
 												{
-													<button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#paymentModal" onclick="setBookingId(@booking.ID)">
+													<a asp-controller="ParkINPayment" asp-action="PaymentDetails"
+													   class="btn btn-sm btn-info" asp-route-id="@booking.ID">
 														<i class="fas fa-credit-card"></i> Pay
-													</button>
+													</a>
 												}
 
-												@if (booking.Status == "Pending" || booking.Status == "Booked")
+												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() ==
+									"accepted")
 												{
-													<a onclick="return confirm('Are you sure you want to cancel this booking?');" asp-action="Cancel" asp-route-id="@booking.ID"
-													   asp-controller="ParkINBookings" class="btn btn-sm btn-outline-danger">
+													<a onclick="return confirm('Are you sure you want to cancel this booking?');"
+													   asp-action="Cancel" asp-route-id="@booking.ID" asp-controller="ParkINBookings"
+													   class="btn btn-sm btn-outline-danger">
 														<i class="fas fa-times"></i> Cancel
 													</a>
 												}
-												
+
 											}
-									</div>
-								</td>
-							</tr>
-						}
+										</div>
+									</td>
+								</tr>
+							}
 						</tbody>
 					</table>
 				</div>

@@ -1,34 +1,37 @@
-﻿using System.Drawing;
-using AutoMapper;
+﻿using AutoMapper;
+using Azure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.Drawing;
+using System.Text.Json;
 using UrbanHub.Data;
 using UrbanHub.DTO;
 using UrbanHub.Entities;
 using UrbanHub.shared;
-using System.Text.Json;
 
 namespace UrbanHubManagement.repo
 {
-    public class ParkinHome(UrbanHubDbContext context , IMapper mapper )
+    public class ParkinHome(UrbanHubDbContext context, IMapper mapper)
     {
-        public Result<ParkInBrowseModel> GetAllParkingSpaces()
+        public async Task<Result<ParkInBrowseModel>> GetAllParkingSpaces( int page)
         {
             var result = new Result<ParkInBrowseModel>();
             try
             {
-                var parkingSpaces =  context.ParkingSpaces.Where(p=>p.IsAvailable==true).ToList();
+                var Available = context.ParkingSpaces.Count();
+                var parkingSpaces = await context.ParkingSpaces
+                    .Where(p => p.IsAvailable == true)
+                    .Skip((page - 1)*21).Take(21).ToListAsync();
+
                 var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(parkingSpaces);
+
                 result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = mappedSpaces,
-                    SearchSpaces = new SearchParkingSpace
-                    {
-                        DateAndTime = DateTime.Now,
-                        SearchText = string.Empty,
-                        Type = string.Empty
-                    }
+                    TotalResults = Available,
+                    CurrentPage = page
+                    
                 };
                 result.Message = "Parking spaces retrieved successfully.";
                 result.Status = true;
@@ -43,15 +46,14 @@ namespace UrbanHubManagement.repo
             }
             return result;
         }
-        public async Task<Result<ParkInBrowseModel>> NearBy( int distance , double lat , double lon)
+        public async Task<Result<ParkInBrowseModel>> NearBy(int distance, double lat, double lon)
         {
             var result = new Result<ParkInBrowseModel>();
-            var currentLocation = new NetTopologySuite.Geometries.Point(lon ,lat  ) { SRID = 4326 };
+            var currentLocation = new NetTopologySuite.Geometries.Point(lon, lat) { SRID = 4326 };
             try
             {
-
                 var nearby = await context.ParkingSpaces
-                    .Where(c => c.Location.Distance(currentLocation) <= distance )
+                    .Where(c => c.Location.Distance(currentLocation) <= distance && c.IsAvailable == true)
                     .ToListAsync();
 
                 var filtered = nearby
@@ -72,12 +74,7 @@ namespace UrbanHubManagement.repo
                 result.Data = new ParkInBrowseModel
                 {
                     ParkingSpaces = newdata,
-                    SearchSpaces = new SearchParkingSpace
-                    {
-                        DateAndTime = DateTime.Now,
-                        SearchText = string.Empty,
-                        Type = string.Empty
-                    }
+                    TotalResults = newdata.Count
                 };
                 result.Message = "Parking spaces retrieved successfully.";
                 result.Status = true;
@@ -99,52 +96,68 @@ namespace UrbanHubManagement.repo
             try
             {
                 var nearby = await context.ParkingSpaces
-                    .Where(c => c.VehicleType == data.Type && c.IsAvailable == true && c.Address.Contains(data.SearchText))
+                    .Where(c => c.VehicleType == data.Type && c.IsAvailable == true &&
+                                c.Address.Contains(data.SearchText))
                     .ToListAsync();
 
-                
+
                 //day 4 of trying
 
-                // okay so lets catch the time and then lets try to filter out the extended data by matching the times and the day
-                var targetDay = data.DateAndTime.DayOfWeek;
-                //found the bug heheheeey..... it was comparing the time with
-                //the date and time so i just need to extract the time
-                //from the date and time and then compare it with the start and end time in the schedule
-                var targetTime = TimeOnly.FromDateTime(data.DateAndTime);
-                var filteredSpaces = nearby
-                    .Where(p =>
-                    {
-                        //
-                        var schedules = JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available);
-
-                        // validating day and time 
-                        return schedules.Any(e =>
-                            e.Day == targetDay.ToString() &&
-                            e.StartTime <= targetTime &&
-                            e.EndTime >= targetTime);
-                    })
-                    .ToList();
-
-                //lets check if the time slot is available in that time 
-                //aaaaahhh logic is hard but ill be there soon i guess
-
-                //var Booking = await context.ParkingBookings
-                //    .Where(c => filteredSpaces.Any(f => f.ID == c.ID
-                //    &&
-                //    c.Status == "Booked") && (
-                //         JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available)
-
-                //        ))
-                //    .ToListAsync();
-
-                var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(filteredSpaces);
-                result.Data = new ParkInBrowseModel
+                if (data.DateAndTime != default || data.DateAndTime != null)
                 {
-                    ParkingSpaces = mappedSpaces,
-                    SearchSpaces = data
-                };
-                result.Message = "Parking spaces retrieved successfully.";
-                result.Status = true;
+                    // okay so lets catch the time and then lets try to filter out the extended data by matching the times and the day
+                    var targetDay = data.DateAndTime?.DayOfWeek;
+                    //found the bug heheheeey..... it was comparing the time with
+                    //the date and time so i just need to extract the time
+                    //from the date and time and then compare it with the start and end time in the schedule
+                    var targetTime = TimeOnly.FromDateTime(data.DateAndTime.Value);
+                    var filteredSpaces = nearby
+                        .Where(p =>
+                        {
+
+                            var schedules = JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available);
+
+                            // validating day and time 
+                            return schedules.Any(e =>
+                                e.Day == targetDay.ToString() &&
+                                e.StartTime <= targetTime &&
+                                e.EndTime >= targetTime);
+                        })
+                        .ToList();
+
+                    //lets check if the time slot is available in that time 
+                    //aaaaahhh logic is hard but ill be there soon i guess
+
+                    //var Booking = await context.ParkingBookings
+                    //    .Where(c => filteredSpaces.Any(f => f.ID == c.ID
+                    //    &&
+                    //    c.Status == "Booked") && (
+                    //         JsonSerializer.Deserialize<List<AvailabeSchadule>>(p.Available)
+
+                    //        ))
+                    //    .ToListAsync();
+
+                    var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(filteredSpaces);
+                    result.Data = new ParkInBrowseModel
+                    {
+                        ParkingSpaces = mappedSpaces,
+                        SearchSpaces = data
+                    };
+                    result.Message = "Parking spaces retrieved successfully.";
+                    result.Status = true;
+                }
+                else
+                {
+                    var mappedSpaces = mapper.Map<List<ParkingSpaceDTO>>(nearby);
+                    result.Data = new ParkInBrowseModel
+                    {
+                        ParkingSpaces = mappedSpaces,
+                        SearchSpaces = data
+                    };
+                    result.Message = "Parking spaces retrieved successfully.";
+                    result.Status = true;
+
+                }
             }
             catch (Exception e)
             {
@@ -154,11 +167,12 @@ namespace UrbanHubManagement.repo
                 result.Status = false;
                 throw;
             }
+
             return result;
         }
 
         // Haversine formula. km distance
 
     }
-   
+
 }

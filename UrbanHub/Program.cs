@@ -6,6 +6,7 @@ using UrbanHub.DTO;
 using UrbanHub.Entities;
 using UrbanHub.shared;
 using UrbanHubManagement.repo;
+using UrbanHub.web.custom_services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(mapper));
@@ -30,7 +31,15 @@ builder.Services.AddScoped<ParkingDetailsModel>();
 builder.Services.AddScoped<UserCard>();
 builder.Services.AddScoped<UserBookings>();
 builder.Services.AddScoped<MySpace>();
+builder.Services.AddScoped<ManageBookings>();
+builder.Services.AddScoped<Notifications>();
+builder.Services.AddScoped<Payment>();
+builder.Services.AddScoped<ParkinWallet>();
 builder.Services.AddHttpContextAccessor();
+//testing
+// although everything is for testing for me now
+
+builder.Services.AddSignalR();
 
 builder.Services.AddAuthentication("UrbanAuth").AddCookie("UrbanAuth",
     opt =>
@@ -39,7 +48,7 @@ builder.Services.AddAuthentication("UrbanAuth").AddCookie("UrbanAuth",
         opt.LoginPath = "/Login";
         opt.ExpireTimeSpan = TimeSpan.FromMinutes(300);
     });
-    
+
 
 var app = builder.Build();
 
@@ -59,6 +68,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 app.MapStaticAssets();
+app.MapHub<SignalrNotification>("/signalrNotification");
 
 app.MapControllerRoute(
     name: "default",

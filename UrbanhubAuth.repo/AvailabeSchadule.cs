@@ -8,7 +8,7 @@ namespace UrbanHubManagement.repo
 {
     internal class AvailabeSchadule
     {
-        public string Day { get; set; }
+        public string Day { get; set; } = null!;
         public TimeOnly StartTime { get; set; }
         public TimeOnly EndTime { get; set; }
     }
