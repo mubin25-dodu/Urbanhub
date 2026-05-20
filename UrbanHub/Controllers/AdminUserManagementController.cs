@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MailKit.Search;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UrbanHub.Data;
 using UrbanHub.Entities;
@@ -9,10 +10,11 @@ namespace UrbanHub.web.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminUserManagementController (AdminUserManagement repo) : Controller
     {
-        [Route("admin/users")]
-        public async Task<IActionResult> Users()
+        [Route("admin/users/{searchTerm?}")]
+        [HttpGet]
+        public async Task<IActionResult> Users( string searchTerm)
         {
-            var users = await repo.Getall();
+            var users = await repo.Get(searchTerm);
             if (!users.Status)
             {
                 ViewBag.Error = true;
@@ -21,6 +23,7 @@ namespace UrbanHub.web.Controllers
 
             return View(users.Data);
         }
+
         [HttpGet]
         public async Task<IActionResult> BanUnban(int id)
         {

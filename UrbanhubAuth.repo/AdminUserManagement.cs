@@ -14,12 +14,20 @@ namespace UrbanHubManagement.repo
 {
     public class  AdminUserManagement(UrbanHubDbContext context , UserCard userCard)
     {
-        public async Task<Result<List<User>>> Getall()
+        public async Task<Result<List<User>>> Get(string searchTerm)
         {
             var result = new Result<List<User>>();
             try
             {
-                var getusers = await context.Users.Where(u => u.Uid != userCard.UserId).ToListAsync();
+                var getusers = new List<User>();
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    getusers = await context.Users.Where(u => u.Uid != userCard.UserId && (u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm))).ToListAsync();
+                }
+                else
+                {
+                    getusers = await context.Users.Where(u => u.Uid != userCard.UserId ).ToListAsync();
+                }
                 if (getusers == null)
                 {
                     result.Status = false;
