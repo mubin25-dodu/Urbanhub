@@ -17,7 +17,7 @@ namespace UrbanHub.Entities
         public DateTime UpdatedAt { get; set; }
         public string Message { get; set; } = null!;
         [ForeignKey("UpdatedBy")]
-        public virtual User Uid { get; set; } = null!;
+        public virtual User User { get; set; } = null!;
 
     }
 }

@@ -18,8 +18,5 @@ public class WithdrawalModel
 
     public string AccountNumber { get; set; }
     [Required]
-
     public string PaymentMethod { get; set; }
-
-
 }

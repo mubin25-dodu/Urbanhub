@@ -177,7 +177,7 @@ namespace UrbanHubManagement.repo
                 {
                     From = "UrbanHub",
                     To = userCard.UserId,
-                    Message = $"🔔 Payment Received – Your payment has been successfully credited to your wallet. " +
+                    Message = $"Payment Received – Your payment has been successfully credited to your wallet. " +
                               $"You may withdraw your funds at any time.",
                     Date = DateTime.Now
                 };

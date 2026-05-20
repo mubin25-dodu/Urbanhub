@@ -28,7 +28,7 @@ namespace UrbanHubManagement.repo
                 }
                 var with = await context.Withdrawals.Where(w=> w.UserID == userCard.UserId ).
                     OrderByDescending(w => w.Date).ToListAsync();
-                var TotalWithdrawals = with.Where(w => w.Status.ToLower() == "success").Sum(w => w.Amount);
+                var TotalWithdrawals = with.Where(w => w.Status.ToLower() == "approved").Sum(w => w.Amount);
                 var currentReq = with.Where(w => w.Status.ToLower() == "pending").Sum(w => w.Amount);
                 var TotalEarnings = wallet.Where(w => w.Status == true).Sum(w => w.Amount);
                 var data = new WithdrawalModel()
