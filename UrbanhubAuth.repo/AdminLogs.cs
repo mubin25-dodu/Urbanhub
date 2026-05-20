@@ -19,7 +19,7 @@ namespace UrbanHubManagement.repo
             var result = new Result<List<Log>>();
             try
             {
-                var getlogs = await context.Logs.Include(l => l.User).ToListAsync();
+                var getlogs = await context.Logs.Include(l => l.User).OrderByDescending(p=>p.UpdatedAt).ToListAsync();
 
                 if (getlogs == null)
                 {

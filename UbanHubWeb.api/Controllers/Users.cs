@@ -6,7 +6,7 @@ namespace UrbanHubWeb.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Users(AdminUserManagement repo) : ControllerBase
+    public class Users(AdminUserManagementCopy repo) : ControllerBase
     {
         [HttpGet]
         [Route("SearchUser/{Searchtearm}")]

@@ -12,7 +12,7 @@ using Microsoft.Data.SqlClient.DataClassification;
 
 namespace UrbanHubManagement.repo
 {
-    public class  AdminUserManagement(UrbanHubDbContext context , UserCard userCard)
+    public class AdminUserManagementCopy(UrbanHubDbContext context )
     {
         public async Task<Result<List<User>>> Get(string searchTerm)
         {
@@ -20,15 +20,9 @@ namespace UrbanHubManagement.repo
             try
             {
                 var getusers = new List<User>();
-                if (!string.IsNullOrEmpty(searchTerm))
-                {
-                    //getusers = await context.Users.Where(u => u.Uid != userCard.UserId && (u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm))).ToListAsync();
-                    getusers = await context.Users.Where(u => u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm)).ToListAsync();
-                }
-                else
-                {
-                    getusers = await context.Users.Where(u => u.Uid != userCard.UserId ).ToListAsync();
-                }
+               
+                getusers = await context.Users.Where(u => u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm)).ToListAsync();
+               
                 if (getusers == null)
                 {
                     result.Status = false;
@@ -67,22 +61,15 @@ namespace UrbanHubManagement.repo
                 if (getusers.Status.ToLower() == "banned")
                 {
                     getusers.Status = "Active";
-                    //logupdate.Message = $"User Unbanned successfully.By {userCard.UserId}";
                     result.Message = $"User Unbanned successfully.";
 
                 }
                 else
                 {
                     getusers.Status = "Banned";
-                    //logupdate.Message = $"User Banned successfully.By {userCard.UserId}";
                     result.Message = $"User banned successfully.";
                 }
 
-
-                logupdate.UpdatedAt = DateTime.Now;
-                logupdate.UpdatedBy = userCard.UserId;
-
-                //context.Logs.Add(logupdate);
                 context.Users.Update(getusers);
                 await context.SaveChangesAsync();
 

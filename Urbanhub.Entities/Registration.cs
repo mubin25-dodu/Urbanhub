@@ -11,7 +11,6 @@ namespace UrbanHub.Entities
     [Table("registration")]
     public class Registration
     {
-        [Key , DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Rid { get; set; }
         [Required]
         [StringLength(50)]

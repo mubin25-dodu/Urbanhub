@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 // Register dependencies
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<UserCard>();
-builder.Services.AddScoped<AdminUserManagement>();
+builder.Services.AddScoped<AdminUserManagementCopy>();
 
 var app = builder.Build();
 

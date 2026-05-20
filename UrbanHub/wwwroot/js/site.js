@@ -20,7 +20,7 @@ if (refreashbtn) {
 
 
 async function loaddata() {
-    const response = await fetch("api/Notification");
+    const response = await fetch("/api/Notification");
     console.log(response);
   const data = await response.json();
   console.log(data);
