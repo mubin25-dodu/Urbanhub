@@ -23,13 +23,6 @@ namespace UrbanHub.web.Controllers
             return View(result.Data);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Pagination(int page)
-        //{
-        //    var result = await repo.GetParkingSpaces(page);
-        //    return RedirectToAction("Browse", result.Data);
-        //}
-
         [HttpGet("ParkIN/Nearby")]
         public async Task<IActionResult> BrowseNearby(double lat, double lng)
         {

@@ -23,6 +23,7 @@ namespace UrbanHubManagement.repo
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
                     getusers = await context.Users.Where(u => u.Uid != userCard.UserId && (u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm))).ToListAsync();
+                    //getusers = await context.Users.Where(u => u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm)).ToListAsync();
                 }
                 else
                 {

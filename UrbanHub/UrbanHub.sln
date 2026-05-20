@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbahHubMail", "..\UrbahHub
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanHub.shared", "..\UrunHub.shared\UrbanHub.shared.csproj", "{315B69F3-55B6-41C1-BCDF-A1F771D8EAEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanHubWeb.api", "..\UbanHubWeb.api\UrbanHubWeb.api.csproj", "{F4678443-EA4E-4087-953D-A362696550D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{315B69F3-55B6-41C1-BCDF-A1F771D8EAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{315B69F3-55B6-41C1-BCDF-A1F771D8EAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{315B69F3-55B6-41C1-BCDF-A1F771D8EAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4678443-EA4E-4087-953D-A362696550D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4678443-EA4E-4087-953D-A362696550D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4678443-EA4E-4087-953D-A362696550D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4678443-EA4E-4087-953D-A362696550D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
