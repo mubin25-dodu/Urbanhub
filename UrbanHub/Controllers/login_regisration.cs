@@ -63,7 +63,6 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
             var identity = new ClaimsIdentity(Claim, "UrbanAuth");
             var principal = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync("UrbanAuth", principal);
-
         }
 
         return Json(userExist);

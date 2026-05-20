@@ -100,7 +100,7 @@
 									</td>
 									<td class="text-center">
 										@{
-											string withdrawnClass = booking.Withdrawn ? "bg-danger" : "bg-success";
+                                            string withdrawnClass = booking.Withdrawn ? "bg-success" : "bg-danger";
 										}
 										<span class="badge @withdrawnClass">@(booking.Withdrawn ? "Yes" : "No")</span>
 									</td>
@@ -123,7 +123,7 @@
 													<i class="fas fa-times"></i> Cancel
 												</a>
 											}
-											else if (booking.Status.ToLower() == "accepted")
+											else if (booking.Status.ToLower() == "accepted" && !booking.Withdrawn)
 											{
 												<a onclick="return confirm('Are you sure you want to cancel this booking?');"
 												   asp-action="Cancel" asp-route-id="@booking.ID" asp-controller="ParkINBookings"

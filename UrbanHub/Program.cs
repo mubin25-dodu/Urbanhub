@@ -35,6 +35,9 @@ builder.Services.AddScoped<ManageBookings>();
 builder.Services.AddScoped<Notifications>();
 builder.Services.AddScoped<Payment>();
 builder.Services.AddScoped<ParkinWallet>();
+builder.Services.AddScoped<AdminUserManagement>();
+builder.Services.AddScoped<AdminTransactions>();
+builder.Services.AddScoped<AdminLogs>();
 builder.Services.AddHttpContextAccessor();
 //testing
 // although everything is for testing for me now

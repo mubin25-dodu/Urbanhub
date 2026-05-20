@@ -157,7 +157,9 @@
 			<a class="page-link" asp-action="Browse" asp-route-page="@(Model.CurrentPage + 1)"
 						   asp-controller="ParkINHome" aria-label="Next">
 							<span aria-hidden="true">&raquo;</span>
-							<span class="sr-only">Next</span>
+							<span class="sr-only @if (Model.CurrentPage >= (Model.TotalResults/21 )) { <text>disabled</text> }">
+								Next
+							</span>
 						</a>
 					</li>
 				</ul>

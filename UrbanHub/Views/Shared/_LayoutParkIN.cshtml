@@ -11,6 +11,13 @@
 	<link rel="stylesheet" href="~/css/page/navbar.css" asp-append-version="true"/>
 	@* <link rel="stylesheet" href="~/UrbanHub.styles.css" asp-append-version="true" /> *@
 	<link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" asp-append-version="true"/>
+	<style>
+		.nav-link.active {
+			border-bottom: 3px solid #0F6DF0 !important;
+			color: #0F6DF0 !important;
+			font-weight: 600;
+		}
+	</style>
 </head>
 <body>
 <header>
@@ -40,21 +47,21 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1 gap-lg-3 align-items-center">
 						<li class="nav-item">
-							<a class="nav-link fw-600 text-dark nav-hover-effect" 
+							<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")" 
 							   asp-controller="Home" asp-action="Index">
 								Home
 							</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link fw-600 text-dark nav-hover-effect" 
+							<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ParkINHome" && ViewContext.RouteData.Values["Action"]?.ToString() == "Browse" ? "active" : "")" 
 							   asp-controller="ParkINHome" asp-action="Browse">
 								ParkIN
 							</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link fw-600 text-dark nav-hover-effect "
+							<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ParkINBookings" && ViewContext.RouteData.Values["Action"]?.ToString() == "MyBookings" ? "active" : "")"
 							   asp-controller="ParkINBookings" asp-action="MyBookings">
 								My bookings
 							</a>
@@ -62,26 +69,26 @@
 						@if (User.IsInRole("Owner"))
 						{
 							<li class="nav-item">
-								<a class="nav-link fw-600 text-dark nav-hover-effect"
+								<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ParkINMySpace" && ViewContext.RouteData.Values["Action"]?.ToString() == "MySpace" ? "active" : "")"
 								   asp-controller="ParkINMySpace" asp-action="MySpace">
 									My Space
 								</a>
-							</li><li class="nav-item">
-								<a class="nav-link fw-600 text-dark nav-hover-effect"
+							</li>
+							<li class="nav-item">
+								<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ParkINManageBookings" && ViewContext.RouteData.Values["Action"]?.ToString() == "Bookings" ? "active" : "")"
 								   asp-controller="ParkINManageBookings" asp-action="Bookings">
 									Manage Bookings
 								</a>
 							</li>
-						<li class="nav-item">
-								<a class="nav-link fw-600 text-dark nav-hover-effect"
+							<li class="nav-item">
+								<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ParkINWallet" && ViewContext.RouteData.Values["Action"]?.ToString() == "MyWallet" ? "active" : "")"
 								   asp-controller="ParkINWallet" asp-action="MyWallet">
 									My Wallet
 								</a>
 							</li>
-
 						}
 						<li class="nav-item">
-							<a class="nav-link fw-600 text-dark nav-hover-effect"
+							<a class="nav-link fw-600 text-dark nav-hover-effect @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ParkINHome" && ViewContext.RouteData.Values["Action"]?.ToString() == "LiveMap" ? "active" : "")"
 							   asp-controller="ParkINHome" asp-action="LiveMap">
 								Map View
 							</a>

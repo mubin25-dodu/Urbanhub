@@ -40,12 +40,12 @@ if (loginBtn) { loginBtn.addEventListener("click", function (event) {
   })
     .then((res) => res.json())
     .then((data) => {
-        //console.log(data);
+        console.log(data);
         document.getElementById("SpanEmail").innerHTML = null;
         document.getElementById("SpanPass").innerHTML = null;
 
         if (data.errors) {
-            //console.log(data.errors);
+            console.log(data.errors);
             if (data.errors.Email) {
                 document.getElementById("SpanEmail").innerHTML = data.errors.Email.errors[0].errorMessage;
             }
@@ -53,8 +53,11 @@ if (loginBtn) { loginBtn.addEventListener("click", function (event) {
                 document.getElementById("SpanPass").innerHTML = data.errors.Password.errors[0].errorMessage;
             }
         }
-        else if (data.status) {
+        else if (data.status && data.data!=null && (data.data.role == "Owner" || data.data.role == "User") ){
             window.location.href="Home"
+        }
+        else if (data.status && data.data.role == "Admin") {
+            window.location.href="Admin/Home"
         }
         else {
 
@@ -85,7 +88,7 @@ if (RegBtn) {
                 //console.log(data);
                 document.getElementById("SEmail").innerHTML = null;
                 document.getElementById("SName").innerHTML = null;
-
+                notif.style.backgroundColor = "";
                 if (data.errors && data.status!=false) {
                     //console.log(data.errors);
                     if (data.errors.Email) {
