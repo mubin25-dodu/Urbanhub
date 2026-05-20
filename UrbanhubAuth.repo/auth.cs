@@ -35,6 +35,11 @@ namespace UrbanHubManagement.repo
                     result.Message = "Wrong password Try again";
                     result.Status = false;
                 }
+                else if(check.Status.ToLower() =="banned"){
+                    result.Data = null;
+                    result.Message = "The User Is Banned";
+                    result.Status = false;
+                }
                 else
                 {
                     result.Data = check;
