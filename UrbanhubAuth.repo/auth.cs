@@ -16,7 +16,7 @@ namespace UrbanHubManagement.repo
             var result = new Result<User>();
             try
             {
-                var check = context.Users.FirstOrDefault(x => x.Email == data.Email);
+                var check = context.Users.FirstOrDefault(x => x.Email.ToLower() == data.Email.ToLower());
                 if (check == null)
                 {
                     result.Data = null;
@@ -64,8 +64,8 @@ namespace UrbanHubManagement.repo
             var result = new Result<List<Registration>>();
             try
             {
-                var check = context.Users.FirstOrDefault(x => x.Email == data.Email);
-                var checkreg = context.Registrations.FirstOrDefault(x => x.Email != null && x.Email == data.Email);
+                var check = context.Users.FirstOrDefault(x => x.Email.ToLower() == data.Email.ToLower());
+                var checkreg = context.Registrations.FirstOrDefault(x => x.Email != null && x.Email.ToLower() == data.Email.ToLower());
                 if (check != null)
                 {
                     result.Data = null;
@@ -114,8 +114,8 @@ namespace UrbanHubManagement.repo
             var result = new Result<User>();
             try
             {
-                var check = context.Registrations.Where(u => u.Email == data.Email);
-                var usercheck = context.Users.FirstOrDefault(e => e.Email == data.Email);
+                var check = context.Registrations.Where(u => u.Email.ToLower() == data.Email.ToLower());
+                var usercheck = context.Users.FirstOrDefault(e => e.Email.ToLower() == data.Email.ToLower());
                 if (check.Count() != 0 && usercheck == null)
                 {
                     data.JoinDate = DateTime.Now;
@@ -129,7 +129,7 @@ namespace UrbanHubManagement.repo
                 }
                 else if (usercheck != null)
                 {
-                    if (usercheck.Email == data.Email)
+                    if (usercheck.Email.ToLower() == data.Email.ToLower())
                     {
                         result.Data = data;
                         result.Status = false;
