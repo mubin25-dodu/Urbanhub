@@ -123,8 +123,7 @@
 											}
 											else
 											{
-												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() ==
-									"accepted")
+												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() =="accepted")
 												{
 													<a asp-controller="ParkINPayment" asp-action="PaymentDetails"
 													   class="btn btn-sm btn-info" asp-route-id="@booking.ID">
@@ -132,8 +131,7 @@
 													</a>
 												}
 
-												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() ==
-									"accepted")
+												@if (booking.PaymentStatus.ToLower() != "paid" && booking.Status.ToLower() == "Cancelled")
 												{
 													<a onclick="return confirm('Are you sure you want to cancel this booking?');"
 													   asp-action="Cancel" asp-route-id="@booking.ID" asp-controller="ParkINBookings"

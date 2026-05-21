@@ -40,7 +40,7 @@ builder.Services.AddScoped<AdminTransactions>();
 builder.Services.AddScoped<AdminLogs>();
 builder.Services.AddHttpContextAccessor();
 //testing
-// although everything is for testing for me now
+// although everything is testing for me now
 
 builder.Services.AddSignalR();
 

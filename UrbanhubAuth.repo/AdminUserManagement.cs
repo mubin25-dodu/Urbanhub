@@ -22,8 +22,7 @@ namespace UrbanHubManagement.repo
                 var getusers = new List<User>();
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
-                    //getusers = await context.Users.Where(u => u.Uid != userCard.UserId && (u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm))).ToListAsync();
-                    getusers = await context.Users.Where(u => u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm)).ToListAsync();
+                    getusers = await context.Users.Where(u => u.Uid != userCard.UserId && (u.Name.Contains(searchTerm) || u.Email.Contains(searchTerm))).ToListAsync();
                 }
                 else
                 {
@@ -67,14 +66,14 @@ namespace UrbanHubManagement.repo
                 if (getusers.Status.ToLower() == "banned")
                 {
                     getusers.Status = "Active";
-                    //logupdate.Message = $"User Unbanned successfully.By {userCard.UserId}";
+                    logupdate.Message = $"User Unbanned successfully.By {userCard.UserId}";
                     result.Message = $"User Unbanned successfully.";
 
                 }
                 else
                 {
                     getusers.Status = "Banned";
-                    //logupdate.Message = $"User Banned successfully.By {userCard.UserId}";
+                    logupdate.Message = $"User Banned successfully.By {userCard.UserId}";
                     result.Message = $"User banned successfully.";
                 }
 
@@ -82,7 +81,7 @@ namespace UrbanHubManagement.repo
                 logupdate.UpdatedAt = DateTime.Now;
                 logupdate.UpdatedBy = userCard.UserId;
 
-                //context.Logs.Add(logupdate);
+                context.Logs.Add(logupdate);
                 context.Users.Update(getusers);
                 await context.SaveChangesAsync();
 

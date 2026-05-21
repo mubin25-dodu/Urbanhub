@@ -107,18 +107,18 @@ namespace UrbanHubManagement.repo
                     result.Status = false;
                     return result;
                 }
-                spaces.Status = "Canceled";
+                spaces.Status = "Cancelled";
 
-                var notification = new Notification()
-                {
-                    From = userCard.UserId.ToString(),
-                    To = spaces.RenterID ,
-                    Message = $"Your parking booking request for {spaces.Parking.Address} has been declined." +
-                              $" Please try booking another parking space. For assistance, contact support.",
-                    Date = DateTime.Now
-                };
+                //var notification = new Notification()
+                //{
+                //    From = userCard.UserId.ToString(),
+                //    To = spaces.RenterID ,
+                //    Message = $"Your parking booking request for {spaces.Parking.Address} has been declined." +
+                //              $" Please try booking another parking space. For assistance, contact support.",
+                //    Date = DateTime.Now
+                //};
 
-                context.Notifications.Add(notification);
+                //context.Notifications.Add(notification);
                 context.ParkingBookings.Update(spaces);
                 context.SaveChanges();
 

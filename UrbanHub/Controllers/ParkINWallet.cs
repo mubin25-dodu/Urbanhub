@@ -36,7 +36,7 @@ namespace UrbanHub.web.Controllers
             {
                 ModelState.AddModelError("Amount", "Insufficient balance");
                 TempData["Error"] = true;
-                TempData["Message"] = "Check If already pending request exists wait for approval";
+                TempData["Message"] = "Insufficient  Balance";
                 return RedirectToAction("MyWallet" , model);
             }
 

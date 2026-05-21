@@ -88,7 +88,7 @@ if (RegBtn) {
                 //console.log(data);
                 document.getElementById("SEmail").innerHTML = null;
                 document.getElementById("SName").innerHTML = null;
-                notif.style.backgroundColor = "";
+                // notif.style.backgroundColor = "";
                 if (data.errors && data.status!=false) {
                     //console.log(data.errors);
                     if (data.errors.Email) {

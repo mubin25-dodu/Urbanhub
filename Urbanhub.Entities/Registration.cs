@@ -15,7 +15,7 @@ namespace UrbanHub.Entities
         [Required]
         [StringLength(50)]
         public string Name { get; set; } = null!;
-        
+        [Key]
         [Required]
         [EmailAddress]
         [StringLength(50)]

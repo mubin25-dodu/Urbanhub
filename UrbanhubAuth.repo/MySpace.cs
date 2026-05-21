@@ -18,7 +18,7 @@ namespace UrbanHubManagement.repo
             var result = new Result<List<ParkingSpace>>();
             try
             {
-                //some lazy work ill update it letter exam ache
+                //some lazy work ill update it letter 
                 var spaces = context.ParkingSpaces.Where(p => p.OwnerId == userCard.UserId
                 && p.Available.ToLower() != "Removed by Owner")
                     .ToList();

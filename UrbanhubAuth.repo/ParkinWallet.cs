@@ -77,7 +77,7 @@ namespace UrbanHubManagement.repo
                     Message = "A new withdrawal request has been submitted.",
                     Seen = false,
                     Title = "Withdrawal Request for " + data.Amount+"BDT",
-                    From = "System",
+                    From = "UrbanHub",
                     Date = DateTime.Now
                 };
 
