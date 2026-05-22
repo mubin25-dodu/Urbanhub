@@ -1,8 +1,9 @@
-# UrbanHub - Parking Management System
+# UrbanHub - Urban Microservices Platform
 
-A comprehensive ASP.NET Core MVC application for managing urban parking spaces, bookings, and payments. UrbanHub provides a platform for parking space owners to list their spaces and for users to browse, book, and manage parking reservations.
+A comprehensive ASP.NET Core microservices platform designed to support multiple urban services. UrbanHub provides a unified platform for various services including parking space management, bookings, payments, and more. The platform enables service providers to list their offerings and users to browse, book, and manage services seamlessly.
 
 ## 📋 Table of Contents
+
 - [Overview](#overview)
 - [Technology Stack](#technology-stack)
 - [Architecture](#architecture)
@@ -16,16 +17,18 @@ A comprehensive ASP.NET Core MVC application for managing urban parking spaces, 
 
 ## 🎯 Overview
 
-UrbanHub is an urban parking management platform that bridges the gap between parking space owners and users seeking convenient parking solutions. The application provides real-time booking capabilities, wallet management, transaction tracking, and comprehensive admin panels for system management.
+UrbanHub is a microservices platform built to provide a scalable foundation for urban services. The platform currently includes parking space management as a core service, enabling service owners to monetize their offerings and users to discover and book services. The platform provides real-time booking capabilities, wallet management, transaction tracking, comprehensive admin panels, and extensibility for additional services in the future.
 
 **Key Stakeholders:**
-- **Parking Space Owners**: Can list, manage, and monetize their parking spaces
-- **Renters/Users**: Can browse, book, and manage parking reservations
-- **Administrators**: Can manage users, monitor transactions, and maintain system logs
+
+- **Service Providers**: Can list, manage, and monetize their services (e.g., parking spaces)
+- **Users**: Can browse, book, and manage service reservations
+- **Administrators**: Can manage users, monitor transactions, maintain system logs, and oversee all services
 
 ## 🛠 Technology Stack
 
 ### Backend
+
 - **Framework**: ASP.NET Core 9.0 (.NET 9)
 - **ORM**: Entity Framework Core 9.0.15
 - **Database**: SQL Server (LocalDB for development)
@@ -36,11 +39,13 @@ UrbanHub is an urban parking management platform that bridges the gap between pa
 - **Security**: Custom authentication with cookie-based sessions
 
 ### Frontend
+
 - **UI Framework**: Bootstrap 5
 - **Icons**: Font Awesome
 - **Client-side Scripting**: jQuery with AJAX
 
 ### Development
+
 - **Language**: C# with nullable reference types enabled
 - **IDE**: Visual Studio / Visual Studio Code
 - **Package Manager**: NuGet
@@ -189,6 +194,7 @@ Urbanhub/
 ## ✨ Features
 
 ### User Features
+
 - **User Authentication & Authorization**
   - Secure registration with password validation (8+ chars, uppercase, lowercase, number, special char)
   - Cookie-based authentication with 5-hour session timeout
@@ -223,6 +229,7 @@ Urbanhub/
   - View community feedback
 
 ### Parking Space Owner Features
+
 - **Space Management**
   - List new parking spaces
   - Edit space details and pricing
@@ -231,6 +238,7 @@ Urbanhub/
   - Track earnings
 
 ### Admin Features
+
 - **User Management**
   - View all registered users
   - Search and filter users
@@ -258,6 +266,7 @@ Urbanhub/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - .NET 9 SDK or later
 - SQL Server 2019 or later (LocalDB for development)
 - Visual Studio 2022 or Visual Studio Code
@@ -266,12 +275,14 @@ Urbanhub/
 ### Installation Steps
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/mubin25-dodu/Urbanhub.git
    cd Urbanhub
    ```
 
 2. **Restore Dependencies**
+
    ```bash
    dotnet restore
    ```
@@ -279,6 +290,7 @@ Urbanhub/
 3. **Update Connection String**
    - Open `UrbanHub/appsettings.json`
    - Modify the connection string if needed:
+
    ```json
    {
      "ConnectionStrings": {
@@ -288,12 +300,14 @@ Urbanhub/
    ```
 
 4. **Create Database**
+
    ```bash
    cd UrbanHub
    dotnet ef database update
    ```
 
 5. **Run the Application**
+
    ```bash
    dotnet run
    ```
@@ -317,6 +331,7 @@ If you have the backup file `urbanhubDb.bak`:
 4. Click OK to restore
 
 ### Key Tables
+
 - **User**: Stores user account information
 - **ParkingSpace**: Parking space listings with geolocation
 - **ParkingBooking**: Booking records and history
@@ -331,10 +346,13 @@ If you have the backup file `urbanhubDb.bak`:
 ## 📦 Project Modules
 
 ### 1. **UrbanHub.web** - Main Web Application
+
 Handles HTTP requests, user interface, and view rendering. Contains MVC controllers, Razor views, and custom middleware.
 
 ### 2. **UrbanhubAuth.repo** - Business Logic Layer
+
 Implements core business logic for:
+
 - User authentication
 - Parking space management
 - Booking operations
@@ -344,7 +362,9 @@ Implements core business logic for:
 - Admin operations
 
 ### 3. **UrbanHub.DTO** - Data Transfer Objects
+
 Defines contracts for:
+
 - Login/Registration
 - Parking spaces
 - Bookings
@@ -352,47 +372,58 @@ Defines contracts for:
 - Search filters
 
 ### 4. **Urbanhub.Entities** - Domain Models
+
 Entity Framework entities mapped to database tables.
 
 ### 5. **UrbanHub.Data** - Data Access Layer
+
 Entity Framework DbContext and migrations.
 
 ### 6. **UrbanHub.shared** - Shared Utilities
+
 - AutoMapper configuration
 - Shared models (ParkInBrowseModel, UserCard, etc.)
 - Reusable view models
 
 ### 7. **UrbahHubMail** - Email Service
+
 Handles email sending using MailKit for notifications and communications.
 
 ### 8. **UrbanHubNotification** - SignalR Hub
+
 Real-time notification service using SignalR for live updates.
 
 ## 🎮 Controllers Guide
 
 ### Authentication Controllers
+
 - **login_regisration**: User registration and login
 
 ### Admin Controllers
+
 - **AdminController**: Admin dashboard and home
 - **AdminUserManagementController**: User management operations
 - **AdminTransactionsController**: Transaction tracking
 - **AdminLogsController**: System logs and audit trail
 
 ### Parking Space Controllers
+
 - **ParkingSpaceController**: Parking space CRUD operations
 - **ParkINHome**: Parking browsing and discovery
 - **ParkINDetails**: Detailed parking information view
 
 ### Booking Controllers
+
 - **ParkINBookings**: User booking management
 - **ParkINManageBookings**: Space owner booking management
 
 ### Payment & Wallet Controllers
+
 - **ParkINPayment**: Payment processing
 - **ParkINWallet**: Wallet management (balance, transactions, withdrawals)
 
 ### Additional Controllers
+
 - **HomeController**: General home page
 - **NotificationsController**: Notification management
 
@@ -400,17 +431,18 @@ Real-time notification service using SignalR for live updates.
 
 - **Cookie-Based Authentication**: Uses "UrbanAuth" cookie scheme
 - **Session Management**: 5-hour session timeout
-- **Password Requirements**: 
+- **Password Requirements**:
   - Minimum 8 characters
   - At least one uppercase letter
   - At least one lowercase letter
   - At least one digit
-  - At least one special character (@$!%*?&)
+  - At least one special character (@$!%\*?&)
 - **Email Verification**: Tracks verified status via Vid field
 
 ## 🗺️ Geospatial Features
 
 The application uses **NetTopologySuite** for geospatial operations:
+
 - Location-based parking search
 - Distance calculations using Haversine Formula
 - Geographic point storage and querying
@@ -418,12 +450,14 @@ The application uses **NetTopologySuite** for geospatial operations:
 ## 📨 Email & Notifications
 
 ### Email Service (UrbahHubMail)
+
 - Uses MailKit library
 - Sends booking confirmations
 - Payment notifications
 - System alerts
 
 ### Real-time Notifications (SignalR)
+
 - Hub: `/signalrNotification`
 - Instant booking updates
 - Live notification delivery
@@ -438,6 +472,7 @@ The application uses **NetTopologySuite** for geospatial operations:
 5. Open a Pull Request
 
 ### Naming Conventions
+
 - **Controllers**: `[Feature]Controller.cs` (e.g., `ParkINBookings.cs`)
 - **Services**: `[Service]Service.cs` or `[Feature].cs`
 - **Views**: `[Action].cshtml` in `Views/[Controller]` directory
@@ -447,22 +482,26 @@ The application uses **NetTopologySuite** for geospatial operations:
 ## 📝 Project Notes
 
 ### Current Status
+
 - **Branch**: `mubin-simplecruds`
 - **Default Branch**: `Main`
 - **Framework**: .NET 9.0
 
 ### Database
+
 - **Location**: SQL Server LocalDB
 - **Name**: UrbanHubDb
 - **Authentication**: Windows Integrated Security
 
 ### Environment Files
+
 - **Development**: `appsettings.Development.json`
 - **Production**: `appsettings.json`
 
 ## 📞 Support & Documentation
 
 For additional documentation, refer to:
+
 - `project docs/Core Db Usage.txt` - Database usage documentation
 - `project docs/urbanhubDb.bak` - Database backup
 
