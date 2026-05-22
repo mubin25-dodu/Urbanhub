@@ -15,7 +15,7 @@ builder.Services.AddAutoMapper(typeof(mapper));
 var connectionString = builder.Configuration.GetConnectionString("UrbanHubDB");
 if (!string.IsNullOrEmpty(connectionString))
 {
-    connectionString = connectionString.Replace("${DB_PASSWORD}", 
+    connectionString = connectionString.Replace("${DB_PASSWORD}",
         Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "{DB_PASSWORD}");
 }
 
