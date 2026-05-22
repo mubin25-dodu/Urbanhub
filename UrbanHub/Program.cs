@@ -11,13 +11,14 @@ using UrbanHub.web.custom_services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(mapper));
 
-// Get connection string and replace environment variable placeholder
-var connectionString = builder.Configuration.GetConnectionString("UrbanHubDB");
-if (!string.IsNullOrEmpty(connectionString))
+// Build connection string with password from user secrets or environment
+var dbPassword = builder.Configuration["DB_PASSWORD"] ?? Environment.GetEnvironmentVariable("DB_PASSWORD");
+if (string.IsNullOrEmpty(dbPassword))
 {
-    connectionString = connectionString.Replace("${DB_PASSWORD}",
-        Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "{DB_PASSWORD}");
+    throw new InvalidOperationException("DB_PASSWORD is not configured. Please set it using 'dotnet user-secrets set DB_PASSWORD <password>'");
 }
+
+var connectionString = $"Host=db.pwpdropezuomudjmrjuj.supabase.co;Port=5432;Database=postgres;Username=postgres;Password={dbPassword};SSL Mode=Require;Trust Server Certificate=true;";
 
 builder.Services.AddDbContext<UrbanHubDbContext>(options =>
     options.UseNpgsql(connectionString
