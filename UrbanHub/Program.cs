@@ -11,8 +11,16 @@ using UrbanHub.web.custom_services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(mapper));
 
+// Get connection string and replace environment variable placeholder
+var connectionString = builder.Configuration.GetConnectionString("UrbanHubDB");
+if (!string.IsNullOrEmpty(connectionString))
+{
+    connectionString = connectionString.Replace("${DB_PASSWORD}", 
+        Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "{DB_PASSWORD}");
+}
+
 builder.Services.AddDbContext<UrbanHubDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UrbanHubDB")
+    options.UseNpgsql(connectionString
     , x => x.UseNetTopologySuite()
     ));
 
