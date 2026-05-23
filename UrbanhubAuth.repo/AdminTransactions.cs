@@ -37,12 +37,12 @@ namespace UrbanHubManagement.repo
                 }
                 if (getwithdrawals == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Withdrawals Found";
                     return result;
                 }
                 result.Data = getwithdrawals;
-                result.Status = true;
+                result.Error = true;
 
             }
             catch (Exception e)
@@ -50,7 +50,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -65,7 +65,7 @@ namespace UrbanHubManagement.repo
 
                 if (getwithdrawals == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Withdrawals Found";
                     return result;
                 }
@@ -111,14 +111,14 @@ namespace UrbanHubManagement.repo
                 await context.SaveChangesAsync();
 
                 result.Data = getwithdrawals;
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;

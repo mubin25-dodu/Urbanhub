@@ -24,7 +24,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "Parking space not found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
 
@@ -45,7 +45,7 @@ namespace UrbanHubManagement.repo
                     ParkingSpaces = parkingSpace ?? new ParkingSpace(),
                     ParkingBookings = bookings ?? new List<ParkingBooking>()
                 };
-                result.Status = true;
+                result.Error = true;
 
 
             }
@@ -54,7 +54,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -71,7 +71,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "You cannot request a booking for your own parking space.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 //if already send a request
@@ -82,7 +82,7 @@ namespace UrbanHubManagement.repo
                     result.Data = null;
                     result.Message = "You have already requested a booking for this parking space. " +
                                      "Cancel it first or wait for owner's response.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
 
@@ -98,7 +98,7 @@ namespace UrbanHubManagement.repo
                 if (existingBookings.Count > 0)
                 {
                     result.Data = data;
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "This time slot conflicts with an existing booking.";
                     return result;
                 }
@@ -123,7 +123,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "Slot Not available";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
 
@@ -145,7 +145,7 @@ namespace UrbanHubManagement.repo
                 context.SaveChanges();
                 
                 result.Data = null;
-                result.Status = true;
+                result.Error = true;
                 result.Message = "Booking Request Send Successfully";
 
             }
@@ -153,7 +153,7 @@ namespace UrbanHubManagement.repo
             {
                 result.Data = data;
                 result.Message = "something went wrong";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;

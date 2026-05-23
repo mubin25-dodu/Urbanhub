@@ -24,7 +24,7 @@ namespace UrbanHubManagement.repo
                     ;
                 if (bookings == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Bookings Found";
                     return result;
                 }
@@ -40,7 +40,7 @@ namespace UrbanHubManagement.repo
                 };
 
                 result.Data = newdata;
-                result.Status = true;
+                result.Error = true;
 
             }
             catch (Exception e)
@@ -48,7 +48,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -62,7 +62,7 @@ namespace UrbanHubManagement.repo
                     p => p.Parking).FirstOrDefault(p=>p.ID ==id);
                 if (bookings == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Bookings Found";
                     return result;
                 }
@@ -94,7 +94,7 @@ namespace UrbanHubManagement.repo
                 result.Message = $"Your payment for parking booking {bookings.Parking.Address} has been processed. " +
                                  $"Your OTP is {OTP}.Please provide this OTP to the Owner to complete the transaction.";
                 result.Data = null;
-                result.Status = true;
+                result.Error = true;
 
             }
             catch (Exception e)
@@ -102,7 +102,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;

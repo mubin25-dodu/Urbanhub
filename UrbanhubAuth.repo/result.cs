@@ -9,7 +9,7 @@ namespace UrbanHubManagement.repo
     public class Result<Table>
     {
         public Table? Data { get; set; }
-        public bool Status { get; set; }
+        public bool Error { get; set; }
         public string? Message { get; set; }
         public string? AdditionalMessage { get; set; }
 

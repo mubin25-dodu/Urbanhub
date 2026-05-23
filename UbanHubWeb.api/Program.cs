@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using UrbanHub.Data;
 using UrbanHubManagement.repo;
 using UrbanHub.shared;
+using UrbanHubManagement.repo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddSwaggerGen();
 
 // Register dependencies
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<Auth>();
 builder.Services.AddScoped<UserCard>();
 builder.Services.AddScoped<AdminUserManagement>();
 

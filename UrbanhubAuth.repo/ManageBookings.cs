@@ -26,21 +26,21 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No Parking Bookings found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 
 
                 result.Data = bookings ?? new List<ParkingBooking>() ;
                 result.Message = "Parking Bookings retrieved successfully.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving Bookings.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 
@@ -56,7 +56,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No Parking Space found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
 
@@ -80,14 +80,14 @@ namespace UrbanHubManagement.repo
 
                 result.Data = null;
                 result.Message = "Parking request accepted.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while removing parking space.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 
@@ -104,7 +104,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No Parking Space found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 spaces.Status = "Canceled";
@@ -124,14 +124,14 @@ namespace UrbanHubManagement.repo
 
                 result.Data = null;
                 result.Message = "Parking request Canceled.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while removing parking space.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 
@@ -147,14 +147,14 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No Parking Space found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 else if (booking.OTP != data.OTP)
                 {
                     result.Data = null;
                     result.Message = "Invalid OTP.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
 
@@ -189,14 +189,14 @@ namespace UrbanHubManagement.repo
 
                 result.Data = null;
                 result.Message = "🔔 Payment Received – Your payment has been successfully credited to your wallet.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while removing parking space.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 

@@ -31,12 +31,12 @@ namespace UrbanHubManagement.repo
                 }
                 if (getusers == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Users Found";
                     return result;
                 }
                 result.Data = getusers;
-                result.Status = true;
+                result.Error = true;
                 result.Message = $"Total {getusers.Count} Users retrieved successfully.";
 
             }
@@ -45,7 +45,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -58,7 +58,7 @@ namespace UrbanHubManagement.repo
                 var getusers = await context.Users.FindAsync(id);
                 if (getusers == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Users Found";
                     return result;
                 }
@@ -87,14 +87,14 @@ namespace UrbanHubManagement.repo
                 await context.SaveChangesAsync();
 
                 result.Data = getusers;
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;

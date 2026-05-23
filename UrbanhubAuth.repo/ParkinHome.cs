@@ -34,14 +34,14 @@ namespace UrbanHubManagement.repo
                     
                 };
                 result.Message = "Parking spaces retrieved successfully.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -77,14 +77,14 @@ namespace UrbanHubManagement.repo
                     TotalResults = newdata.Count
                 };
                 result.Message = "Parking spaces retrieved successfully.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -144,7 +144,7 @@ namespace UrbanHubManagement.repo
                         SearchSpaces = data
                     };
                     result.Message = "Parking spaces retrieved successfully.";
-                    result.Status = true;
+                    result.Error = true;
                 }
                 else
                 {
@@ -155,7 +155,7 @@ namespace UrbanHubManagement.repo
                         SearchSpaces = data
                     };
                     result.Message = "Parking spaces retrieved successfully.";
-                    result.Status = true;
+                    result.Error = true;
 
                 }
             }
@@ -164,7 +164,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 

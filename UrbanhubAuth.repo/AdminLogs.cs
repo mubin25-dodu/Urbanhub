@@ -23,12 +23,12 @@ namespace UrbanHubManagement.repo
 
                 if (getlogs == null)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Logs Found";
                     return result;
                 }
                 result.Data = getlogs;
-                result.Status = true;
+                result.Error = true;
                 result.Message = $"Total {getlogs.Count} Logs retrieved successfully.";
 
             }
@@ -37,7 +37,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;

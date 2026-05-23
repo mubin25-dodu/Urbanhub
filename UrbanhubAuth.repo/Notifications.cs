@@ -25,20 +25,20 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No Notifications found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 
                 result.Data = notifications;
                 result.Message = "Notifications retrieved successfully.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving Bookings.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 
@@ -57,7 +57,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No Notifications found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 var mark = notifications.Find(n => n.ID == id);
@@ -66,7 +66,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "Notification not found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
 
@@ -76,14 +76,14 @@ namespace UrbanHubManagement.repo
 
                 result.Data = notifications;
                 result.Message = "Notifications retrieved successfully.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving Bookings.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 

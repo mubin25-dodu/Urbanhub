@@ -24,21 +24,21 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No bookings found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 
 
                 result.Data = Bookings;
                 result.Message = "";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 
@@ -54,7 +54,7 @@ namespace UrbanHubManagement.repo
                 {
                     result.Data = null;
                     result.Message = "No bookings found.";
-                    result.Status = false;
+                    result.Error = false;
                     return result;
                 }
                 cancel.Status ="Cancelled";
@@ -62,14 +62,14 @@ namespace UrbanHubManagement.repo
 
                 result.Data = null;
                 result.Message = "Booking cancelled successfully.";
-                result.Status = true;
+                result.Error = true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
 

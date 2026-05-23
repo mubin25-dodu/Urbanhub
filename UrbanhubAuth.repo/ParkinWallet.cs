@@ -22,7 +22,7 @@ namespace UrbanHubManagement.repo
                 var wallet = await context.Wallets.Where(w => w.UserID == userCard.UserId).ToListAsync();
                 if (wallet == null || wallet.Count == 0)
                 {
-                    result.Status = false;
+                    result.Error = false;
                     result.Message = "No Data Found";
                     return result;
                 }
@@ -41,7 +41,7 @@ namespace UrbanHubManagement.repo
                 };
 
                 result.Data = data;
-                result.Status = true;
+                result.Error = true;
                 result.Message = "";
 
             }
@@ -50,7 +50,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
@@ -84,7 +84,7 @@ namespace UrbanHubManagement.repo
                 context.Withdrawals.Add(apply);
                 context.Notifications.Add(notification);
                 context.SaveChanges();
-                result.Status = true;
+                result.Error = true;
                 result.Message = "Application sent successfully";
 
             }
@@ -93,7 +93,7 @@ namespace UrbanHubManagement.repo
                 Console.WriteLine(e);
                 result.Data = null;
                 result.Message = "An error occurred while retrieving parking spaces.";
-                result.Status = false;
+                result.Error = false;
                 throw;
             }
             return result;
