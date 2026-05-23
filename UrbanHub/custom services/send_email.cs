@@ -7,7 +7,7 @@ namespace UrbanHub.custom_services;
 public class  send_email
 {
     private readonly string _from = "almubin9516@gmail.com";
-    private readonly string _password = "lttx pttk qrva dwtg";
+    private readonly string _password = "nopass";
 
     public async Task SendEmail(string to, string subject, string body) { 
 
