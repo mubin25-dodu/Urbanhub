@@ -11,7 +11,7 @@ namespace UrbanHub.web.Controllers
         public IActionResult Bookings()
         {
             var result = repo.GetAll();
-            if (result.Status == false)
+            if (result.Error == false)
             {
                 ViewBag.Error = true;
                 ViewBag.Message = result.Message;
@@ -25,7 +25,7 @@ namespace UrbanHub.web.Controllers
         public IActionResult Accept(int id)
         {
             var result = repo.Accept(id);
-            if (result.Status == false)
+            if (result.Error == false)
             {
                 TempData["Error"] = true;
                 TempData["Message"] = result.Message;
@@ -39,7 +39,7 @@ namespace UrbanHub.web.Controllers
         public IActionResult Cancel(int id)
         {
             var result = repo.Cancel(id);
-            if (result.Status == false)
+            if (result.Error == false)
             {
                 TempData["Error"] = true;
                 TempData["Message"] = result.Message;
@@ -54,7 +54,7 @@ namespace UrbanHub.web.Controllers
         public IActionResult RequestPayment(ParkingBooking data)
         { 
             var result = repo.RequestPayment(data);
-            if (result.Status == false)
+            if (result.Error == false)
             {
                 TempData["Error"] = true;
                 TempData["Message"] = result.Message;

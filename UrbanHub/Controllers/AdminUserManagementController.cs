@@ -15,7 +15,7 @@ namespace UrbanHub.web.Controllers
         public async Task<IActionResult> Users( string searchTerm)
         {
             var users = await repo.Get(searchTerm);
-            if (!users.Status)
+            if (!users.Error)
             {
                 ViewBag.Error = true;
                 ViewBag.Message = users.Message;
@@ -35,7 +35,7 @@ namespace UrbanHub.web.Controllers
             }
 
             var users = await repo.BanUnbanUser(id);
-            if (!users.Status)
+            if (!users.Error)
             {
                 ViewBag.Error = true;
                 ViewBag.Message = users.Message;

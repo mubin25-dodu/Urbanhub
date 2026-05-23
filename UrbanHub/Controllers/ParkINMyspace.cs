@@ -12,7 +12,7 @@ namespace UrbanHub.web.Controllers
         public IActionResult MySpace()
         {
             var result = repo.GetAll();
-            if (result.Status == false)
+            if (result.Error == false)
             {
                 ViewBag.Error = true;
                 ViewBag.Message = result.Message;
@@ -26,7 +26,7 @@ namespace UrbanHub.web.Controllers
         public IActionResult Delete(int id)
         {
             var result = repo.Delete(id);
-            if (result.Status == false)
+            if (result.Error == false)
             {
                 TempData["Error"] = true;
                 TempData["Message"] = result.Message;

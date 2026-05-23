@@ -15,7 +15,7 @@ namespace UrbanHub.web.Controllers
         public async Task<IActionResult> Transactions( string searchTerm)
         {
             var payments = await repo.Get(searchTerm);
-            if (!payments.Status)
+            if (!payments.Error)
             {
                 ViewBag.Error = true;
                 ViewBag.Message = payments.Message;
@@ -35,7 +35,7 @@ namespace UrbanHub.web.Controllers
             }
 
             var users = await repo.PrecoessTask(id , task);
-            if (!users.Status)
+            if (!users.Error)
             {
                 ViewBag.Error = true;
                 ViewBag.Message = users.Message;

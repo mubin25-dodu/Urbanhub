@@ -51,7 +51,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         }
 
         var userExist = repo.UserExist(data);
-        if (userExist.Status == true)
+        if (userExist.Error == true)
         {
             var Claim = new List<Claim>()
             {
@@ -79,7 +79,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
             return Ok(new { HasError = false, errors = ModelState });
         }
         var register = repo.register(data);
-        if(register.Status)
+        if(register.Error)
         {
            int rid = int.Parse(register.AdditionalMessage);
             sendmail(data.Email, data.Name,rid);
@@ -127,13 +127,13 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         else
         {
             var result = repo.Save(data);
-            if (result.Status)
+            if (result.Error)
             {
                return RedirectToAction("login_reg");
             }
             else
             {
-                ViewBag.Status = result.Status;
+                ViewBag.Status = result.Error;
                 ViewBag.Message = result.Message;
             }
         }

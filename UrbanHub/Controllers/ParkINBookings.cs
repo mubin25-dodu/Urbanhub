@@ -18,7 +18,7 @@ namespace UrbanHub.web.Controllers
         {
             var result = repo.CancelBooking(id);
 
-                if (!result.Status)
+                if (!result.Error)
                 {
                     TempData["Error"] = true;
                     TempData["Message"] = result.Message;

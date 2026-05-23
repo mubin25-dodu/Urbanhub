@@ -20,7 +20,7 @@ namespace UrbanHub.web.Controllers
 
             var result = repo.Getbooking(id);
             
-            if (!result.Status || result.Data == null)
+            if (!result.Error || result.Data == null)
             {
                 return NotFound();
             }
@@ -38,7 +38,7 @@ namespace UrbanHub.web.Controllers
 
             var result = repo.ProcessPayment(id);
             
-            if (result.Status)
+            if (result.Error)
             {
                 TempData["Message"] = result.Message;
                 TempData["Error"] = false;

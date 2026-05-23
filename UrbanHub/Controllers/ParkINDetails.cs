@@ -19,7 +19,7 @@ namespace UrbanHub.web.Controllers
             }
 
             var result = repo.GetParkingSpace(id);
-            if (result.Status)
+            if (result.Error)
             {
                 var newresult = new ParkingDetailsModel();
                 newresult.ParkingSpaces = result.Data.ParkingSpaces;
@@ -39,7 +39,7 @@ namespace UrbanHub.web.Controllers
             } 
             var result = repo.RequestBooking(data.ParkingBookingDTO);
 
-            if (!result.Status )
+            if (!result.Error )
             {
                 TempData["Error"] = true;
                 TempData["Message"] = result.Message;
