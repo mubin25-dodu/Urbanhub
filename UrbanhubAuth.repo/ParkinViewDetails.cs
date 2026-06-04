@@ -110,22 +110,22 @@ namespace UrbanHubManagement.repo
 
                 //not checking end date its on the user if he wants to 
                 //share his parking space for 1 day or 1 month or 1 year (and yes i'm lazy)
-                var ceckavailable = context.ParkingSpaces
-                    .AsEnumerable()
-                    .Where(b => {
-                        if (string.IsNullOrWhiteSpace(b.Available)) return false;
-                        var jsondata = JsonSerializer.Deserialize<List<AvailabeSchadule>>(b.Available);
-                        return jsondata?.Any(c => c.Day == startday &&
-                                                  c.StartTime <= starttime &&
-                                                  c.EndTime >= starttime) ?? false;
-                    });
-                if (!ceckavailable.Any())
-                {
-                    result.Data = null;
-                    result.Message = "Slot Not available";
-                    result.Status = false;
-                    return result;
-                }
+                //var ceckavailable = context.ParkingSpaces
+                //    .AsEnumerable()
+                //    .Where(b => {
+                //        if (string.IsNullOrWhiteSpace(b.Available)) return false;
+                //        var jsondata = JsonSerializer.Deserialize<List<AvailabeSchadule>>(b.Available);
+                //        return jsondata?.Any(c => c.Day == startday &&
+                //                                  c.StartTime <= starttime &&
+                //                                  c.EndTime >= starttime) ?? false;
+                //    });
+                //if (!ceckavailable.Any())
+                //{
+                //    result.Data = null;
+                //    result.Message = "Slot Not available";
+                //    result.Status = false;
+                //    return result;
+                //}
 
 
                 TimeSpan amount = data.EndingTime-data.StartingTime;
