@@ -151,7 +151,7 @@ public class login_regisration(Auth repo , UrbanHubDbContext context) : Controll
         //sending mail
         var email = e;
         var subject = "Registration Confirmation";
-        var registrationLink = $"https://localhost:7019/Registration?email={email}&id={rid}";
+        var registrationLink = $"https://{Environment.GetEnvironmentVariable("webaddress")}/Registration?email={email}&id={rid}";
         var message = $@"
         <!DOCTYPE html>
         <html>
